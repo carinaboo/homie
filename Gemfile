@@ -36,6 +36,11 @@ end
 # gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'devise'
 
+# Rspec unit testing
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
