@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="Rails homie: development" uuid="f195fc9b-1b4a-4e61-8920-19822af1949c">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Samuel Son\Documents\GitHub\homie\db\development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\SWang\Desktop\cs169\homie\db\development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
   </component>

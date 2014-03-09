@@ -1,5 +1,10 @@
 Homie::Application.routes.draw do
 
+  get "apartments/view"
+  get "apartments/new"
+  get "apartments/create"
+  get "apartments/edit"
+  get "apartments/update"
   devise_for :users
 
   root :to => "home#index"
