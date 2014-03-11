@@ -3,10 +3,8 @@ class ApartmentsController < ApplicationController
 
   def view
     @apartment = Apartment.find(params[:id])
-    @reviews = Review.where(:apartment_id => @apartment.id)
-    if !can_review(@reviews)
-      @show_form = true
-    end
+    @reviews = Review.where(apartment_id: @apartment.id)
+    @show_form = can_review?(@reviews)                      #boolean value
   end
 
   def new
@@ -15,7 +13,7 @@ class ApartmentsController < ApplicationController
 
   def create
     @apartment = Apartment.new(params[:apartment])
-    @apartment.save ? redirect_to @apartment : render 'new'
+    @apartment.save ? redirect_to @apartment : render "new"
   end
 
   def edit
@@ -24,11 +22,11 @@ class ApartmentsController < ApplicationController
   def update
     @apartment = Apartment.find(params[:id])
     valid = @apartment.update_attributes(apartment_params)
-    valid ? redirect_to @apartment : render 'edit'
+    valid ? redirect_to @apartment : render "edit"
   end
 
   private
     def apartment_params
-      params.require(:apartment).permit(:title, :address)
+      params.require(:apartment).permit(:title, :address, :description, :price, :bathrooms, :bedrooms)
     end
 end
