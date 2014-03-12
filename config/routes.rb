@@ -1,5 +1,6 @@
 Homie::Application.routes.draw do
 
+<<<<<<< HEAD
   get "reviews/create"
   get "reviews/update"
   get "reviews/find_by_apt"
@@ -8,11 +9,21 @@ Homie::Application.routes.draw do
   get "apartments/create"
   get "apartments/edit"
   get "apartments/update"
+=======
+  get 'apartments/view/:id', to: 'apartments#view'
+  get 'apartments/new', to: 'apartments#new'
+  get 'apartments/edit/:id', to: 'apartments#edit'
+  
+  post 'apartments/update/:id', to: 'apartments#update'
+  post '/apartments/create', to: 'apartments#create'
+
+  resources :apartments
+>>>>>>> FETCH_HEAD
   devise_for :users
 
-  root :to => "home#index"
+  root :to => 'home#index'
 
-  get "home/index"
+  get 'home/index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

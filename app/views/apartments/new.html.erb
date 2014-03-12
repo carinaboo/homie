@@ -1,2 +1,24 @@
-<h1>Apartments#new</h1>
-<p>Find me in app/views/apartments/new.html.erb</p>
+<h1>Create a new apartment</h1>
+
+<%= form_for(@apartment) do |f| %>
+
+  <div><%= f.label :Title %><br />
+  <%= f.text_field :title %></div>
+
+   <div><%= f.label :Address %><br />
+  <%= f.text_field :address %></div>
+
+  <div><%= f.label :Description %><br />
+  <%= f.text_area :description %></div>
+
+  <div><%= f.label :price %><br />
+  <%= f.text_field :price %></div>
+
+  <div><%= f.label :bedrooms %><br />
+   <%= f.select :bedrooms, 1..10 %></div>
+
+   <div><%= f.label :bathrooms %><br />
+   <%= f.select :bedrooms, 1..10 %></div>
+
+  <div><%= f.submit "Create Apartment" %></div>
+<% end %>
