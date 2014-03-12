@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140308230658) do
+ActiveRecord::Schema.define(version: 20140311203453) do
 
   create_table "apartments", force: true do |t|
     t.string   "title"
@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(version: 20140308230658) do
     t.float    "bathrooms"
     t.float    "bedrooms"
     t.float    "average_overall_rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reviews", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

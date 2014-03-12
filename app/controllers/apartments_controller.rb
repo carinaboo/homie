@@ -3,7 +3,7 @@ class ApartmentsController < ApplicationController
 
   #Loads the apartment profile page with reviews. Provides user with option to add reviews
   #if the user is logged in and hasn't already added a review.
-  def view
+  def show
     @apartment = Apartment.find(params[:id])
     @reviews = Review.where(apartment_id: @apartment.id)
     #boolean value used in view to decide whether user can add new review

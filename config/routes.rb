@@ -1,24 +1,10 @@
 Homie::Application.routes.draw do
 
-<<<<<<< HEAD
   get "reviews/create"
   get "reviews/update"
   get "reviews/find_by_apt"
-  get "apartments/view"
-  get "apartments/new"
-  get "apartments/create"
-  get "apartments/edit"
-  get "apartments/update"
-=======
-  get 'apartments/view/:id', to: 'apartments#view'
-  get 'apartments/new', to: 'apartments#new'
-  get 'apartments/edit/:id', to: 'apartments#edit'
-  
-  post 'apartments/update/:id', to: 'apartments#update'
-  post '/apartments/create', to: 'apartments#create'
 
   resources :apartments
->>>>>>> FETCH_HEAD
   devise_for :users
 
   root :to => 'home#index'
