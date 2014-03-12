@@ -7,6 +7,6 @@ class Review < ActiveRecord::Base
 	FORBIDDEN = 403
 	PAGE_NOT_FOUND = 404
 	
-	def self.create(user_id, apt_id, overall_rating, review)
+	def self.add(user_id, apt_id, overall_rating, review)
 		
 end
