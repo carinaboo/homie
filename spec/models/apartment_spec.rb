@@ -17,36 +17,36 @@ describe Apartment do
 	 	expect(@bad_apt).to (eq Apartment::FORBIDDEN)
   	end
 
-	it "testFindById" do
+	it "testAddUserId" do
 	  expect(@apartment.user_id).to (eq 1)
 	end
 
-	it "testTitle" do
+	it "testAddTitle" do
 	  expect(@apartment.title).to (eq "apt1")
 	end
 
-	it "testAddress" do
+	it "testAddAddress" do
 	  expect(@apartment.address).to (eq "addr1")
 	end	
 
-	it "testDescription" do
+	it "testAddDescription" do
 	  expect(@apartment.description).to (eq "desc1")
 	end  
 
-	it "testPrice" do
+	it "testAddPrice" do
 	  expect(@apartment.price).to (eq 1000)
 	end 
 
-	it "testBathroom" do
+	it "testAddBathroom" do
 	  expect(@apartment.bathrooms).to (eq 1)
 	  end   
 
-	it "testBedrooms" do
+	it "testAddBedrooms" do
 	  expect(@apartment.bedrooms).to (eq 1)
 	end  
    end
 
-	describe "update apartment" do
+	describe "update and search for apartment" do
 	  before do
 		@apartment.updateDescription(2, "apt2", "addr2", "desc2", 2000, 2, 2)
 	  end
@@ -77,6 +77,16 @@ describe Apartment do
 
 	  it "testUpdateBedrooms" do
 	  	expect(@apartment.bedrooms).to (eq 2)
-	  end 
+	  end
+
+	  it "test search with valid address" do
+	  	result = Apartment.search("addr2")
+	  	expect(result.first.address).to (eq "addr2")
+	  end
+
+	  it "test search with invalid address" do
+	  	result = Apartment.search("addr1")
+	  	expect(result).to (eq [])
+	  end	 
 	end
 end

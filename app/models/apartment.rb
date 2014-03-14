@@ -11,7 +11,7 @@ class Apartment < ActiveRecord::Base
   	#adds a new apartment to the database and returns errorCode if not valid.
 	def self.add(user_id, title, address, desc, price, bedrooms, bathrooms)
 		apt = new(user_id: user_id, title: title, address: address, description: desc, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
-		return SUCCESS if apt.save
+		return apt if apt.save
 		FORBIDDEN
 	end
 
@@ -26,10 +26,13 @@ class Apartment < ActiveRecord::Base
 	#search for apartments by address and returns an array of apartments at that location. 
 	def self.search(search)
 		if search
+			# for now blank search returns all results to make it easier for dev testing
+			# change to show nothing later
 			find(:all, :conditions => ['address LIKE ?', "%#{search}%"])
+			# Apartment.where("address LIKE ?", search)
 		else
-			#find(:all)
 			return []
+			# find(:all)
 		end
 	end
 end
