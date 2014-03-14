@@ -9,13 +9,14 @@ class ReviewsController < ApplicationController
   def create
   	#assuming add method in model will return correct error code or new_average
   	if(current_user)	#check if the user is loggin in
-  		code = Review.add(params[:user_id],params[:apt_id], params[:overall_rating]. params[:review]) 
+  		code = Review.add(params[:user_id],params[:apt_id], params[:overall_rating], params[:review]) 
   	else
       render json: {errCode: NOT_LOGGEDIN}
     end
 
     if code != 1
       render json: {errCode: code}
+    end
 
   	#update new averge rating
   	num_of_reviews = Review.count(:conditions => "apt_id == params[:apt_id]") 	#To do: make sure this is correct
@@ -40,11 +41,13 @@ class ReviewsController < ApplicationController
         render json:{errCode: UNAUTHORIZED_USER}
       end
 
-      code = Review.update(params[:review_id], params[:overall_rating]. params[:review]) 
+      code = Review.update(params[:review_id], params[:overall_rating], params[:review]) 
+
     else  #if not logged in
       #handle error: user is not logged in
       render json: {errCode: NOT_LOGGEDIN}
-
+    end
+    
     if code!= 1
       #error handling, only FORBIDDEN will be returned in this case
       render json: {errCode: code}
