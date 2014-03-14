@@ -9,7 +9,7 @@ class ApartmentsController < ApplicationController
   #if the user is logged in and hasn't already added a review.
   def show
     @apartment = Apartment.find(params[:id])
-    # @reviews = Review.where(apartment_id: @apartment.id)
+    @reviews = Review.find_by_apt(params[:id])
     #boolean value used in view to decide whether user can add new review
     # @show_form = can_review?(@reviews)        #method from ApartmentsHelper
   end

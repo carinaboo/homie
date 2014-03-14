@@ -5,3 +5,30 @@
 <p><%= @apartment.bedrooms %> bedrooms</p>
 <p><%= @apartment.bathrooms %> bathrooms</p>
 <p> rating: <%= @apartment.average_overall_rating %></p>
+
+
+<table>
+	<thead>
+    <tr>
+		<th>User</th>
+		<th>Review</th>
+		<th>Overall Rating</th>
+		<th>Created At</th>
+		<th>Updated At</th>
+		<th>Apartment</th>
+    </tr>
+  	</thead>
+
+	<tbody>
+		<% @reviews.each do |review| %>
+			<tr>
+			    <td><%= review.user_id %></td>
+			    <td><%= review.review %></td>
+			    <td><%= review.overall_rating %></td>
+			    <td><%= review.created_at %></td>
+			    <td><%= review.updated_at %></td>
+			    <td><%= review.apartment_id %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
