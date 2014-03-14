@@ -10,7 +10,7 @@ describe ApartmentsController do
   end
 
   after(:each) do
-    subject.sign_out @user
+    subject.sign_out @user if subject.current_user
     @user.destroy
   end
 
@@ -28,6 +28,61 @@ describe ApartmentsController do
     end
   end
 
+  describe "GET #new" do
+    it "should render #new for logged in user" do
+      get :new
+      response.should render_template :new
+    end
+
+    it "should not render #new if user not logged in" do
+      subject.sign_out @user
+      get :new
+      response.should_not render_template :new
+    end
+  end
+
+  describe "POST #create" do
+    it "successfully adds new apartment page" do
+      expect { post :create, apartment: FactoryGirl.attributes_for(:apartment)}.to change(Apartment, :count).by(1)
+    end
+
+    it "successfully redirects to new apartment page" do
+      post :create, apartment: FactoryGirl.attributes_for(:apartment)
+      response.should redirect_to Apartment.last
+    end
+
+    it "does not add invalid/duplicate apartment page" do  
+      FactoryGirl.create(:apartment)
+      expect { post :create, apartment: FactoryGirl.attributes_for(:apartment)}.to change(Apartment, :count).by(0)
+    end
+
+    it "should not redirect to new apartment page for bad input" do
+      FactoryGirl.create(:apartment)
+      post :create, apartment: FactoryGirl.attributes_for(:apartment)
+      response.should_not redirect_to Apartment.last
+    end
+  end
+
+  describe "GET #edit" do
+    it "successfully loads edit page" do
+      get :edit
+      response.should render_template :edit
+    end
+
+    it "should not load edit page if user not logged in" do
+      subject.sign_out @user
+      get :edit
+      response.should_not render_template :edit
+    end
+  end
+
+  describe "POST #update" do
+    
+  end 
+
+  describe "POST #search" do
+
+  end     
 =begin
   describe "new" do
     it "returns http success" do
@@ -64,5 +119,4 @@ describe ApartmentsController do
     end
   end
 =end
-
 end
