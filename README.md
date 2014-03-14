@@ -1,6 +1,8 @@
 Homie
 =====
 
+[homieapts.herokuapp.com](http://homieapts.herokuapp.com/)
+
 ## To Run The Application
 1. `git clone https://github.com/carinaboo/homie.git`
 1. `bundle install`
