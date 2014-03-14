@@ -9,9 +9,9 @@ class ApartmentsController < ApplicationController
   #if the user is logged in and hasn't already added a review.
   def show
     @apartment = Apartment.find(params[:id])
-    @reviews = Review.where(apartment_id: @apartment.id)
+    # @reviews = Review.where(apartment_id: @apartment.id)
     #boolean value used in view to decide whether user can add new review
-    @show_form = can_review?(@reviews)        #method from ApartmentsHelper
+    # @show_form = can_review?(@reviews)        #method from ApartmentsHelper
   end
 
   #Page for creating new apartment profile.
@@ -35,7 +35,11 @@ class ApartmentsController < ApplicationController
     baths = params[:apartment][:bathrooms]
     result = Apartment.add(user_id, title, addr, desc, price, beds, baths)
     #valid = result >= 0 && result != 403 && result != 404
-    render json: {errCode: result}
+    if result.is_a? Apartment
+      redirect_to :action => "show", :id => result.id
+    else
+      render json: {errCode: result}
+    end
   end
 
   #Page for editing apartment profile information.
@@ -64,7 +68,8 @@ class ApartmentsController < ApplicationController
   end
 
   def search
-    @apartments = Apartment.search params[:search]
+    # @apartments = Apartment.all
+    @apartments = Apartment.search(params[:search])
   end
  
 end
