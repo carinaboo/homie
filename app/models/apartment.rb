@@ -1,6 +1,6 @@
 class Apartment < ActiveRecord::Base
 	has_many :reviews
-	belongs_to :user
+	belongs_to :user, class_name: 'User', foreign_key: 'user_id'
 
 	validates :user_id, :title, :address, :description, :price, :bedrooms, :bathrooms, presence: true
 	validates :address, uniqueness: true

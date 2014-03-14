@@ -6,7 +6,7 @@ class CreateReviews < ActiveRecord::Migration
       t.date :created_date
       t.text :review
       t.integer :overall_rating
-      
+
       t.timestamps
     end
   end

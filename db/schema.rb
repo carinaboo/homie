@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140314034328) do
+ActiveRecord::Schema.define(version: 20140314115109) do
 
   create_table "apartments", force: true do |t|
     t.string   "title"
@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 20140314034328) do
 
   create_table "reviews", force: true do |t|
     t.integer  "user_id"
-    t.integer  "apt_id"
     t.date     "created_date"
     t.text     "review"
     t.integer  "overall_rating"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "apartment_id"
   end
 
   create_table "users", force: true do |t|
