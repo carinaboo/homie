@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/rardisyah/Documents/CS169/homie/config/environment.rb": [
+      "/Users/Carina/Sites/homie/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/rardisyah/Documents/CS169/homie/config/application.rb": [
+      "/Users/Carina/Sites/homie/config/application.rb": [
         1,
         null,
         1,
@@ -41,13 +41,13 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/config/boot.rb": [
+      "/Users/Carina/Sites/homie/config/boot.rb": [
         null,
         1,
         null,
         1
       ],
-      "/Users/rardisyah/Documents/CS169/homie/config/environments/test.rb": [
+      "/Users/Carina/Sites/homie/config/environments/test.rb": [
         1,
         null,
         null,
@@ -85,7 +85,7 @@
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/config/initializers/backtrace_silencers.rb": [
+      "/Users/Carina/Sites/homie/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -94,7 +94,7 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/config/initializers/devise.rb": [
+      "/Users/Carina/Sites/homie/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -350,13 +350,13 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/config/initializers/filter_parameter_logging.rb": [
+      "/Users/Carina/Sites/homie/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/rardisyah/Documents/CS169/homie/config/initializers/inflections.rb": [
+      "/Users/Carina/Sites/homie/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -374,14 +374,14 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/config/initializers/mime_types.rb": [
+      "/Users/Carina/Sites/homie/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/config/initializers/secret_token.rb": [
+      "/Users/Carina/Sites/homie/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -395,12 +395,12 @@
         null,
         1
       ],
-      "/Users/rardisyah/Documents/CS169/homie/config/initializers/session_store.rb": [
+      "/Users/Carina/Sites/homie/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/rardisyah/Documents/CS169/homie/config/initializers/wrap_parameters.rb": [
+      "/Users/Carina/Sites/homie/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -416,7 +416,7 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/factories/apartments.rb": [
+      "/Users/Carina/Sites/homie/spec/factories/apartments.rb": [
         1,
         1,
         1,
@@ -429,7 +429,7 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/factories/users.rb": [
+      "/Users/Carina/Sites/homie/spec/factories/users.rb": [
         1,
         1,
         1,
@@ -438,7 +438,7 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/config/routes.rb": [
+      "/Users/Carina/Sites/homie/config/routes.rb": [
         1,
         null,
         1,
@@ -509,7 +509,7 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/app/models/user.rb": [
+      "/Users/Carina/Sites/homie/app/models/user.rb": [
         1,
         1,
         1,
@@ -519,7 +519,7 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/app/helpers/apartments_helper.rb": [
+      "/Users/Carina/Sites/homie/app/helpers/apartments_helper.rb": [
         1,
         1,
         0,
@@ -531,11 +531,11 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/app/helpers/application_helper.rb": [
+      "/Users/Carina/Sites/homie/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/app/helpers/devise_helper.rb": [
+      "/Users/Carina/Sites/homie/app/helpers/devise_helper.rb": [
         1,
         null,
         null,
@@ -558,65 +558,65 @@
         null,
         null,
         null,
-        0,
-        null,
-        null
-      ],
-      "/Users/rardisyah/Documents/CS169/homie/app/helpers/home_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/rardisyah/Documents/CS169/homie/app/helpers/reviews_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/rardisyah/Documents/CS169/homie/app/helpers/user_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/support/devise_support.rb": [
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        0,
-        null,
-        null,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null
-      ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/support/spec_test_helper.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
         0,
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/app/controllers/apartments_controller.rb": [
+      "/Users/Carina/Sites/homie/app/helpers/home_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Carina/Sites/homie/app/helpers/reviews_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Carina/Sites/homie/app/helpers/user_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Carina/Sites/homie/spec/support/devise_support.rb": [
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/Carina/Sites/homie/spec/support/spec_test_helper.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/Carina/Sites/homie/app/controllers/apartments_controller.rb": [
         1,
         1,
         null,
@@ -693,7 +693,7 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/app/controllers/application_controller.rb": [
+      "/Users/Carina/Sites/homie/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -708,7 +708,7 @@
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/controllers/reviews_controller_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/controllers/reviews_controller_spec.rb": [
         1,
         null,
         1,
@@ -736,7 +736,7 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/app/controllers/reviews_controller.rb": [
+      "/Users/Carina/Sites/homie/app/controllers/reviews_controller.rb": [
         1,
         1,
         1,
@@ -820,36 +820,19 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/controllers/user_controller_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/controllers/user_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/app/controllers/user_controller.rb": [
+      "/Users/Carina/Sites/homie/app/controllers/user_controller.rb": [
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/helpers/apartments_helper_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/helpers/apartments_helper_spec.rb": [
         1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/helpers/reviews_helper_spec.rb": [
         1,
         null,
         null,
@@ -866,7 +849,7 @@
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/helpers/user_helper_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/helpers/reviews_helper_spec.rb": [
         1,
         null,
         null,
@@ -883,7 +866,24 @@
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/models/apartment_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/helpers/user_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/Carina/Sites/homie/spec/models/apartment_spec.rb": [
         1,
         null,
         1,
@@ -992,7 +992,7 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb": [
+      "/Users/Carina/Sites/homie/app/models/apartment.rb": [
         1,
         1,
         1,
@@ -1005,8 +1005,8 @@
         null,
         null,
         1,
-        41,
-        41,
+        45,
+        45,
         20,
         null,
         null,
@@ -1032,8 +1032,37 @@
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/models/review_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/models/review_spec.rb": [
         1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null,
         1,
         1,
@@ -1043,11 +1072,21 @@
         1,
         1,
         1,
+        null,
+        null,
         1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/app/models/review.rb": [
+      "/Users/Carina/Sites/homie/app/models/review.rb": [
         1,
         1,
         1,
@@ -1062,118 +1101,118 @@
         null,
         1,
         null,
+        8,
+        null,
+        null,
+        null,
+        null,
+        null,
+        8,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        2,
+        2,
+        1,
+        null,
+        null,
+        1,
+        null,
+        4,
         4,
         null,
         null,
         null,
         null,
         null,
-        4,
-        0,
-        null,
-        null,
-        null,
-        1,
-        null,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        null,
-        3,
-        3,
-        null,
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         null,
         null,
         1,
         null,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         1,
         null,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
         null,
         null,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/models/user_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/models/user_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/views/apartments/create.html.erb_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/views/apartments/create.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/views/apartments/edit.html.erb_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/views/apartments/edit.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/views/apartments/new.html.erb_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/views/apartments/new.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/views/apartments/update.html.erb_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/views/apartments/update.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/views/apartments/view.html.erb_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/views/apartments/view.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/views/reviews/create.html.erb_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/views/reviews/create.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/views/reviews/find_by_apt.html.erb_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/views/reviews/find_by_apt.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/spec/views/reviews/update.html.erb_spec.rb": [
+      "/Users/Carina/Sites/homie/spec/views/reviews/update.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/rardisyah/Documents/CS169/homie/app/controllers/devise_controller.rb": [
+      "/Users/Carina/Sites/homie/app/controllers/devise_controller.rb": [
         null,
         1,
         1,
@@ -1352,6 +1391,6 @@
         null
       ]
     },
-    "timestamp": 1394808809
+    "timestamp": 1394822619
   }
 }
