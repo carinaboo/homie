@@ -26,7 +26,7 @@ class Apartment < ActiveRecord::Base
 	#search for apartments by address and returns an array of apartments at that location. 
 	def self.search(search)
 		if search
-			find(:all, :conditions => ['address LIKE ?', "%#{search}%"])
+			Apartment.where("address LIKE ?", search)
 		else
 			#find(:all)
 			return []
