@@ -1,7 +1,19 @@
 require 'spec_helper'
 
 describe ReviewsController do
-=begin
+
+  before(:each) do
+    #login_user  
+    @user = FactoryGirl.create(:user)
+    subject.sign_in @user
+    #FactoryGirl.create(:apartment).should be_valid
+  end
+
+  after(:each) do
+    subject.sign_out @user if subject.current_user
+    @user.destroy
+  end
+  
   describe "GET 'create'" do
     it "returns http success" do
       get 'create'
@@ -22,5 +34,5 @@ describe ReviewsController do
       expect(response).to be_success
     end
   end
-=end
+
 end

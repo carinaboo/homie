@@ -65,23 +65,27 @@ describe ApartmentsController do
 
   describe "GET #edit" do
     it "successfully loads edit page" do
-      get :edit
+      get :edit, id: FactoryGirl.create(:apartment)
       response.should render_template :edit
     end
 
     it "should not load edit page if user not logged in" do
       subject.sign_out @user
-      get :edit
+      get :edit, id: FactoryGirl.create(:apartment)
       response.should_not render_template :edit
     end
   end
 
   describe "POST #update" do
-    
+    it "successfully updates apartment page" do
+
+    end
   end 
 
   describe "POST #search" do
+    it "successfully returns search result" do
 
+    end
   end     
 =begin
   describe "new" do
