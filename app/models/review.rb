@@ -15,22 +15,29 @@ class Review < ActiveRecord::Base
   def self.add(user_id, apt_id, overall_rating, review)
     review = self.new(user: user_id, apartment: apt_id, overall_rating: overall_rating, review: review)
     if review.valid?
-      review.
-          end
-
+      review.save
+    else
+      return FORBIDDEN
+    end
       total = num_of_reviews * average_review + params[:overall_rating]
       num_of_reviews += 1
       new_average = total / num_of_reviews
     end
 
     def self.update(user_id, apt_id, overall_rating, review)
-
-
+      review = self.find_by_review(user: user_id, apartment: apt_id, overall_rating: overall_rating, review: review) #check find_by_review
+      if review.valid?
+        review.save
+      else
+        return FORBIDDEN
+      end
       total = num_of_reviews * average_review + params[:overall_rating]
       num_of_reviews += 1
       new_average = total / num_of_reviews
     end
 
     def self.find_by_apt(apt_id)
-
+      apt_reviews = Apartment.find(apt_id)
+      return reviews
     end
+  end

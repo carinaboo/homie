@@ -12,3 +12,9 @@
     <h2 class="inline"><%= link_to "Sign Up", new_user_registration_url %></h2>
   </div>
 <% end %>
+
+<%= form_tag apartments_search_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search], :id => 'search_field' %>
+  <%= submit_tag "Search", :name => nil %> 
+  <%= link_to_function "Clear", "$('search_field').clear()" %>
+<% end %> 

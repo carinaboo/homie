@@ -66,5 +66,9 @@ class ApartmentsController < ApplicationController
       render json: {errCode: result}
     end
   end
+
+  def search
+    #@apartment = Apartment.search params[:search]
+  end
  
 end
