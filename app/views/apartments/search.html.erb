@@ -21,6 +21,7 @@
   <tbody>
     <% @apartments.each do |apt| %>
       <tr>
+        <td><a href="/apartments/<%= apt.id %>" >View</a></td>
         <td><%= apt.title %></td>
         <td><%= apt.address %></td>
         <td><%= apt.price %></td>
