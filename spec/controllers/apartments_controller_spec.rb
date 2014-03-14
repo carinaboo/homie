@@ -3,10 +3,8 @@ require 'factory_girl_rails'
 
 describe ApartmentsController do
   before(:each) do
-    #login_user  
     @user = FactoryGirl.create(:user)
     subject.sign_in @user
-    #FactoryGirl.create(:apartment).should be_valid
   end
 
   after(:each) do
@@ -78,21 +76,37 @@ describe ApartmentsController do
 
   describe "POST #update" do
     it "successfully updates apartment page" do
-
+      put :create, apartment: FactoryGirl.attributes_for(:apartment)
+      response.should redirect_to Apartment.last 
     end
+
+    it "does not update apartment page with bad info" do
+      FactoryGirl.create(:apartment)
+      put :create, apartment: FactoryGirl.attributes_for(:apartment)
+      response.should_not redirect_to Apartment.last 
+    end    
   end 
 
   describe "POST #search" do
-    it "successfully returns search result" do
+    it "returns http success" do
+      get 'search'
+      expect(response).to be_success
+    end
 
+    it "returns redirects to search page" do
+      post :search, search: ""
+      response.should render_template :search
     end
   end     
+
+end
+
 =begin
   describe "new" do
     it "returns http success" do
       get 'new'
       expect(response).to be_success
-    end
+    end 
   end
 
   describe "create" do
@@ -109,6 +123,7 @@ describe ApartmentsController do
     end
   end
 
+
   describe "update" do
     it "returns http success" do
       get 'update'
@@ -116,11 +131,5 @@ describe ApartmentsController do
     end
   end
 
-  describe "search" do
-    it "returns http success" do
-      get 'search'
-      expect(response).to be_success
-    end
-  end
 =end
-end
+
