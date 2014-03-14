@@ -49,6 +49,8 @@ end
 #Factory Girl
 gem 'factory_girl_rails'
 
+gem 'simplecov', :require => false, :group => :test
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
