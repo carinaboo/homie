@@ -50,4 +50,6 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.include SpecTestHelper, :type => :controller
+  config.include Devise::TestHelpers, :type => :controller
+  config.extend ControllerMacros, :type => :controller
 end
