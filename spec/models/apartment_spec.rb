@@ -46,6 +46,16 @@ describe Apartment do
 	end  
    end
 
+   describe "failing update and search for apartment" do
+	  before do
+		@result = @apartment.updateDescription(nil, "apt2", "addr2", "desc2", 2000, 2, 2)
+	  end
+
+	  it "testUpdateId" do
+	  	expect(@result).to (eq Apartment::FORBIDDEN)
+	  end
+   end
+
 	describe "update and search for apartment" do
 	  before do
 		@apartment.updateDescription(2, "apt2", "addr2", "desc2", 2000, 2, 2)
@@ -87,6 +97,11 @@ describe Apartment do
 	  it "test search with invalid address" do
 	  	result = Apartment.search("addr1")
 	  	expect(result).to (eq [])
-	  end	 
+	  end	
+
+	  it "test search with nil passed in" do
+	  	result = Apartment.search(nil)
+	  	expect(result).to (eq [])
+	  end 
 	end
 end
