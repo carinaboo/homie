@@ -32,10 +32,11 @@ class Review < ActiveRecord::Base
 
     def self.find_by_apt(apt_id)
       review_array = Array.new
-      Review.all.each.do |r| #reviews with s?
+      Review.all.each do |r| #reviews with s?
         if r.apt_id == apt_id
           review_array.push(r)
         end
+      end
       return review_array
       #apartment = Apartment.find(apt_id) #can't call apartment model here
       #return apartment.Reviews
