@@ -1,6 +1,10 @@
 class ApartmentsController < ApplicationController
   include ApartmentsHelper
 
+  SUCCESS = 1
+  FORBIDDEN = 403
+  PAGE_NOT_FOUND = 404
+
   #Loads the apartment profile page with reviews. Provides user with option to add reviews
   #if the user is logged in and hasn't already added a review.
   def show
@@ -15,7 +19,7 @@ class ApartmentsController < ApplicationController
     if current_user
       @apartment = Apartment.new
     else
-      render json: {errCode: 403}
+      render json: {errCode: FORBIDDEN}
     end
   end
 
@@ -30,21 +34,17 @@ class ApartmentsController < ApplicationController
     beds = params[:apartment][:bedrooms]
     baths = params[:apartment][:bathrooms]
     result = Apartment.add(user_id, title, addr, desc, price, beds, baths)
-    valid = result >= 0 && result != 403 && result != 404
-    if valid 
-      render json: {errCode: 1}
-    else
-      render json: {errCode: result}
-    end
+    #valid = result >= 0 && result != 403 && result != 404
+    render json: {errCode: result}
   end
 
   #Page for editing apartment profile information.
   def edit
     @apartment = Apartment.find(params[:id])
     if !@apartment
-      render json: {errCode: 404}
+      render json: {errCode: PAGE_NOT_FOUND}
     elsif !current_user
-      render json: {errCode: 403}
+      render json: {errCode: FORBIDDEN}
     end
   end
 
@@ -59,12 +59,8 @@ class ApartmentsController < ApplicationController
     beds = params[:apartment][:bedrooms]
     baths = params[:apartment][:bathrooms]
     result = Apartment.updateDescription(user_id, title, addr, desc, price, beds, baths)
-    valid = result >= 0 && result != 403 && result != 404
-    if valid 
-      render json: {errCode: 1}
-    else
-      render json: {errCode: result}
-    end
+    #valid = result >= 0 && result != 403 && result != 404
+    render json: {errCode: result}
   end
 
   def search
