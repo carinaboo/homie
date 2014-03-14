@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-03-14T07:40:40-07:00">2014-03-14T07:40:40-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-03-14T07:53:29-07:00">2014-03-14T07:53:29-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">65.79%</span></span>
+    (<span class="covered_percent"><span class="red">66.9%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.08
+         1.14
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>47</b> files in total.
-    <b>418</b> relevant lines. 
-    <span class="green"><b>275</b> lines covered</span> and
-    <span class="red"><b>143</b> lines missed </span>
+    <b>426</b> relevant lines. 
+    <span class="green"><b>285</b> lines covered</span> and
+    <span class="red"><b>141</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -162,12 +162,12 @@
       
       <tr>
         <td class="strong"><a href="#3530989c94ff60430a833d1e6dfd2a1cc41254b7" class="src_link" title="app/models/apartment.rb">app/models/apartment.rb</a></td>
-        <td class="yellow strong">89.47 %</td>
+        <td class="green strong">100.0 %</td>
         <td>38</td>
         <td>19</td>
-        <td>17</td>
-        <td>2</td>
-        <td>6.5</td>
+        <td>19</td>
+        <td>0</td>
+        <td>7.4</td>
       </tr>
       
       <tr>
@@ -393,9 +393,9 @@
       <tr>
         <td class="strong"><a href="#bb49ba713900d63e0bf68638d137f1a87db27998" class="src_link" title="spec/models/apartment_spec.rb">spec/models/apartment_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>92</td>
-        <td>48</td>
-        <td>48</td>
+        <td>107</td>
+        <td>56</td>
+        <td>56</td>
         <td>0</td>
         <td>2.2</td>
       </tr>
@@ -3083,11 +3083,11 @@
         <div class="source_table" id="3530989c94ff60430a833d1e6dfd2a1cc41254b7">
   <div class="header">
     <h3>app/models/apartment.rb</h3>
-    <h4><span class="yellow">89.47 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>19</b> relevant lines. 
-      <span class="green"><b>17</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <span class="green"><b>19</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -3166,20 +3166,20 @@
           <code class="ruby">	def self.add(user_id, title, address, desc, price, bedrooms, bathrooms)</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="13">
-          <span class="hits">37</span>
+        <li class="covered" data-hits="41" data-linenumber="13">
+          <span class="hits">41</span>
           
           <code class="ruby">		apt = new(user_id: user_id, title: title, address: address, description: desc, price: price, bedrooms: bedrooms, bathrooms:bathrooms)</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="14">
-          <span class="hits">37</span>
+        <li class="covered" data-hits="41" data-linenumber="14">
+          <span class="hits">41</span>
           
           <code class="ruby">		return apt if apt.save</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="15">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="20" data-linenumber="15">
+          <span class="hits">20</span>
           
           <code class="ruby">		FORBIDDEN</code>
         </li>
@@ -3214,20 +3214,20 @@
           <code class="ruby">	def updateDescription(user_id, title, address, desc, price, bedrooms, bathrooms)</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="21">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="11" data-linenumber="21">
+          <span class="hits">11</span>
           
           <code class="ruby">		valid = self.update_attributes(user_id: user_id, title: title, address: address, description: desc, price: price, bedrooms: bedrooms, bathrooms:bathrooms)</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="22">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="11" data-linenumber="22">
+          <span class="hits">11</span>
           
           <code class="ruby">		return SUCCESS if valid</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
-          
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
           
           <code class="ruby">		FORBIDDEN</code>
         </li>
@@ -3256,8 +3256,8 @@
           <code class="ruby">	def self.search(search)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="28">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="28">
+          <span class="hits">3</span>
           
           <code class="ruby">		if search</code>
         </li>
@@ -3292,8 +3292,8 @@
           <code class="ruby">		else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="34">
-          
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
           
           <code class="ruby">			return []</code>
         </li>
@@ -7471,8 +7471,8 @@
     <h3>spec/models/apartment_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>48</b> relevant lines. 
-      <span class="green"><b>48</b> lines covered</span> and
+      <b>56</b> relevant lines. 
+      <span class="green"><b>56</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -7510,20 +7510,20 @@
           <code class="ruby">  before do</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="6">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="20" data-linenumber="6">
+          <span class="hits">20</span>
           
           <code class="ruby">	@valid_apt = Apartment.add(1, &quot;apt1&quot;, &quot;addr1&quot;, &quot;desc1&quot;, 1000, 1, 1)	</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="7">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="20" data-linenumber="7">
+          <span class="hits">20</span>
           
           <code class="ruby">	@bad_apt = Apartment.add(nil, &quot;apt2&quot;, &quot;addr2&quot;, &quot;desc2&quot;, 1000, 1, 1)</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="8">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="20" data-linenumber="8">
+          <span class="hits">20</span>
           
           <code class="ruby">  	@apartment = Apartment.find_by_user_id(1)</code>
         </li>
@@ -7771,7 +7771,7 @@
         <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
-          <code class="ruby">	describe &quot;update and search for apartment&quot; do</code>
+          <code class="ruby">   describe &quot;failing update and search for apartment&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="50">
@@ -7780,10 +7780,10 @@
           <code class="ruby">	  before do</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="51">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="1" data-linenumber="51">
+          <span class="hits">1</span>
           
-          <code class="ruby">		@apartment.updateDescription(2, &quot;apt2&quot;, &quot;addr2&quot;, &quot;desc2&quot;, 2000, 2, 2)</code>
+          <code class="ruby">		@result = @apartment.updateDescription(nil, &quot;apt2&quot;, &quot;addr2&quot;, &quot;desc2&quot;, 2000, 2, 2)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
@@ -7807,7 +7807,7 @@
         <li class="covered" data-hits="1" data-linenumber="55">
           <span class="hits">1</span>
           
-          <code class="ruby">	  	expect(@apartment.user_id).to (eq 2)</code>
+          <code class="ruby">	  	expect(@result).to (eq Apartment::FORBIDDEN)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="56">
@@ -7819,214 +7819,304 @@
         <li class="never" data-hits="" data-linenumber="57">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">   end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="58">
           
-          <code class="ruby">	  it &quot;testUpdateTitle&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
-          <code class="ruby">	  	expect(@apartment.title).to (eq &quot;apt2&quot;)</code>
+          <code class="ruby">	describe &quot;update and search for apartment&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  before do</code>
+        </li>
+      
+        <li class="covered" data-hits="10" data-linenumber="61">
+          <span class="hits">10</span>
+          
+          <code class="ruby">		@apartment.updateDescription(2, &quot;apt2&quot;, &quot;addr2&quot;, &quot;desc2&quot;, 2000, 2, 2)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby">	  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="62">
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  it &quot;testUpdateId&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="65">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  	expect(@apartment.user_id).to (eq 2)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby">	  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="68">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  it &quot;testUpdateTitle&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="69">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  	expect(@apartment.title).to (eq &quot;apt2&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">	  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="72">
           <span class="hits">1</span>
           
           <code class="ruby">	  it &quot;testUpdateAddress&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="63">
+        <li class="covered" data-hits="1" data-linenumber="73">
           <span class="hits">1</span>
           
           <code class="ruby">	  	expect(@apartment.address).to (eq &quot;addr2&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">	  end	</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
+        <li class="covered" data-hits="1" data-linenumber="76">
           <span class="hits">1</span>
           
           <code class="ruby">	  it &quot;testUpdateDescription&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="67">
+        <li class="covered" data-hits="1" data-linenumber="77">
           <span class="hits">1</span>
           
           <code class="ruby">	  	expect(@apartment.description).to (eq &quot;desc2&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby">	  end  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="79">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="70">
+        <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
           <code class="ruby">	  it &quot;testUpdatePrice&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="71">
+        <li class="covered" data-hits="1" data-linenumber="81">
           <span class="hits">1</span>
           
           <code class="ruby">	  	expect(@apartment.price).to (eq 2000)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="82">
           
           
           <code class="ruby">	  end </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="83">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="74">
-          <span class="hits">1</span>
-          
-          <code class="ruby">	  it &quot;testUpdateBathroom&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="75">
-          <span class="hits">1</span>
-          
-          <code class="ruby">	  	expect(@apartment.bathrooms).to (eq 2)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="76">
-          
-          
-          <code class="ruby">	  end   </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="77">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="78">
-          <span class="hits">1</span>
-          
-          <code class="ruby">	  it &quot;testUpdateBedrooms&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="79">
-          <span class="hits">1</span>
-          
-          <code class="ruby">	  	expect(@apartment.bedrooms).to (eq 2)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="80">
-          
-          
-          <code class="ruby">	  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="81">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="82">
-          <span class="hits">1</span>
-          
-          <code class="ruby">	  it &quot;test search with valid address&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="83">
-          <span class="hits">1</span>
-          
-          <code class="ruby">	  	result = Apartment.search(&quot;addr2&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="84">
           <span class="hits">1</span>
           
-          <code class="ruby">	  	expect(result.first.address).to (eq &quot;addr2&quot;)</code>
+          <code class="ruby">	  it &quot;testUpdateBathroom&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="85">
+        <li class="covered" data-hits="1" data-linenumber="85">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">	  end</code>
+          <code class="ruby">	  	expect(@apartment.bathrooms).to (eq 2)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="86">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">	  end   </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="87">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="87">
           
-          <code class="ruby">	  it &quot;test search with invalid address&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="88">
           <span class="hits">1</span>
           
-          <code class="ruby">	  	result = Apartment.search(&quot;addr1&quot;)</code>
+          <code class="ruby">	  it &quot;testUpdateBedrooms&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="89">
           <span class="hits">1</span>
           
-          <code class="ruby">	  	expect(result).to (eq [])</code>
+          <code class="ruby">	  	expect(@apartment.bedrooms).to (eq 2)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="90">
           
           
-          <code class="ruby">	  end	 </code>
+          <code class="ruby">	  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="91">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="92">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  it &quot;test search with valid address&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="93">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  	result = Apartment.search(&quot;addr2&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="94">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  	expect(result.first.address).to (eq &quot;addr2&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="95">
+          
+          
+          <code class="ruby">	  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="96">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="97">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  it &quot;test search with invalid address&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="98">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  	result = Apartment.search(&quot;addr1&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="99">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  	expect(result).to (eq [])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="100">
+          
+          
+          <code class="ruby">	  end	</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="101">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="102">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  it &quot;test search with nil passed in&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="103">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  	result = Apartment.search(nil)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="104">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	  	expect(result).to (eq [])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="105">
+          
+          
+          <code class="ruby">	  end </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="106">
+          
+          
           <code class="ruby">	end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="92">
+        <li class="never" data-hits="" data-linenumber="107">
           
           
           <code class="ruby">end</code>
