@@ -50,7 +50,7 @@ class Review < ActiveRecord::Base
     end
 
   def self.update_average_rating(num_of_reviews, average_review, old_overall_rating, new_overall_rating)
-    total = num_of_reviews * average_review - old_rating + new_rating
+    total = num_of_reviews * average_review - old_overall_rating + new_overall_rating
     new_average = total / num_of_reviews
     return new_average
   end
