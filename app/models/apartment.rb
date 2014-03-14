@@ -9,22 +9,22 @@ class Apartment < ActiveRecord::Base
 
 	def self.add(user_id, title, address, desc, price, bedrooms, bathrooms)
 		addr = self.find_by_address(address)
-		if addr != nil || address = addr.address
+		#if addr != nil || address = addr.address
 			#ERROR
-		elsif title == nil || address == nill || desc == nill || price == nill || bedrooms == nill || bathrooms == nill
+		#elsif title == nil || address == nill || desc == nill || price == nill || bedrooms == nill || bathrooms == nill
 			#ERROR
-		else
+		#else
 			apt = self.new(title: title, address: address, description: desc, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
 			#SUCCESS
 	end
 
 	def self.updateDescription(user_id, title, address, desc, price, bederooms, bathrooms)
 		addr = self.find_by_address(address)
-		if addr == nil
+		#if addr == nil
 			#ERROR
-		elsif title == nil || address == nill || desc == nill || price == nill || bedrooms == nill || bathrooms == nill
+		#elsif title == nil || address == nill || desc == nill || price == nill || bedrooms == nill || bathrooms == nill
 			#ERROR
-		else
+		#else
 			apt = self.new(title: title, address: address, description: desc, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
 			#SUCCESS
 	end
