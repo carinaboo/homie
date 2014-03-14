@@ -9,7 +9,6 @@ describe Apartment do
   end
 
   describe "new apartment" do
-	
   	it "can only be added by logged in user" do	
 	 	expect(valid_apt).to (eq Apartment::SUCCESS)
   	end
