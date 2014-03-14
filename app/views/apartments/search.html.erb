@@ -1,1 +1,9 @@
-<h1> search result </h1>
+<%= form_tag apartments_search_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search], :id => 'search_field' %>
+  <%= submit_tag "Search", :name => nil %> 
+  <%= link_to_function "Clear", "$('search_field').clear()" %>
+<% end %> 
+
+<h2>Search result</h2>
+
+
