@@ -6,4 +6,27 @@
 
 <h2>Search result</h2>
 
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Address</th>
+      <th>price</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apartments.each do |apt| %>
+      <tr>
+        <td><%= apt.title %></td>
+        <td><%= apt.address %></td>
+        <td><%= apt.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
