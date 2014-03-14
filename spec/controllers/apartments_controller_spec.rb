@@ -2,13 +2,21 @@ require 'spec_helper'
 require 'factory_girl_rails'
 
 describe ApartmentsController do
-=begin
   before(:each) do
-    FactoryGirl.create(:apartment).should be_valid
+    #login_user  
+    @user = FactoryGirl.create(:user)
+    subject.sign_in @user
+    #FactoryGirl.create(:apartment).should be_valid
   end
-=end
-  describe "#show" do
+
+  after(:each) do
+    subject.sign_out @user
+    @user.destroy
+  end
+
+  describe "GET #show" do
     it "assigns requested apartment to @apartment" do
+      #subject.sign_in FactoryGirl.create(:user)
       apartment = FactoryGirl.create(:apartment)
       get :show, id: apartment
       assigns(:apartment).should eq(apartment)
