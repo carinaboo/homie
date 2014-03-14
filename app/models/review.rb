@@ -31,8 +31,14 @@ class Review < ActiveRecord::Base
     end
 
     def self.find_by_apt(apt_id)
-      apartment = Apartment.find(apt_id)
-      return apartment.Reviews
+      review_array = Array.new
+      Review.all.each.do |r| #reviews with s?
+        if r.apt_id == apt_id
+          review_array.push(r)
+        end
+      return review_array
+      #apartment = Apartment.find(apt_id) #can't call apartment model here
+      #return apartment.Reviews
     end
 
     def self.add_average_rating(num_of_reviews, average_review, overall_rating)
@@ -42,7 +48,7 @@ class Review < ActiveRecord::Base
       return new_average
     end
 
-  def self.update_average_rating(num_of_reviews, average_review, old_rating, new_rating)
+  def self.update_average_rating(num_of_reviews, average_review, old_overall_rating, new_overall_rating)
     total = num_of_reviews * average_review - old_rating + new_rating
     new_average = total / num_of_reviews
     return new_average
