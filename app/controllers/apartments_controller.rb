@@ -35,7 +35,11 @@ class ApartmentsController < ApplicationController
     baths = params[:apartment][:bathrooms]
     result = Apartment.add(user_id, title, addr, desc, price, beds, baths)
     #valid = result >= 0 && result != 403 && result != 404
-    render json: {errCode: result}
+    if result.is_a? Apartment
+      redirect_to :action => "show", :id => result.id
+    else
+      render json: {errCode: result}
+    end
   end
 
   #Page for editing apartment profile information.
