@@ -1,7 +1,7 @@
 Homie::Application.routes.draw do
 
   get "reviews/create"
-  get "reviews/update"
+  post "reviews/update"
   get "reviews/find_by_apt"
 
   get 'apartments/search' => 'apartments#search'
