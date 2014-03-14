@@ -3147,3 +3147,887 @@ DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a rel
   [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
   [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
   [1m[35m (2.0ms)[0m  rollback transaction
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-13 21:54:59 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_home_index_html_erb__1860834368576324795_70126826037360 at /Users/rardisyah/Documents/CS169/homie/app/views/home/index.html.erb:41)
+  Rendered home/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 151ms (Views: 101.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 21:54:59 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 21:54:59 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 21:54:59 -0700
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 21:54:59 -0700
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 21:54:59 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 21:54:59 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 21:54:59 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 21:54:59 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 21:54:59 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 21:54:59 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 21:54:59 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 21:54:59 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 21:54:59 -0700
+
+
+Started GET "/apartments/search?utf8=%E2%9C%93&search=bancroft" for 127.0.0.1 at 2014-03-13 21:55:04 -0700
+Processing by ApartmentsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"bancroft"}
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_apartments_search_html_erb__3349907023560348763_70126839116200 at /Users/rardisyah/Documents/CS169/homie/app/views/apartments/search.html.erb:4)
+  Rendered apartments/search.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   </thead>
+    20: 
+    21:   <tbody>
+    22:     <% @apartments.each do |apt| %>
+    23:       <tr>
+    24:         <td><%= apt.title %></td>
+    25:         <td><%= apt.address %></td>
+  app/views/apartments/search.html.erb:22:in `_app_views_apartments_search_html_erb__3349907023560348763_70126839116200'
+
+
+  Rendered /Users/rardisyah/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (30.9ms)
+  Rendered /Users/rardisyah/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/rardisyah/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (44.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-13 21:55:47 -0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1[0m
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_home_index_html_erb__1860834368576324795_70126826037360 at /Users/rardisyah/Documents/CS169/homie/app/views/home/index.html.erb:41)
+  Rendered home/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 28ms (Views: 22.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 21:55:47 -0700
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 21:55:47 -0700
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 21:55:47 -0700
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 21:55:47 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 21:55:47 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 21:55:47 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 21:55:47 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 21:55:47 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 21:55:47 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 21:55:47 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 21:55:47 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 21:55:47 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 21:55:47 -0700
+
+
+Started GET "/apartments/search?utf8=%E2%9C%93&search=bancroft" for 127.0.0.1 at 2014-03-13 21:55:52 -0700
+Processing by ApartmentsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"bancroft"}
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. You have also used finder options. These are also deprecated. Please build a scope instead of using finder options. (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+  [1m[35mApartment Load (0.3ms)[0m  SELECT "apartments".* FROM "apartments" WHERE (address LIKE '%bancroft%')
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_apartments_search_html_erb__3349907023560348763_70126839116200 at /Users/rardisyah/Documents/CS169/homie/app/views/apartments/search.html.erb:4)
+  Rendered apartments/search.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   </thead>
+    20: 
+    21:   <tbody>
+    22:     <% @apartments.each do |apt| %>
+    23:       <tr>
+    24:         <td><%= apt.title %></td>
+    25:         <td><%= apt.address %></td>
+  app/views/apartments/search.html.erb:22:in `_app_views_apartments_search_html_erb__3349907023560348763_70126839116200'
+
+
+  Rendered /Users/rardisyah/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (30.6ms)
+  Rendered /Users/rardisyah/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/rardisyah/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (41.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-13 21:56:05 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_home_index_html_erb___306191713578617752_70339579485000 at /Users/rardisyah/Documents/CS169/homie/app/views/home/index.html.erb:41)
+  Rendered home/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 144ms (Views: 98.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:05 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:05 -0700
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:05 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:05 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:05 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:05 -0700
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:05 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:05 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:05 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:05 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:05 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:05 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:05 -0700
+
+
+Started GET "/apartments/search?utf8=%E2%9C%93&search=bancroft" for 127.0.0.1 at 2014-03-13 21:56:10 -0700
+Processing by ApartmentsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"bancroft"}
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. You have also used finder options. These are also deprecated. Please build a scope instead of using finder options. (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+  [1m[36mApartment Load (0.3ms)[0m  [1mSELECT "apartments".* FROM "apartments" WHERE (address LIKE '%bancroft%')[0m
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_apartments_search_html_erb__1633184363842503869_70339603208360 at /Users/rardisyah/Documents/CS169/homie/app/views/apartments/search.html.erb:4)
+  Rendered apartments/search.html.erb within layouts/application (32.6ms)
+Completed 500 Internal Server Error in 45ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   </thead>
+    20: 
+    21:   <tbody>
+    22:     <% @apartments.each do |apt| %>
+    23:       <tr>
+    24:         <td><%= apt.title %></td>
+    25:         <td><%= apt.address %></td>
+  app/views/apartments/search.html.erb:22:in `_app_views_apartments_search_html_erb__1633184363842503869_70339603208360'
+
+
+  Rendered /Users/rardisyah/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/rardisyah/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/rardisyah/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-13 21:56:31 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_home_index_html_erb___1795384377159903489_70215440455260 at /Users/rardisyah/Documents/CS169/homie/app/views/home/index.html.erb:41)
+  Rendered home/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 152ms (Views: 126.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:31 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:31 -0700
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:31 -0700
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:31 -0700
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:31 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:31 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:31 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:31 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:31 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:31 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:31 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:31 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:31 -0700
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2014-03-13 21:56:33 -0700
+Processing by ApartmentsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered apartments/new.html.erb within layouts/application (63.5ms)
+Completed 200 OK in 86ms (Views: 72.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2014-03-13 21:56:36 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 29ms (Views: 23.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/apartments/search?utf8=%E2%9C%93&search=bancroft" for 127.0.0.1 at 2014-03-13 21:56:41 -0700
+Processing by ApartmentsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"bancroft"}
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. You have also used finder options. These are also deprecated. Please build a scope instead of using finder options. (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+  [1m[36mApartment Load (0.2ms)[0m  [1mSELECT "apartments".* FROM "apartments" WHERE (address LIKE '%bancroft%')[0m
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_apartments_search_html_erb__1408416723604976591_70215440456980 at /Users/rardisyah/Documents/CS169/homie/app/views/apartments/search.html.erb:4)
+  Rendered apartments/search.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   </thead>
+    20: 
+    21:   <tbody>
+    22:     <% @apartments.each do |apt| %>
+    23:       <tr>
+    24:         <td><%= apt.title %></td>
+    25:         <td><%= apt.address %></td>
+  app/views/apartments/search.html.erb:22:in `_app_views_apartments_search_html_erb__1408416723604976591_70215440456980'
+
+
+  Rendered /Users/rardisyah/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/rardisyah/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/rardisyah/.rvm/gems/ruby-2.0.0-p195/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-13 21:56:54 -0700
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_home_index_html_erb___1795384377159903489_70215440455260 at /Users/rardisyah/Documents/CS169/homie/app/views/home/index.html.erb:41)
+  Rendered home/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 33ms (Views: 26.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:54 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:54 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:54 -0700
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:54 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:54 -0700
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:54 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:54 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:54 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:54 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:54 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:54 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:54 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:54 -0700
+
+
+Started GET "/apartments/search?utf8=%E2%9C%93&search=bancroft" for 127.0.0.1 at 2014-03-13 21:56:57 -0700
+Processing by ApartmentsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"bancroft"}
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. You have also used finder options. These are also deprecated. Please build a scope instead of using finder options. (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+  [1m[36mApartment Load (0.2ms)[0m  [1mSELECT "apartments".* FROM "apartments" WHERE (address LIKE '%bancroft%')[0m
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_apartments_search_html_erb__1408416723604976591_70215440456980 at /Users/rardisyah/Documents/CS169/homie/app/views/apartments/search.html.erb:4)
+  Rendered apartments/search.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 17ms (Views: 11.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:57 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:57 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:57 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:57 -0700
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:57 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:57 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:57 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:57 -0700
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 21:56:57 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:57 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:57 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:57 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 21:56:57 -0700
+
+
+Started GET "/apartments/search?utf8=%E2%9C%93&search=bancroft" for 127.0.0.1 at 2014-03-13 21:57:00 -0700
+Processing by ApartmentsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"bancroft"}
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. You have also used finder options. These are also deprecated. Please build a scope instead of using finder options. (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+  [1m[36mApartment Load (0.2ms)[0m  [1mSELECT "apartments".* FROM "apartments" WHERE (address LIKE '%bancroft%')[0m
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_apartments_search_html_erb__1408416723604976591_70215440456980 at /Users/rardisyah/Documents/CS169/homie/app/views/apartments/search.html.erb:4)
+  Rendered apartments/search.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 21:57:00 -0700
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 21:57:00 -0700
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 21:57:00 -0700
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 21:57:00 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 21:57:00 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 21:57:00 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 21:57:00 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 21:57:00 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 21:57:00 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 21:57:00 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 21:57:00 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 21:57:00 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 21:57:00 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-13 21:58:01 -0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1[0m
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_home_index_html_erb___1795384377159903489_70215440455260 at /Users/rardisyah/Documents/CS169/homie/app/views/home/index.html.erb:41)
+  Rendered home/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 26ms (Views: 20.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 21:58:01 -0700
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 21:58:01 -0700
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 21:58:01 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 21:58:01 -0700
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 21:58:01 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:01 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:01 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:01 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:01 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:01 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:01 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:01 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:01 -0700
+
+
+Started GET "/apartments/search?utf8=%E2%9C%93&search=a" for 127.0.0.1 at 2014-03-13 21:58:03 -0700
+Processing by ApartmentsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"a"}
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. You have also used finder options. These are also deprecated. Please build a scope instead of using finder options. (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+  [1m[35mApartment Load (0.2ms)[0m  SELECT "apartments".* FROM "apartments" WHERE (address LIKE '%a%')
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_apartments_search_html_erb__1408416723604976591_70215423079180 at /Users/rardisyah/Documents/CS169/homie/app/views/apartments/search.html.erb:4)
+  [1m[36mApartment Load (0.2ms)[0m  [1mSELECT "apartments".* FROM "apartments"[0m
+  Rendered apartments/search.html.erb within layouts/application (2.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 51ms (Views: 43.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 21:58:03 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 21:58:03 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 21:58:03 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:03 -0700
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 21:58:03 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:03 -0700
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 21:58:03 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:03 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:03 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:03 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:03 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 21:58:03 -0700
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2014-03-13 21:58:06 -0700
+Processing by ApartmentsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered apartments/new.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 35ms (Views: 31.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2014-03-13 21:58:16 -0700
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UHk1/lo85d2WErFRhmIsBDmrt307vvrZjvYloesvEP0=", "apartment"=>{"title"=>"Apartment 1", "address"=>"111 bancroft avenue", "description"=>"fghjk", "price"=>"700", "bedrooms"=>"1", "bathrooms"=>"1"}, "commit"=>"Create Apartment"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mApartment Exists (0.2ms)[0m  SELECT 1 AS one FROM "apartments" WHERE "apartments"."address" = '111 bancroft avenue' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-13 21:59:06 -0700
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_home_index_html_erb___1795384377159903489_70215440455260 at /Users/rardisyah/Documents/CS169/homie/app/views/home/index.html.erb:41)
+  Rendered home/index.html.erb within layouts/application (48.4ms)
+Completed 200 OK in 58ms (Views: 53.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:06 -0700
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:06 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:06 -0700
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:06 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:06 -0700
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:06 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:06 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:06 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:06 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:06 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:06 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:06 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:06 -0700
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-13 21:59:13 -0700
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1[0m
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_home_index_html_erb___1795384377159903489_70215440455260 at /Users/rardisyah/Documents/CS169/homie/app/views/home/index.html.erb:41)
+  Rendered home/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 26ms (Views: 21.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:13 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:13 -0700
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:13 -0700
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:13 -0700
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:13 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:13 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:13 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:13 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:13 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:13 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:13 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:13 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:13 -0700
+
+
+Started GET "/apartments/new" for 127.0.0.1 at 2014-03-13 21:59:16 -0700
+Processing by ApartmentsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+  Rendered apartments/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 26ms (Views: 18.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/apartments" for 127.0.0.1 at 2014-03-13 21:59:24 -0700
+Processing by ApartmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UHk1/lo85d2WErFRhmIsBDmrt307vvrZjvYloesvEP0=", "apartment"=>{"title"=>"Apartment 1", "address"=>"111 bancroft avenue", "description"=>"ghjkl", "price"=>"700", "bedrooms"=>"1", "bathrooms"=>"1"}, "commit"=>"Create Apartment"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mApartment Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "apartments" WHERE "apartments"."address" = '111 bancroft avenue' LIMIT 1[0m
+  [1m[35mSQL (82.6ms)[0m  INSERT INTO "apartments" ("address", "bathrooms", "bedrooms", "created_at", "description", "price", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "111 bancroft avenue"], ["bathrooms", 1.0], ["bedrooms", 1.0], ["created_at", Fri, 14 Mar 2014 04:59:24 UTC +00:00], ["description", "ghjkl"], ["price", 700.0], ["title", "Apartment 1"], ["updated_at", Fri, 14 Mar 2014 04:59:24 UTC +00:00], ["user_id", 3]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 94ms (Views: 0.2ms | ActiveRecord: 84.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-03-13 21:59:29 -0700
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_home_index_html_erb___1795384377159903489_70215440455260 at /Users/rardisyah/Documents/CS169/homie/app/views/home/index.html.erb:41)
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:29 -0700
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:29 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:29 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:29 -0700
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:29 -0700
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:29 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:29 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:29 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:29 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:29 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:29 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:29 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:29 -0700
+
+
+Started GET "/apartments/search?utf8=%E2%9C%93&search=bancroft" for 127.0.0.1 at 2014-03-13 21:59:33 -0700
+Processing by ApartmentsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"bancroft"}
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. You have also used finder options. These are also deprecated. Please build a scope instead of using finder options. (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+  [1m[36mApartment Load (0.3ms)[0m  [1mSELECT "apartments".* FROM "apartments" WHERE (address LIKE '%bancroft%')[0m
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_apartments_search_html_erb__1408416723604976591_70215423079180 at /Users/rardisyah/Documents/CS169/homie/app/views/apartments/search.html.erb:4)
+  [1m[35mApartment Load (0.2ms)[0m  SELECT "apartments".* FROM "apartments"
+  Rendered apartments/search.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:33 -0700
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:33 -0700
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:33 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:33 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:33 -0700
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 21:59:33 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:33 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:33 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:33 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:33 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:33 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:33 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 21:59:33 -0700
+
+
+Started GET "/apartments/search?utf8=%E2%9C%93&search=" for 127.0.0.1 at 2014-03-13 22:00:06 -0700
+Processing by ApartmentsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>""}
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. You have also used finder options. These are also deprecated. Please build a scope instead of using finder options. (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+  [1m[35mApartment Load (0.4ms)[0m  SELECT "apartments".* FROM "apartments" WHERE (address LIKE '%%')
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_apartments_search_html_erb__1408416723604976591_70215421824640 at /Users/rardisyah/Documents/CS169/homie/app/views/apartments/search.html.erb:4)
+  Rendered apartments/search.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 42ms (Views: 22.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 22:00:06 -0700
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 22:00:06 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 22:00:06 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:06 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:06 -0700
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 22:00:06 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:06 -0700
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 22:00:06 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:06 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:06 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:06 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:06 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:06 -0700
+
+
+Started GET "/apartments/search?utf8=%E2%9C%93&search=y" for 127.0.0.1 at 2014-03-13 22:00:12 -0700
+Processing by ApartmentsController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"y"}
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. You have also used finder options. These are also deprecated. Please build a scope instead of using finder options. (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from search at /Users/rardisyah/Documents/CS169/homie/app/models/apartment.rb:29)
+  [1m[35mApartment Load (0.2ms)[0m  SELECT "apartments".* FROM "apartments" WHERE (address LIKE '%y%')
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.1. We recommend using Unobtrusive JavaScript instead. See http://guides.rubyonrails.org/working_with_javascript_in_rails.html#unobtrusive-javascript. (called from block in _app_views_apartments_search_html_erb__1408416723604976591_70215421824640 at /Users/rardisyah/Documents/CS169/homie/app/views/apartments/search.html.erb:4)
+  Rendered apartments/search.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-03-13 22:00:12 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:12 -0700
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2014-03-13 22:00:12 -0700
+
+
+Started GET "/assets/user.css?body=1" for 127.0.0.1 at 2014-03-13 22:00:12 -0700
+
+
+Started GET "/assets/apartments.css?body=1" for 127.0.0.1 at 2014-03-13 22:00:12 -0700
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2014-03-13 22:00:12 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:12 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:12 -0700
+
+
+Started GET "/assets/apartments.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:12 -0700
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:12 -0700
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:12 -0700
+
+
+Started GET "/assets/user.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:12 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-03-13 22:00:12 -0700

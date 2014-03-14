@@ -29,7 +29,7 @@ class ApartmentsController < ApplicationController
     user_id = current_user.id
     title = params[:apartment][:title]
     addr = params[:apartment][:address]
-    desc = params[:apartment][:desc]
+    desc = params[:apartment][:description]
     price = params[:apartment][:price]
     beds = params[:apartment][:bedrooms]
     baths = params[:apartment][:bathrooms]
@@ -54,7 +54,7 @@ class ApartmentsController < ApplicationController
     user_id = current_user.id
     title = params[:apartment][:title]
     addr = params[:apartment][:address]
-    desc = params[:apartment][:desc]
+    desc = params[:apartment][:description]
     price = params[:apartment][:price]
     beds = params[:apartment][:bedrooms]
     baths = params[:apartment][:bathrooms]
@@ -64,7 +64,7 @@ class ApartmentsController < ApplicationController
   end
 
   def search
-    #@apartment = Apartment.search params[:search]
+    @apartments = Apartment.search params[:search]
   end
  
 end
