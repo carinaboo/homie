@@ -1,6 +1,6 @@
 class Apartment < ActiveRecord::Base
 	has_many :reviews
-	belongs_to :user
+	belongs_to :user, class_name: 'User', foreign_key: 'user_id'
 
 	validates :user_id, :title, :address, :description, :price, :bedrooms, :bathrooms, presence: true
 	validates :address, uniqueness: true
@@ -11,7 +11,7 @@ class Apartment < ActiveRecord::Base
   	#adds a new apartment to the database and returns errorCode if not valid.
 	def self.add(user_id, title, address, desc, price, bedrooms, bathrooms)
 		apt = new(user_id: user_id, title: title, address: address, description: desc, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
-		return SUCCESS if apt.save
+		return apt if apt.save
 		FORBIDDEN
 	end
 

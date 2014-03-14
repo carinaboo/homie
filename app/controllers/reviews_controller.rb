@@ -5,18 +5,20 @@ class ReviewsController < ApplicationController
   UNAUTHORIZED_USER = -7
 
   def create
-    #assuming add method in model will return correct error code or new_average
-    if(current_user)	#check if the user is loggin in
-      code = Review.add(params[:user_id],params[:apt_id], params[:overall_rating], params[:review])
+    # can only create when in an apartment page!
+    # assuming add method in model will return correct error code or new_average
+    if(current_user)	# check if the user is loggin in
+      #apt = Review.find(params[:id])
+      review = Review.add(current_user.id, params[:id], params[:overall_rating], params[:review])
     else
       render json: {errCode: NOT_LOGGEDIN}
     end
 
-    if code != 1
-      render json: {errCode: code}
-    end
+    #if code != 1
+    #  render json: {errCode: code}
+    #end
 
-    #update new averge rating
+    # update new averge rating
     num_of_reviews = Review.count(:conditions => "apt_id == params[:apt_id]") 	#To do: make sure this is correct
     apt_record = Apartment.find(params[:apt_id])
     average_review = apt_record.average_overall_rating
@@ -25,14 +27,14 @@ class ReviewsController < ApplicationController
     apt_record.average_overall_rating = new_average;
     apt_record.save;
 
-    #render json to return the newly created review
+    # render json to return the newly created review
     render json: {user_id: params[:user_id], apt_id: params[:apt_id], review: params[:review], overall_rating: new_average}
 
   end
 
   def update
     if(current_user)
-      #check if the current user modifying the review is the user wrote the review
+      # check if the current user modifying the review is the user wrote the review
       review = Review.find(params[:review_id])
       user_id = review.user_id
       if(current_user.user_id != user_id)
@@ -41,17 +43,17 @@ class ReviewsController < ApplicationController
 
       code = review.update(params[:overall_rating], params[:review])
 
-    else  #if not logged in
-      #handle error: user is not logged in
+    else  # if not logged in
+      # handle error: user is not logged in
       render json: {errCode: NOT_LOGGEDIN}
     end
 
     if code!= 1
-      #error handling, only FORBIDDEN will be returned in this case
+      # error handling, only FORBIDDEN will be returned in this case
       render json: {errCode: code}
     end
 
-    #update new averge rating
+    # update new averge rating
     num_of_reviews = Review.count(:conditions => "apt_id == params[:apt_id]")   #To do: make sure this is correct
     apt_record = Apartment.find(params[:apt_id])
     average_review = apt_record.average_overall_rating
