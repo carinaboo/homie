@@ -3145,3 +3145,5 @@ DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directl
 DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from search at /home/saasbook/homie/app/models/apartment.rb:25)
   [1m[35mApartment Load (0.6ms)[0m  SELECT "apartments".* FROM "apartments" WHERE (address LIKE '%1%')
   [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  rollback transaction

@@ -3,18 +3,18 @@ require 'spec_helper'
 describe Apartment do
   #pending "add some examples to (or delete) #{__FILE__}"
   before do
-	valid_apt = Apartment.add(1, "apt1", "addr1", "desc1", 1000, 1, 1)	
-	bad_apt = Apartment.add(nil, "apt2", "addr2", "desc2", 1000, 1, 1)
+	@valid_apt = Apartment.add(1, "apt1", "addr1", "desc1", 1000, 1, 1)	
+	@bad_apt = Apartment.add(nil, "apt2", "addr2", "desc2", 1000, 1, 1)
   	@apartment = Apartment.find_by_user_id(1)
   end
 
   describe "new apartment" do
   	it "can only be added by logged in user" do	
-	 	expect(valid_apt).to (eq Apartment::SUCCESS)
+	 	expect(@valid_apt).to (eq Apartment::SUCCESS)
   	end
 
   	it "cannot be added by user not logged in" do
-	 	expect(bad_apt).to (eq Apartment::FORBIDDEN)
+	 	expect(@bad_apt).to (eq Apartment::FORBIDDEN)
   	end
 
 	it "testFindById" do
@@ -30,7 +30,7 @@ describe Apartment do
 	end	
 
 	it "testDescription" do
-	  expect(@apartment.desc).to (eq "desc")
+	  expect(@apartment.description).to (eq "desc1")
 	end  
 
 	it "testPrice" do
@@ -64,7 +64,7 @@ describe Apartment do
 	  end	
 
 	  it "testUpdateDescription" do
-	  	expect(@apartment.desc).to (eq "desc2")
+	  	expect(@apartment.description).to (eq "desc2")
 	  end  
 
 	  it "testUpdatePrice" do
