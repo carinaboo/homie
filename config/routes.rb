@@ -4,6 +4,7 @@ Homie::Application.routes.draw do
   get "reviews/update"
   get "reviews/find_by_apt"
 
+  get 'apartments/search' => 'apartments#search'
   resources :apartments
   devise_for :users
 
