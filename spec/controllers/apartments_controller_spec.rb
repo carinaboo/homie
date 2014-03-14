@@ -1,40 +1,60 @@
 require 'spec_helper'
+require 'factory_girl_rails'
 
 describe ApartmentsController do
+=begin
+  before(:each) do
+    FactoryGirl.create(:apartment).should be_valid
+  end
+=end
+  describe "#show" do
+    it "assigns requested apartment to @apartment" do
+      apartment = FactoryGirl.create(:apartment)
+      get :show, id: apartment
+      assigns(:apartment).should eq(apartment)
+    end
 
-  describe "GET 'view'" do
-    it "returns http success" do
-      get 'view'
-      expect(response).to be_success
+    it "renders #show view" do
+      get :show, id: FactoryGirl.create(:apartment)
+      response.should render_template :show
     end
   end
 
-  describe "GET 'new'" do
+=begin
+  describe "new" do
     it "returns http success" do
       get 'new'
       expect(response).to be_success
     end
   end
 
-  describe "GET 'create'" do
-    it "returns http success" do
-      get 'create'
-      expect(response).to be_success
+  describe "create" do
+    #it "returns http success" do
+      #get 'create'
+      #expect(response).to be_success
     end
   end
 
-  describe "GET 'edit'" do
+  describe "edit" do
     it "returns http success" do
       get 'edit'
       expect(response).to be_success
     end
   end
 
-  describe "GET 'update'" do
+  describe "update" do
     it "returns http success" do
       get 'update'
       expect(response).to be_success
     end
   end
+
+  describe "search" do
+    it "returns http success" do
+      get 'search'
+      expect(response).to be_success
+    end
+  end
+=end
 
 end

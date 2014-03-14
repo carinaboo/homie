@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'factory_girl_rails'
 
 # Specs in this file have access to a helper object that includes
 # the ApartmentsHelper. For example:

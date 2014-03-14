@@ -10,7 +10,7 @@ describe Apartment do
 
   describe "new apartment" do
   	it "can only be added by logged in user" do	
-	 	expect(@valid_apt).to (eq Apartment::SUCCESS)
+	 	expect(@valid_apt.is_a? Apartment).to (eq true)
   	end
 
   	it "cannot be added by user not logged in" do
