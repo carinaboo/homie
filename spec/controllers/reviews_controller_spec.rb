@@ -15,6 +15,15 @@ describe ReviewsController do
     @user.destroy
     @apartment.destroy
   end
+
+  # describe "POST #create" do
+  #   it "successfully adds new review page" do
+  #     num = Apartment.find(@apartment.id).reviews.length
+  #     post :create, user_id: @user.id, 
+  #     @apartment.reviews.add(@user.id, 5, "great place")
+  #     expect(Apartment.find(@apartment.id).reviews.length).to equal(num+1)
+  #   end
+  # end
   
   describe "GET #create" do
     it "successfully adds new review page" do

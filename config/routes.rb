@@ -1,6 +1,6 @@
 Homie::Application.routes.draw do
 
-  get "reviews/create"
+  post "reviews/create"
   post "reviews/update"
   get "reviews/find_by_apt"
 

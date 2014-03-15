@@ -8,8 +8,9 @@ class ReviewsController < ApplicationController
     # can only create when in an apartment page!
     # assuming add method in model will return correct error code or new_average
     if(current_user)	# check if the user is loggin in
-      #apt = Review.find(params[:id])
-      review = Review.add(current_user.id, params[:id], params[:overall_rating], params[:review])
+      apt = Review.find(params[:id])
+      review = apt.reviews.add(current_user.id, params[:overall_rating], params[:review])
+      # review = Review.add(current_user.id, params[:id], params[:overall_rating], params[:review])
     else
       render json: {errCode: NOT_LOGGEDIN}
     end
