@@ -1,8 +1,8 @@
 Homie::Application.routes.draw do
 
-  post "reviews/create"
-  post "reviews/update"
-  get "reviews/find_by_apt"
+  post '/reviews', to: 'reviews#create', as: 'reviews_create'
+  put "reviews/:id", to: 'reviews#update', as: 'reviews_update'
+  get "reviews/:apt_id", to: 'reviews#find_by_apt', as: 'reviews_find_by_apt'
 
   get 'apartments/search' => 'apartments#search'
   resources :apartments

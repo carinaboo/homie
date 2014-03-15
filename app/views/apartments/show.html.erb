@@ -7,6 +7,22 @@
 <p> rating: <%= @apartment.average_overall_rating %></p>
 
 
+<h2>Create Review</h2>
+
+<%= form_for @review, url: "/reviews", html: {method: :post} do |f| %>
+
+	<div><%= f.label :Overall_Rating %><br />
+	<%= f.select :overall_rating, 1..5 %></div>
+
+	<div><%= f.label :Review %><br />
+	<%= f.text_area :review, size: "60x12" %></div>
+
+	<%= f.hidden_field :apartment_id, value: @apartment.id %>
+
+	<div><%= f.submit "Submit" %></div>
+<% end %>
+
+
 <table>
 	<thead>
     <tr>

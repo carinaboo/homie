@@ -8,9 +8,17 @@ class ReviewsController < ApplicationController
     # can only create when in an apartment page!
     # assuming add method in model will return correct error code or new_average
     if(current_user)	# check if the user is loggin in
-      apt = Review.find(params[:id])
-      review = apt.reviews.add(current_user.id, params[:overall_rating], params[:review])
+      # p "beforeeeeeeeeeee  " + Review.count.to_s
+      # p "888888888888888888888  " + current_user.id.to_s
+      # p "xxxxxxxxxxxxxxxxxxxxx  " + params[:id].to_s
+      apartment = Apartment.find(params[:review][:apartment_id])
+      # p "xxxxxxxxxxxxxxxxxxxxx apartment.title " + apartment.title
+      review = apartment.reviews.add(current_user.id, params[:review][:overall_rating], params[:review][:review])
+      # p "xxxxxxxxxxxxxxxxxxxxx review.apartment_id " + review.apartment_id.to_s + " " + review.user_id.to_s + " " + review.review
       # review = Review.add(current_user.id, params[:id], params[:overall_rating], params[:review])
+      # p "afterrrrrrrrrrrr  " + Review.count.to_s
+      p review.inspect
+      # render json: review.to_json
     else
       render json: {errCode: NOT_LOGGEDIN}
     end
@@ -20,16 +28,17 @@ class ReviewsController < ApplicationController
     #end
 
     # update new averge rating
-    num_of_reviews = Review.count(:conditions => "apt_id == params[:apt_id]") 	#To do: make sure this is correct
-    apt_record = Apartment.find(params[:apt_id])
-    average_review = apt_record.average_overall_rating
-    overall_rating = params[:overall_rating]
+    # num_of_reviews = Review.count(:conditions => "apartment_id == params[:apartment_id]") 	#To do: make sure this is correct
+    num_of_reviews = apartment.reviews.count
+    average_review = apartment.average_overall_rating || 0
+    overall_rating = params[:review][:overall_rating].to_i
     new_average = Review.add_average_rating(num_of_reviews, average_review, overall_rating)
-    apt_record.average_overall_rating = new_average;
-    apt_record.save;
+    apartment.average_overall_rating = new_average;
+    apartment.save;
 
-    # render json to return the newly created review
-    render json: {user_id: params[:user_id], apt_id: params[:apt_id], review: params[:review], overall_rating: new_average}
+    redirect_to apartment_path id: apartment.id
+    # render json: review.to_json
+    # render json: {review: review, apartment: apartment}
 
   end
 
