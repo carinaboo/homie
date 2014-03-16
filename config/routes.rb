@@ -1,7 +1,8 @@
 Homie::Application.routes.draw do
 
-  post '/reviews', to: 'reviews#create', as: 'reviews_create'
-  put "reviews/:id", to: 'reviews#update', as: 'reviews_update'
+  post '/reviews', to: 'reviews#create', as: 'create_review'
+  get "reviews/:id/edit", to: 'reviews#edit', as: 'edit_review'
+  put "reviews/:id", to: 'reviews#update', as: 'update_review'
   get "reviews/:apt_id", to: 'reviews#find_by_apt', as: 'reviews_find_by_apt'
 
   get 'apartments/search' => 'apartments#search'
@@ -9,8 +10,6 @@ Homie::Application.routes.draw do
   devise_for :users
 
   root :to => 'home#index'
-
-  get 'home/index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

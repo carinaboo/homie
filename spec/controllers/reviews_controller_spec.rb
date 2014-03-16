@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'pp'
 
 describe ReviewsController do
 
@@ -19,51 +18,48 @@ describe ReviewsController do
 
   describe "POST #create" do
     it "successfully adds new review page" do
-      num = Apartment.find(@apartment.id).reviews.length
-      pp "000000000000000000000   " + num.to_s
-      post :create, id: 1, overall_rating: 5, review: "beautiful place!"
-      # post :create, user_id: @user.id, id: @apartment.id, overall_rating: 5, review: "beautiful place!"
-      # @apartment.reviews.add(@user.id, 5, "great place")
-      # post :create, review: FactoryGirl.attributes_for(:review), id: 1
-      pp "000000000000000000000   " + num.to_s
-      new_num = Apartment.find(@apartment.id).reviews.length
-      pp "1111111111111111111111   " + new_num.to_s + " " + num.to_s
-      expect(new_num).to equal(num+1)
-      # expect { post :create, review: FactoryGirl.attributes_for(:review)}.to change(Review, :count).by(1)
-
+      expect { post :create, review: {apartment_id: @apartment.id, overall_rating: 5, review: "This place is the best"}}.to change(Review, :count).by(1)
     end
   end
 
-  # describe "POST #create" do
-  #   it "successfully adds new review page" do
-  #     expect { post :create, id: 1, overall_rating: 5, review: "beautiful place!"}.to change(Review, :count).by(1)
-  #   end
-  # end
+  describe "GET #edit and #update" do
 
-  # describe "GET #create" do
-  #   it "successfully adds new review page" do
-  #     expect { get :create, review: FactoryGirl.attributes_for(:review)}.to change(Review, :count).by(1)
-  #   end
-  # end
+    before(:each) do
+      post :create, review: {apartment_id: @apartment.id, overall_rating: 5, review: "This place is the best"}
+      @review = @apartment.reviews.first
+    end
 
-  # describe "POST #update" do
-  #   it "successfully updates review page" do
-  #     post :create, review: FactoryGirl.attributes_for(:review)
-  #     response.should redirect_to Review.last 
-  #   end
+    after(:each) do
+      @review.destroy
+    end
 
-  #   it "does not update review page with bad info" do
-  #     FactoryGirl.create(:review)
-  #     post :update, review: FactoryGirl.attributes_for(:review)
-  #     response.should_not redirect_to Review.last 
-  #   end  
-  # end
+    it "successfully loads edit page" do
+      get :edit, id: @review.id
+      response.should render_template :edit
+    end
 
-  # describe "GET #find_by_apt" do
-  #   it "returns http success" do
-  #     get 'find_by_apt'
-  #     expect(response).to be_success
-  #   end
-  # end
+    it "successfully updates review page" do
+      put :update, id: @review.id, review: FactoryGirl.attributes_for(:review)
+      response.should redirect_to apartment_path id: @apartment.id
+    end
+
+    it "does not update review page with wrong user" do
+      subject.sign_out @user
+      @user2 = FactoryGirl.create(:user, email: "differentuser@berkeley.edu")
+      subject.sign_in @user2
+      put :update, id: @review.id, review: FactoryGirl.attributes_for(:review)
+      response.should_not redirect_to apartment_path id: @apartment.id
+      subject.sign_in @user
+    end  
+
+  end
+
+  describe "GET #find_by_apt" do
+    it "returns json of reviews" do
+      post :create, review: {apartment_id: @apartment.id, overall_rating: 5, review: "Great place"}
+      get 'find_by_apt', apt_id: @apartment.id
+      response.body.should == @apartment.reviews.to_json
+    end
+  end
 
 end

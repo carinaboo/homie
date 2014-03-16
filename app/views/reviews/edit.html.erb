@@ -1,0 +1,12 @@
+<h2>Edit Review</h2>
+
+<%= form_for @review, url: "/reviews/"+@review.id.to_s, html: {method: :put} do |f| %>
+
+	<div><%= f.label :Overall_Rating %><br />
+	<%= f.select :overall_rating, 1..5 %></div>
+
+	<div><%= f.label :Review %><br />
+	<%= f.text_area :review, size: "60x12" %></div>
+
+	<div><%= f.submit "Save" %></div>
+<% end %>

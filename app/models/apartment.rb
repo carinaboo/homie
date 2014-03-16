@@ -9,17 +9,17 @@ class Apartment < ActiveRecord::Base
   	FORBIDDEN = 403
 
   	#adds a new apartment to the database and returns errorCode if not valid.
-	def self.add(user_id, title, address, desc, price, bedrooms, bathrooms)
-		apt = new(user_id: user_id, title: title, address: address, description: desc, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
-		return apt if apt.save
+	def self.add(user_id, title, address, description, price, bedrooms, bathrooms)
+		apartment = new(user_id: user_id, title: title, address: address, description: description, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
+		return apartment if apartment.save
 		FORBIDDEN
 	end
 
 	#update the description for this apartment record and then returns FORBIDDEN if
 	#the updates are not valid; otherwise returns 1 for success
-	def updateDescription(user_id, title, address, desc, price, bedrooms, bathrooms)
-		valid = self.update_attributes(user_id: user_id, title: title, address: address, description: desc, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
-		return SUCCESS if valid
+	def update(user_id, title, address, description, price, bedrooms, bathrooms)
+		valid = self.update_attributes(user_id: user_id, title: title, address: address, description: description, price: price, bedrooms: bedrooms, bathrooms: bathrooms)
+		return self if valid
 		FORBIDDEN
 	end
 

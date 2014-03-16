@@ -1,3 +1,5 @@
+<%= link_to "Edit Apartment", edit_apartment_path(id: @apartment.id) %>
+
 <h2><%= @apartment.title %></h2>
 <p><%= @apartment.address %></p>
 <p><%= @apartment.description %></p>
@@ -26,6 +28,7 @@
 <table>
 	<thead>
     <tr>
+    	<th></th>
 		<th>User</th>
 		<th>Review</th>
 		<th>Overall Rating</th>
@@ -38,7 +41,8 @@
 	<tbody>
 		<% @reviews.each do |review| %>
 			<tr>
-			    <td><%= review.user_id %></td>
+				<td><%= link_to "Edit", edit_review_path(id: review.id) %></td>
+			    <td><%= review.user.username %></td>
 			    <td><%= review.review %></td>
 			    <td><%= review.overall_rating %></td>
 			    <td><%= review.created_at %></td>

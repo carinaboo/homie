@@ -37,7 +37,7 @@ class ApartmentsController < ApplicationController
     result = Apartment.add(user_id, title, addr, desc, price, beds, baths)
     #valid = result >= 0 && result != 403 && result != 404
     if result.is_a? Apartment
-      redirect_to :action => "show", :id => result.id
+      redirect_to action: "show", id: result.id
     else
       render json: {errCode: result}
     end
@@ -58,14 +58,17 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.find(params[:id])
     user_id = current_user.id
     title = params[:apartment][:title]
-    addr = params[:apartment][:address]
-    desc = params[:apartment][:description]
+    address = params[:apartment][:address]
+    description = params[:apartment][:description]
     price = params[:apartment][:price]
     beds = params[:apartment][:bedrooms]
     baths = params[:apartment][:bathrooms]
-    result = Apartment.updateDescription(user_id, title, addr, desc, price, beds, baths)
-    #valid = result >= 0 && result != 403 && result != 404
-    render json: {errCode: result}
+    result = @apartment.update(user_id, title, address, description, price, beds, baths)
+    if result.is_a? Apartment
+      redirect_to action: "show", id: result.id
+    else
+      render json: {errCode: result}
+    end
   end
 
   def search

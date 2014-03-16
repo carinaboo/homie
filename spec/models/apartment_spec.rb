@@ -48,7 +48,7 @@ describe Apartment do
 
    describe "failing update and search for apartment" do
 	  before do
-		@result = @apartment.updateDescription(nil, "apt2", "addr2", "desc2", 2000, 2, 2)
+		@result = @apartment.update(nil, "apt2", "addr2", "desc2", 2000, 2, 2)
 	  end
 
 	  it "testUpdateId" do
@@ -58,7 +58,7 @@ describe Apartment do
 
 	describe "update and search for apartment" do
 	  before do
-		@apartment.updateDescription(2, "apt2", "addr2", "desc2", 2000, 2, 2)
+		@apartment.update(2, "apt2", "addr2", "desc2", 2000, 2, 2)
 	  end
 
 	  it "testUpdateId" do
