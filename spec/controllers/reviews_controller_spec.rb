@@ -15,30 +15,50 @@ describe ReviewsController do
     @user.destroy
     @apartment.destroy
   end
-  
-  describe "GET #create" do
+
+  describe "POST #create" do
     it "successfully adds new review page" do
-      expect { get :create, review: FactoryGirl.attributes_for(:review)}.to change(Review, :count).by(1)
+      expect { post :create, review: {apartment_id: @apartment.id, overall_rating: 5, review: "This place is the best"}}.to change(Review, :count).by(1)
     end
   end
 
-  describe "POST #update" do
-    it "successfully updates review page" do
-      post :create, review: FactoryGirl.attributes_for(:review)
-      response.should redirect_to Review.last 
+  describe "GET #edit and #update" do
+
+    before(:each) do
+      post :create, review: {apartment_id: @apartment.id, overall_rating: 5, review: "This place is the best"}
+      @review = @apartment.reviews.first
     end
 
-    it "does not update review page with bad info" do
-      FactoryGirl.create(:review)
-      post :update, review: FactoryGirl.attributes_for(:review)
-      response.should_not redirect_to Review.last 
+    after(:each) do
+      @review.destroy
+    end
+
+    it "successfully loads edit page" do
+      get :edit, id: @review.id
+      response.should render_template :edit
+    end
+
+    it "successfully updates review page" do
+      put :update, id: @review.id, review: FactoryGirl.attributes_for(:review)
+      response.should redirect_to apartment_path id: @apartment.id
+    end
+
+    it "does not update review page with wrong user" do
+      subject.sign_out @user
+      @user2 = FactoryGirl.create(:user, email: "differentuser@berkeley.edu")
+      subject.sign_in @user2
+      put :update, id: @review.id, review: FactoryGirl.attributes_for(:review)
+      response.should_not redirect_to apartment_path id: @apartment.id
+      subject.sign_in @user
     end  
+
   end
 
   describe "GET #find_by_apt" do
-    it "returns http success" do
-      get 'find_by_apt'
-      expect(response).to be_success
+    it "returns json of reviews" do
+      post :create, review: {apartment_id: @apartment.id, overall_rating: 5, review: "Great place"}
+      get 'find_by_apt', apt_id: @apartment.id
+      response.body.should == @apartment.reviews.to_json
     end
   end
 

@@ -1,4 +1,4 @@
-<h1>Edit a new apartment</h1>
+<h1>Edit apartment</h1>
 
 <%= form_for(@apartment) do |f| %>
 
@@ -18,7 +18,7 @@
    <%= f.select :bedrooms, 1..10 %></div>
 
    <div><%= f.label :bathrooms %><br />
-   <%= f.select :bedrooms, 1..10 %></div>
+   <%= f.select :bathrooms, 1..10 %></div>
 
-  <div><%= f.submit "Create Apartment" %></div>
+  <div><%= f.submit "Save" %></div>
 <% end %>
