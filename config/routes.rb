@@ -15,7 +15,7 @@ Homie::Application.routes.draw do
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
 
-  get "/", to: 'home#index', as: 'home_index'
+  # get "/", to: 'home#index', as: 'home_index'
   
   
   # The priority is based upon order of creation: first created -> highest priority.
