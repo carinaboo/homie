@@ -9,7 +9,7 @@ Homie::Application.routes.draw do
   resources :apartments
   devise_for :users
 
-  # get "/", to: 'home#index', as: 'home_index'
+  get "/", to: 'home#index', as: 'home_index'
   root :to => 'home#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
