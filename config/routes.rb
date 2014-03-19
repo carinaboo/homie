@@ -1,4 +1,6 @@
 Homie::Application.routes.draw do
+  
+  root :to => 'home#index'
 
   post '/reviews', to: 'reviews#create', as: 'create_review'
   get "reviews/:id/edit", to: 'reviews#edit', as: 'edit_review'
@@ -14,7 +16,7 @@ Homie::Application.routes.draw do
   end
 
   get "/", to: 'home#index', as: 'home_index'
-  root :to => 'home#index'
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
