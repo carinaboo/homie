@@ -9,6 +9,10 @@ Homie::Application.routes.draw do
   resources :apartments
   devise_for :users
 
+  devise_for :users do
+    get '/users/sign_out', to: 'devise/sessions#destroy'
+  end
+
   get "/", to: 'home#index', as: 'home_index'
   root :to => 'home#index'
   
