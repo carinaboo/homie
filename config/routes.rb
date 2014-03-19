@@ -5,10 +5,11 @@ Homie::Application.routes.draw do
   put "reviews/:id", to: 'reviews#update', as: 'update_review'
   get "reviews/:apt_id", to: 'reviews#find_by_apt', as: 'reviews_find_by_apt'
 
-  get 'apartments/search' => 'apartments#search'
+  get 'apartments/search', to: 'apartments#search'
   resources :apartments
   devise_for :users
 
+  # get "/", to: 'home#index', as: 'home_index'
   root :to => 'home#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
