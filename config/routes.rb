@@ -7,7 +7,7 @@ Homie::Application.routes.draw do
 
   get 'apartments/search', to: 'apartments#search'
   resources :apartments
-  devise_for :users
+  # devise_for :users
 
   devise_for :users do
     get '/users/sign_out', to: 'devise/sessions#destroy'
