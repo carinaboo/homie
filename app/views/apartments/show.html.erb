@@ -17,7 +17,7 @@
 	<%= f.select :overall_rating, 1..5 %></div>
 
 	<div><%= f.label :Review %><br />
-	<%= f.text_area :review, size: "60x12" %></div>
+	<%= f.text_area :review, size: "60x12", value: "What do you think of this place?" %></div>
 
 	<%= f.hidden_field :apartment_id, value: @apartment.id %>
 
@@ -43,7 +43,11 @@
 			<tr>
 				<td><%= link_to "Edit", edit_review_path(id: review.id) %></td>
 			    <td><%= review.user.username %></td>
-			    <td><%= review.review %></td>
+			    <td>
+				    <% if review.review != nil %>
+				    <%= review.review %>
+				    <% end %>
+			    </td>
 			    <td><%= review.overall_rating %></td>
 			    <td><%= review.created_at %></td>
 			    <td><%= review.updated_at %></td>
