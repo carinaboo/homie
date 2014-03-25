@@ -3,3 +3,31 @@
 <h1><%= @user.username %></h1>
 <h3>About you: </h3>
 <h3>Your email is : <%= @user.email %></h3>
+<hr />
+<h3>Here is the list of apartment created by you
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Title</th>
+      <th>Address</th>
+      <th>price</th>
+      <th>id</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apartments.each do |apt| %>
+      <tr>
+        <td><a href="/apartments/<%= apt.id %>" >View</a></td>
+        <td><%= apt.title %></td>
+        <td><%= apt.address %></td>
+        <td><%= apt.price %></td>
+        <td><%= apt.user_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</h3>
