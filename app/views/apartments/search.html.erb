@@ -2,7 +2,7 @@
   <%= text_field_tag :search, params[:search], :id => 'search_field' %>
   <%= submit_tag "Search", :name => nil %> 
   <%= link_to_function "Clear", "$('search_field').clear()" %>
-  <%= select_tag "sorting", options_for_select([ "Ratings: high to low", "Ratings: low to high", "Price: high to low", "Price: low to high" ], :selected => params[:sorting]) %>
+  <%= select_tag "sorting", options_for_select([ "Ratings: high to low", "Ratings: low to high", "Price: high to low", "Price: low to high" ], :selected => params[:sorting]), :onchange => "this.form.submit();" %>
 <% end %> 
 
 <h2>Search result</h2>
@@ -10,7 +10,6 @@
 <table>
   <thead>
     <tr>
-      <th> </th>
       <th>Title</th>
       <th>Address</th>
       <th>price</th>
@@ -23,8 +22,7 @@
   <tbody>
     <% @apartments.each do |apt| %>
       <tr>
-        <td><a href="/apartments/<%= apt.id %>" >View</a></td>
-        <td><%= apt.title %></td>
+        <td><%= link_to apt.title, apt %></td>
         <td><%= apt.address %></td>
         <td><%= apt.price %></td>
         <td><%= apt.average_overall_rating.round(2) if apt.average_overall_rating %></td>
