@@ -73,7 +73,8 @@ class ApartmentsController < ApplicationController
 
   def search
     # @apartments = Apartment.all
-    @apartments = Apartment.search(params[:search])
+    sort = params[:sorting]
+    @apartments = Apartment.search(params[:search], sort)
   end
  
 end

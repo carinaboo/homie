@@ -24,11 +24,21 @@ class Apartment < ActiveRecord::Base
 	end
 
 	#search for apartments by address and returns an array of apartments at that location. 
-	def self.search(search)
+	def self.search(search, sort)
 		if search
 			# for now blank search returns all results to make it easier for dev testing
 			# change to show nothing later
-			find(:all, :conditions => ['address LIKE ?', "%#{search}%"])
+			
+			if sort == "Ratings: low to high"
+				sorting = 'average_overall_rating asc'
+			elsif sort == "Ratings: high to low"
+				sorting = 'average_overall_rating desc'
+			elsif sort == "Price: low to high"
+				sorting = 'price asc'
+			elsif sort == "Price: high to low"
+				sorting = 'price desc'
+			end
+			find(:all, :conditions => ['address LIKE ?', "%#{search}%"], :order =>  sorting)
 			# Apartment.where("address LIKE ?", search)
 		else
 			return []
