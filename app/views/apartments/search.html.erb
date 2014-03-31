@@ -1,31 +1,42 @@
 <%= form_tag apartments_search_path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:search], :id => 'search_field' %>
-  <%= submit_tag "Search", :name => nil %> 
-  <%= link_to_function "Clear", "$('search_field').clear()" %>
+  <%= text_field_tag :search, params[:search], id: "search_field", placeholder: "Search addresses or listing title" %>
+  <%= submit_tag "Search", name: nil, class: "btn btn-primary" %> 
   <%= select_tag "sorting", options_for_select([ "Ratings: high to low", "Ratings: low to high", "Price: high to low", "Price: low to high" ], :selected => params[:sorting]), :onchange => "this.form.submit();" %>
+  <div id="filters">
+    <%= label_tag :minimum_price %>
+    <%= text_field_tag :minimum_price, params[:min_price], value: 0 %>
+    <%= label_tag :maximum_price %>
+    <%= text_field_tag :maximum_price, params[:max_price], value: @max_price.round(0) %>
+    
+    <%= label_tag :minimum_bedrooms %>
+    <%= text_field_tag :minimum_bedrooms, params[:min_bedrooms], value: 1 %>
+    <%= label_tag :maximum_bedrooms %>
+    <%= text_field_tag :maximum_bedrooms, params[:max_bedrooms], value: @max_bedrooms.round(0) %>
+  </div>
 <% end %> 
 
-<h2>Search result</h2>
+<h2>Search results</h2>
 
-<table>
+<table class="apartments">
   <thead>
     <tr>
       <th>Title</th>
       <th>Address</th>
-      <th>price</th>
-      <th>rating</th>
-      <th></th>
-      <th></th>
+      <th>Bedrooms</th>
+      <th>Bathrooms</th>
+      <th>Price</th>
+      <th>Rating</th>
     </tr>
   </thead>
-
   <tbody>
     <% @apartments.each do |apt| %>
       <tr>
-        <td><%= link_to apt.title, apt %></td>
-        <td><%= apt.address %></td>
-        <td><%= apt.price %></td>
-        <td><%= apt.average_overall_rating.round(2) if apt.average_overall_rating %></td>
+        <td class="title"><%= link_to apt.title, apt %></td>
+        <td class="address"><%= apt.address %></td>
+        <td class="bedrooms"><%= apt.bedrooms.round(0) %></td>
+        <td class="bathrooms"><%= apt.bathrooms.round(0) %></td>
+        <td class="price"><span class="amount"><%= number_to_currency(apt.price) %></span></td>
+        <td class="rating"><%= number_with_precision(apt.average_overall_rating, precision: 2) if apt.average_overall_rating %></td>
       </tr>
     <% end %>
   </tbody>

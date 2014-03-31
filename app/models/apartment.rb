@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: apartments
+#
+#  id                     :integer          not null, primary key
+#  title                  :string(255)
+#  address                :string(255)
+#  description            :text
+#  price                  :float
+#  bathrooms              :float
+#  bedrooms               :float
+#  average_overall_rating :float
+#  created_at             :datetime
+#  updated_at             :datetime
+#  user_id                :integer
+#
+
 class Apartment < ActiveRecord::Base
 	has_many :reviews
 	belongs_to :user, class_name: 'User', foreign_key: 'user_id'
@@ -27,7 +44,7 @@ class Apartment < ActiveRecord::Base
 	end
 
 	#search for apartments by address and returns an array of apartments at that location. 
-	def self.search(search, sort)
+	def self.search(search, sort, min_price, max_price, min_bedrooms, max_bedrooms)
 		if search
 			# for now blank search returns all results to make it easier for dev testing
 			# change to show nothing later
@@ -41,7 +58,8 @@ class Apartment < ActiveRecord::Base
 			elsif sort == "Price: high to low"
 				sorting = 'price desc'
 			end
-			find(:all, :conditions => ['address LIKE ?', "%#{search}%"], :order =>  sorting)
+			# find(:all, :conditions => ['address LIKE ?', "%#{search}%"], :order =>  sorting)
+			Apartment.where('title LIKE ? OR address LIKE ?', "%#{search}%", "%#{search}%").order(sorting)
 			# Apartment.where("address LIKE ?", search)
 		else
 			return []

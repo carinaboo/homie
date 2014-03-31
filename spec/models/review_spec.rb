@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: reviews
+#
+#  id             :integer          not null, primary key
+#  user_id        :integer
+#  review         :text
+#  overall_rating :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#  apartment_id   :integer
+#
+
 require 'spec_helper'
 
 describe Review do
