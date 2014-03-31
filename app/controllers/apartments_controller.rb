@@ -82,12 +82,16 @@ class ApartmentsController < ApplicationController
 
     min_price = params[:min_price]
     max_price = params[:max_price]
+
+    min_rating = params[:min_rating]
+
     min_bedrooms = params[:min_bedrooms]
     max_bedrooms = params[:max_bedrooms]
+    
     min_bathrooms = params[:min_bathrooms]
     max_bathrooms = params[:max_bathrooms]
     
-    @apartments = Apartment.search(params[:search], sort, min_price, max_price, min_bedrooms, max_bedrooms, min_bathrooms, max_bathrooms)
+    @apartments = Apartment.search(params[:search], sort, min_price, max_price, min_rating, min_bedrooms, max_bedrooms, min_bathrooms, max_bathrooms)
     @max_price = Apartment.maximum("price")
     @max_bedrooms = Apartment.maximum("bedrooms")
     @max_bathrooms = Apartment.maximum("bathrooms")

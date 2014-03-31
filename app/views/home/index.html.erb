@@ -1,4 +1,4 @@
-<div class="index_box">
+<div class="main">
   <% if current_user %>
   <h2 class="">Welcome <%= current_user.username %></h2>
   <% end %>
@@ -7,7 +7,6 @@
   <%= form_tag apartments_search_path, :method => 'get' do %>
     <%= text_field_tag :search, params[:search], :id => 'search_field', :placeholder => "Search address or listing title" %>
     <%= submit_tag "Search", name: nil, class: "btn btn-primary" %> 
-    <%= link_to_function "Clear", "$('search_field').clear()" %>
   <% end %> 
   </section>
 </div>

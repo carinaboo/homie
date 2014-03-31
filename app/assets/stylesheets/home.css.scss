@@ -25,7 +25,33 @@ table {
 	margin-bottom: 10px;
 }
 
-.box, .index_box {
+.nav {
+	overflow: auto;
+	margin-bottom: 50px;
+	padding: 25px;
+	background-color: rgba(250,250,250,0.5);
+	border-radius: 5px;
+
+	.logo {
+		display: inline-block;
+		width: 113px;
+		height: 50px;
+		background-image: url("/assets/logo.png");
+		background-size: 113px 50px;
+		float: left;
+
+		&:hover {
+			background-image: url("/assets/logo-orange.png");
+		}
+	}
+
+	.inline {
+		float:right;
+		margin: 5px;
+	}
+}
+
+.main {
 	overflow: auto;
 	margin-bottom: 50px;
 	padding: 25px;
@@ -36,19 +62,4 @@ table {
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	/*filter:alpha(opacity=60);*/
 	/*opacity:0.6;*/
-}
-
-.homie {
-	float:left;
-	margin: 1px;
-}
-
-.homie a:link, .homie a:visited {
-	text-decoration: none;
-	color: black;
-}
-
-.inline {
-	float:right;
-	margin: 5px;
 }
