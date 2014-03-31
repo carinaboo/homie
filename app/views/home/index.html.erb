@@ -5,7 +5,7 @@
   <br>
   <section class ="">
   <%= form_tag apartments_search_path, :method => 'get' do %>
-    <%= text_field_tag :search, params[:search], :id => 'search_field', :placeholder => "Address" %>
+    <%= text_field_tag :search, params[:search], :id => 'search_field', :placeholder => "Search address or listing title" %>
     <%= submit_tag "Search", name: nil, class: "btn btn-primary" %> 
     <%= link_to_function "Clear", "$('search_field').clear()" %>
   <% end %> 

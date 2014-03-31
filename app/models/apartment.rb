@@ -44,7 +44,7 @@ class Apartment < ActiveRecord::Base
 	end
 
 	#search for apartments by address and returns an array of apartments at that location. 
-	def self.search(search, sort, min_price, max_price, min_bedrooms, max_bedrooms)
+	def self.search(search, sort, min_price, max_price, min_bedrooms, max_bedrooms, min_bathrooms, max_bathrooms)
 		if search
 			# for now blank search returns all results to make it easier for dev testing
 			# change to show nothing later
@@ -57,10 +57,12 @@ class Apartment < ActiveRecord::Base
 				sorting = 'price asc'
 			elsif sort == "Price: high to low"
 				sorting = 'price desc'
+			else # default sort from highest to lowest rating
+				sorting = 'average_overall_rating desc'
 			end
+
 			# find(:all, :conditions => ['address LIKE ?', "%#{search}%"], :order =>  sorting)
-			Apartment.where('title LIKE ? OR address LIKE ?', "%#{search}%", "%#{search}%").order(sorting)
-			# Apartment.where("address LIKE ?", search)
+			Apartment.where('(title LIKE ? OR address LIKE ?) AND (price >= ? AND price <= ? AND bedrooms >= ? AND bedrooms <= ? AND bathrooms >= ? AND bathrooms <= ?)', "%#{search}%", "%#{search}%", min_price.presence || 0, max_price.presence || Apartment.maximum("price"), min_bedrooms.presence || 0, max_bedrooms.presence || Apartment.maximum("bedrooms"), min_bathrooms.presence || 0, max_bathrooms.presence || Apartment.maximum("bathrooms")).order(sorting)
 		else
 			return []
 			# find(:all)

@@ -6,12 +6,19 @@
 	width: 300px;
 }
 
+select[name=sorting] {
+	margin-left: 175px;
+}
+
 #filters {
 	label {
 		display: inline-block;
-		margin-right: 10px;
+		margin-left: 20px;
 	}
 	input {
+		width: 20px;
+	}
+	input[name=min_price], input[name=max_price] {
 		width: 50px;
 	}
 }
