@@ -2,8 +2,9 @@ class Apartment < ActiveRecord::Base
 	has_many :reviews
 	belongs_to :user, class_name: 'User', foreign_key: 'user_id'
 
-	validates :user_id, :title, :address, :description, :price, :bedrooms, :bathrooms, presence: true
-	validates :address, uniqueness: true
+	validates :user_id, :title, :description, :bedrooms, :bathrooms, presence: true
+	validates :address, presence: true, uniqueness: { case_sensitive: false }
+	validates :price, presence: true, numericality: { greater_than: 0}
 
 	SUCCESS = 1
   	FORBIDDEN = 403
@@ -11,8 +12,10 @@ class Apartment < ActiveRecord::Base
   	#adds a new apartment to the database and returns errorCode if not valid.
 	def self.add(user_id, title, address, description, price, bedrooms, bathrooms)
 		apartment = new(user_id: user_id, title: title, address: address, description: description, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
-		return apartment if apartment.save
-		FORBIDDEN
+		apartment.save
+		return apartment
+		#apartment.errors.messages
+		#FORBIDDEN
 	end
 
 	#update the description for this apartment record and then returns FORBIDDEN if
@@ -24,11 +27,21 @@ class Apartment < ActiveRecord::Base
 	end
 
 	#search for apartments by address and returns an array of apartments at that location. 
-	def self.search(search)
+	def self.search(search, sort)
 		if search
 			# for now blank search returns all results to make it easier for dev testing
 			# change to show nothing later
-			find(:all, :conditions => ['address LIKE ?', "%#{search}%"])
+			
+			if sort == "Ratings: low to high"
+				sorting = 'average_overall_rating asc'
+			elsif sort == "Ratings: high to low"
+				sorting = 'average_overall_rating desc'
+			elsif sort == "Price: low to high"
+				sorting = 'price asc'
+			elsif sort == "Price: high to low"
+				sorting = 'price desc'
+			end
+			find(:all, :conditions => ['address LIKE ?', "%#{search}%"], :order =>  sorting)
 			# Apartment.where("address LIKE ?", search)
 		else
 			return []

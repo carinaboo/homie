@@ -1,3 +1,7 @@
+<% flash.each do |key, value| %>
+	<div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+
 <%= link_to "Edit Apartment", edit_apartment_path(id: @apartment.id) %>
 
 <h2><%= @apartment.title %></h2>
