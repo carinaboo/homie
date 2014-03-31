@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: apartments
+#
+#  id                     :integer          not null, primary key
+#  title                  :string(255)
+#  address                :string(255)
+#  description            :text
+#  price                  :float
+#  bathrooms              :float
+#  bedrooms               :float
+#  average_overall_rating :float
+#  created_at             :datetime
+#  updated_at             :datetime
+#  user_id                :integer
+#
+
 require 'spec_helper'
 
 describe Apartment do
@@ -10,11 +27,11 @@ describe Apartment do
 
   describe "new apartment" do
   	it "can only be added by logged in user" do	
-	 	expect(@valid_apt.is_a? Apartment).to (eq true)
+	 	expect(@valid_apt.valid?).to (eq true)
   	end
 
   	it "cannot be added by user not logged in" do
-	 	expect(@bad_apt).to (eq Apartment::FORBIDDEN)
+	 	expect(@bad_apt.valid?).to (eq false)
   	end
 
 	it "testAddUserId" do

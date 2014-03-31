@@ -2,13 +2,15 @@
 
 <%= form_for(@apartment) do |f| %>
 
-  <div><%= f.label :Title %><br />
+<%= render 'shared/error_messages' %> 
+
+  <div><%= f.label :title %><br />
   <%= f.text_field :title %></div>
 
-   <div><%= f.label :Address %><br />
+   <div><%= f.label :address %><br />
   <%= f.text_field :address %></div>
 
-  <div><%= f.label :Description %><br />
+  <div><%= f.label :description %><br />
   <%= f.text_area :description %></div>
 
   <div><%= f.label :price %><br />

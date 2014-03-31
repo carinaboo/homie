@@ -1,44 +1,12 @@
-<style>
-.index_box {
-  height: auto;
-  margin: 50px;
-  padding: 25px;
-  background-color: rgba(250,250,250,0.5);
-  border-radius: 5px;
-  /*box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2), 
-          inset 0px 1px 0px 0px rgba(250, 250, 250, 0.5);*/
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  /*filter:alpha(opacity=60);*/
-  /*opacity:0.6;*/
-}
-
-.box .homie
-{
-  float:left;
-  margin: 1px;
-  display: block;
-}
-
-.inline
-{
-  float:right;
-  margin: 5px;
-}
-
-</style>
-
-
-
-<div class="index_box">
+<div class="main">
   <% if current_user %>
   <h2 class="">Welcome <%= current_user.username %></h2>
   <% end %>
   <br>
   <section class ="">
   <%= form_tag apartments_search_path, :method => 'get' do %>
-    <%= text_field_tag :search, params[:search], :id => 'search_field' %>
-    <%= submit_tag "Search", :name => nil %> 
-    <%= link_to_function "Clear", "$('search_field').clear()" %>
+    <%= text_field_tag :search, params[:search], :id => 'search_field', :placeholder => "Search address or listing title" %>
+    <%= submit_tag "Search", name: nil, class: "btn btn-primary" %> 
   <% end %> 
   </section>
 </div>

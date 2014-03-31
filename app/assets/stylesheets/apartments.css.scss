@@ -1,3 +1,47 @@
 // Place all the styles related to the Apartments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#search_field {
+	width: 300px;
+}
+
+select[name=sorting] {
+	margin-left: 190px;
+}
+
+#filters {
+	label {
+		display: inline-block;
+		margin-left: 20px;
+	}
+	input {
+		width: 20px;
+	}
+	input[name=min_price], input[name=max_price] {
+		width: 50px;
+	}
+	#reset_filters {
+		margin-left: 20px;
+	}
+}
+
+.apartments {
+	width: 100%; 
+
+	.title {
+		min-width: 230px;
+	}
+	.address {
+		min-width: 300px;
+	}
+	.bedrooms, .bathrooms, .price, .rating {
+		width: auto;
+	}
+	.price {
+		text-align: right;
+	}
+	.rating {
+		text-align: right;
+	}
+}

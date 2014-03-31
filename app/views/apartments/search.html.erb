@@ -1,31 +1,67 @@
-<%= form_tag apartments_search_path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:search], :id => 'search_field' %>
-  <%= submit_tag "Search", :name => nil %> 
-  <%= link_to_function "Clear", "$('search_field').clear()" %>
+<%= form_tag apartments_search_path, id: "search_form", method: 'get' do %>
+  <%= text_field_tag :search, params[:search], id: "search_field", placeholder: "Search address or listing title" %>
+  <%= submit_tag "Search", name: nil, class: "btn btn-primary" %> 
+  <%= select_tag "sorting", options_for_select([ "Ratings: high to low", "Ratings: low to high", "Price: high to low", "Price: low to high" ], :selected => params[:sorting]), :onchange => "this.form.submit();" %>
+  <div id="filters">
+    <span>Filters:</span>
+
+    <%= label_tag :price, "Price"%>
+    <%= text_field_tag :min_price, params[:min_price], placeholder: 0 %>
+    <span>to</span>
+    <%= text_field_tag :max_price, params[:max_price], placeholder: @max_price.round(0) %>
+    
+    <%= label_tag :rating, "Minimum Rating"%>
+    <%= text_field_tag :min_rating, params[:min_rating], placeholder: 0 %>
+    
+    <%= label_tag :bedrooms, "Bedrooms" %>
+    <%= text_field_tag :min_bedrooms, params[:min_bedrooms], placeholder: 1 %>
+    <span>to</span>
+    <%= text_field_tag :max_bedrooms, params[:max_bedrooms], placeholder: @max_bedrooms.round(0) %>
+    
+    <%= label_tag :bathrooms, "Bathrooms" %>
+    <%= text_field_tag :min_bathrooms, params[:min_bathrooms], placeholder: 1 %>
+    <span>to</span>
+    <%= text_field_tag :max_bathrooms, params[:max_bathrooms], placeholder: @max_bathrooms.round(0) %>
+
+    <%= link_to "Clear", "#", id: "reset_filters" %>
+  </div>
 <% end %> 
 
-<h2>Search result</h2>
+<h2>Search results</h2>
 
-<table>
+<table class="apartments">
   <thead>
     <tr>
       <th>Title</th>
       <th>Address</th>
-      <th>price</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Bedrooms</th>
+      <th>Bathrooms</th>
+      <th>Price</th>
+      <th>Rating</th>
     </tr>
   </thead>
-
   <tbody>
     <% @apartments.each do |apt| %>
       <tr>
-        <td><a href="/apartments/<%= apt.id %>" >View</a></td>
-        <td><%= apt.title %></td>
-        <td><%= apt.address %></td>
-        <td><%= apt.price %></td>
+        <td class="title"><%= link_to apt.title, apt %></td>
+        <td class="address"><%= apt.address %></td>
+        <td class="bedrooms"><%= apt.bedrooms.round(0) %></td>
+        <td class="bathrooms"><%= apt.bathrooms.round(0) %></td>
+        <td class="price"><span class="amount"><%= number_to_currency(apt.price) %></span></td>
+        <td class="rating"><%= number_with_precision(apt.average_overall_rating, precision: 2) if apt.average_overall_rating %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<script>
+$(function() {
+  $("#reset_filters").click(function(e){
+    e.preventDefault();
+    $("#filters input").each(function() {
+      $(this).val("");
+    })
+    $("#search_form").submit();
+  });
+});
+</script>

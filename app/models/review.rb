@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: reviews
+#
+#  id             :integer          not null, primary key
+#  user_id        :integer
+#  review         :text
+#  overall_rating :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#  apartment_id   :integer
+#
+
 class Review < ActiveRecord::Base
   belongs_to :apartment, class_name: 'Apartment', foreign_key: 'apartment_id'
   belongs_to :user, class_name: 'User', foreign_key: 'user_id'

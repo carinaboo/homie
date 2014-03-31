@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: apartments
+#
+#  id                     :integer          not null, primary key
+#  title                  :string(255)
+#  address                :string(255)
+#  description            :text
+#  price                  :float
+#  bathrooms              :float
+#  bedrooms               :float
+#  average_overall_rating :float
+#  created_at             :datetime
+#  updated_at             :datetime
+#  user_id                :integer
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:

@@ -1,0 +1,34 @@
+<h6> [User photo will be here] </h6>
+
+<h1><%= @user.username %></h1>
+<h4>About You: </h4>
+<h4>Your Email: <%= @user.email %></h4>
+<hr />
+<h4>Apartment Listings You Created</h4>
+
+<table class="apartments">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Address</th>
+      <th>Bedrooms</th>
+      <th>Bathrooms</th>
+      <th>Price</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @apartments.each do |apt| %>
+      <tr>
+        <td><a href="/apartments/<%= apt.id %>">View</a></td>
+        <td class="title"><%= apt.title %></td>
+        <td class="address"><%= apt.address %></td>
+        <td class="bedrooms"><%= apt.bedrooms.round(0) %></td>
+        <td class="bathrooms"><%= apt.bathrooms.round(0) %></td>
+        <td class="price"><span class="amount"><%= number_to_currency(apt.price) %></span></td>
+        <td class="rating"><%= number_with_precision(apt.average_overall_rating, precision: 2) if apt.average_overall_rating %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
