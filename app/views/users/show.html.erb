@@ -5,29 +5,30 @@
 <h4>Your Email: <%= @user.email %></h4>
 <hr />
 <h4>Apartment Listings You Created</h4>
-<table>
+
+<table class="apartments">
   <thead>
     <tr>
-      <th> </th>
+      <th></th>
       <th>Title</th>
       <th>Address</th>
-      <th>price</th>
-      <th>id</th>
-      <th></th>
-      <th></th>
+      <th>Bedrooms</th>
+      <th>Bathrooms</th>
+      <th>Price</th>
+      <th>Rating</th>
     </tr>
   </thead>
-
   <tbody>
     <% @apartments.each do |apt| %>
       <tr>
-        <td><a href="/apartments/<%= apt.id %>" >View</a></td>
-        <td><%= apt.title %></td>
-        <td><%= apt.address %></td>
-        <td><%= apt.price %></td>
-        <td><%= apt.user_id %></td>
+        <td><a href="/apartments/<%= apt.id %>">View</a></td>
+        <td class="title"><%= apt.title %></td>
+        <td class="address"><%= apt.address %></td>
+        <td class="bedrooms"><%= apt.bedrooms.round(0) %></td>
+        <td class="bathrooms"><%= apt.bathrooms.round(0) %></td>
+        <td class="price"><span class="amount"><%= number_to_currency(apt.price) %></span></td>
+        <td class="rating"><%= number_with_precision(apt.average_overall_rating, precision: 2) if apt.average_overall_rating %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-</h3>
