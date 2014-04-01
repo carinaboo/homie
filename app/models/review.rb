@@ -21,7 +21,7 @@ class Review < ActiveRecord::Base
   validates :user_id, presence: true
   validates :apartment_id, presence: true
   validates :overall_rating, presence: true
-  validates :review, presence: true
+  # validates :review, presence: true
 
   def self.add(user_id, overall_rating, review)
     # adds a review to the database
