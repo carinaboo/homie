@@ -44,7 +44,11 @@
     <% @apartments.each do |apt| %>
       <tr>
         <td class="title"><%= link_to apt.title, apt %></td>
-        <td class="address"><%= apt.address %></td>
+        <td class="street_address"><%= apt.street_address %></td>
+        <td class="apartment_number"><%= apt.apartment_number %></td>
+        <td class="city"><%= apt.city %></td>
+        <td class="state"><%= apt.state %></td>
+        <td class="zip"><%= apt.zip %></td>
         <td class="bedrooms"><%= apt.bedrooms.round(0) %></td>
         <td class="bathrooms"><%= apt.bathrooms.round(0) %></td>
         <td class="price"><span class="amount"><%= number_to_currency(apt.price) %></span></td>

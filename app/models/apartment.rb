@@ -62,7 +62,7 @@ class Apartment < ActiveRecord::Base
 			end
 
 			# find(:all, :conditions => ['address LIKE ?', "%#{search}%"], :order =>  sorting)
-			Apartment.where('(title LIKE ? OR address LIKE ?) AND (price >= ? AND price <= ? AND (average_overall_rating >= ? OR average_overall_rating IS ?) AND bedrooms >= ? AND bedrooms <= ? AND bathrooms >= ? AND bathrooms <= ?)', 
+			Apartment.where('(title LIKE ? OR street_address LIKE ?) AND (price >= ? AND price <= ? AND (average_overall_rating >= ? OR average_overall_rating IS ?) AND bedrooms >= ? AND bedrooms <= ? AND bathrooms >= ? AND bathrooms <= ?)',
 				"%#{search}%", "%#{search}%", min_price.presence || 0, max_price.presence || Apartment.maximum("price"), 
 				min_rating.presence || 0, min_rating.presence || nil,
 				min_bedrooms.presence || 0, max_bedrooms.presence || Apartment.maximum("bedrooms"), 
