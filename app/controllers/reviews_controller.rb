@@ -7,8 +7,8 @@ class ReviewsController < ApplicationController
 
   def create
     # can only create when in an apartment page!
-    # assuming add method in model will return correct error code or new_average
     if(current_user)	# check if the user is loggin in
+
       apartment = Apartment.find(params[:review][:apartment_id])   
       # update new averge rating
       num_of_reviews = apartment.reviews.count
@@ -47,8 +47,9 @@ class ReviewsController < ApplicationController
         # update new averge rating
         num_of_reviews = apartment.reviews.count
         average_review = apartment.average_overall_rating || 0
-        overall_rating = params[:review][:overall_rating].to_i
-        new_average = Review.add_average_rating(num_of_reviews, average_review, overall_rating)
+        new_overall_rating = params[:review][:overall_rating].to_i
+        old_overall_rating = review.overall_rating
+        new_average = Review.update_average_rating(num_of_reviews, average_review, old_overall_rating, new_overall_rating)
         apartment.average_overall_rating = new_average;
         apartment.save;
         # add review to apartment
