@@ -7,7 +7,8 @@
 
 
 <h2><%= @apartment.title %></h2>
-<p><%= @apartment.address %></p>
+<p><%= @apartment.street_address %>, <%= @apartment.apartment_number %></p>
+<p><%= @apartment.city %>, <%= @apartment.state %> <%= @apartment.zip %></p>
 <p><%= @apartment.description %></p>
 <p>$<%= @apartment.price %></p>
 <p><%= @apartment.bedrooms %> bedrooms</p>

@@ -19,16 +19,16 @@ class Apartment < ActiveRecord::Base
 	has_many :reviews
 	belongs_to :user, class_name: 'User', foreign_key: 'user_id'
 
-	validates :user_id, :title, :description, :bedrooms, :bathrooms, presence: true
-	validates :address, presence: true, uniqueness: { case_sensitive: false }
+	validates :user_id, :title, :city, :state, :zip, :description, :bedrooms, :bathrooms, presence: true
+	validates :street_address, presence: true, uniqueness: { case_sensitive: false }
 	validates :price, presence: true, numericality: { greater_than: 0}
 
 	SUCCESS = 1
   	FORBIDDEN = 403
 
   	#adds a new apartment to the database and returns errorCode if not valid.
-	def self.add(user_id, title, address, description, price, bedrooms, bathrooms)
-		apartment = new(user_id: user_id, title: title, address: address, description: description, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
+	def self.add(user_id, title, street_address, apartment_number, city, state, zip, description, price, bedrooms, bathrooms)
+		apartment = new(user_id: user_id, title: title, street_address: street_address, apartment_number: apartment_number, city: city, state: state, zip: zip, description: description, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
 		apartment.save
 		return apartment
 		#apartment.errors.messages
@@ -37,8 +37,8 @@ class Apartment < ActiveRecord::Base
 
 	#update the description for this apartment record and then returns FORBIDDEN if
 	#the updates are not valid; otherwise returns 1 for success
-	def update(user_id, title, address, description, price, bedrooms, bathrooms)
-		valid = self.update_attributes(user_id: user_id, title: title, address: address, description: description, price: price, bedrooms: bedrooms, bathrooms: bathrooms)
+	def update(user_id, title, street_address, apartment_number, city, state, zip, description, price, bedrooms, bathrooms)
+		valid = self.update_attributes(user_id: user_id, title: title, street_address: street_address, apartment_number: apartment_number, city: city, state: state, zip: zip, description: description, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
 		return self if valid
 		FORBIDDEN
 	end
