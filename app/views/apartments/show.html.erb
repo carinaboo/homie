@@ -20,6 +20,14 @@
 <%= form_for @review, url: "/reviews", html: {method: :post} do |f| %>
 
 	<div><%= f.label :Overall_Rating %><br />
+	<ul class="rating">
+		<% (1..5).each do |i| %>
+			<li class="rating_star" data-apt-id="<%= @apartment.id %>" data-stars="<%= i %>" id="<%= "#{@apartment.id}_#{i}" %>"></li>
+		<% end %>
+	</ul>
+	<br />
+	<br />
+	<br />
 	<%= f.select :overall_rating, 1..5 %></div>
 
 	<div><%= f.label :Review %><br />
@@ -45,7 +53,7 @@
     </tr>
   	</thead>
 
-	<tbody>
+<!-- 	<tbody>
 		<% @reviews.each do |review| %>
 			<tr>
 				<td><%= link_to "Edit", edit_review_path(id: review.id) %></td>
@@ -63,4 +71,33 @@
 			</tr>
 		<% end %>
 	</tbody>
+</table> -->
+
+	<tbody>
+		<span id = "haha">hahahahah</span>
+
+		<% @reviews.each do |review| %>
+			<tr>
+				<span id="corresponed_user">
+					<td><%= link_to "Edit" , edit_review_path(id: review.id) %></td>
+				</span>
+				
+			    <td><%= review.user.username %></td>
+			    <td>
+				    <% if review.review != nil %>
+				    <%= review.review %>
+				    <% end %>
+			    </td>
+			    <td><%= review.overall_rating %></td>
+			    <td><%= review.created_at %></td>
+			    <td><%= review.updated_at %></td>
+			    <td><%= review.apartment_id %></td>
+			</tr>
+		<% end %>
+	</tbody>
 </table>
+
+<script type="text/javascript">
+$('#corresponed_user').hide();
+$('#haha').hide();
+</script>

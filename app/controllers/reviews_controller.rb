@@ -7,8 +7,7 @@ class ReviewsController < ApplicationController
 
   def create
     # can only create when in an apartment page!
-    # assuming add method in model will return correct error code or new_average
-    if(current_user)  # check if the user is loggin in
+    if(current_user)	# check if the user is loggin in
       apartment = Apartment.find(params[:review][:apartment_id])   
       # update new averge rating
       num_of_reviews = apartment.reviews.count
@@ -47,8 +46,9 @@ class ReviewsController < ApplicationController
         # update new averge rating
         num_of_reviews = apartment.reviews.count
         average_review = apartment.average_overall_rating || 0
-        overall_rating = params[:review][:overall_rating].to_i
-        new_average = Review.add_average_rating(num_of_reviews, average_review, overall_rating)
+        new_overall_rating = params[:review][:overall_rating].to_i
+        old_overall_rating = review.overall_rating
+        new_average = Review.update_average_rating(num_of_reviews, average_review, old_overall_rating, new_overall_rating)
         apartment.average_overall_rating = new_average;
         apartment.save;
         # add review to apartment
@@ -69,7 +69,7 @@ class ReviewsController < ApplicationController
     # array_of_records.each_with_index{ |val, index|
     #   review_id = val.review_id
     #   user_id = val.user_id
-    #   username = User.find(user_id).username    #Todo: name is username or real name?
+    #   username = User.find(user_id).username 		#Todo: name is username or real name?
     #   review = val.review
     #   overall_rating = val.overall_rating
     #   json_object = {:review_id=>review_id, :username=>username, :review=>review, :overall_rating=>overall_rating}.to_json
