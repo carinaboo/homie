@@ -6,8 +6,10 @@ Homie::Application.routes.draw do
   get "reviews/:id/edit", to: 'reviews#edit', as: 'edit_review'
   put "reviews/:id", to: 'reviews#update', as: 'update_review'
   get "reviews/:apt_id", to: 'reviews#find_by_apt', as: 'reviews_find_by_apt'
+  delete 'reviews/:id', to: 'reviews#delete', as:'delete_review'
 
   get 'apartments/search', to: 'apartments#search'
+  #get 'apartments/delete', to: 'apartment#delete', as: 'delete_apartment'
   resources :apartments
   # devise_for :users
 

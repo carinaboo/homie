@@ -96,5 +96,22 @@ class ApartmentsController < ApplicationController
     @max_bedrooms = Apartment.maximum("bedrooms")
     @max_bathrooms = Apartment.maximum("bathrooms")
   end
+
+  def destroy
+    @apartment = Apartment.find(params[:id])
+    if !@apartment
+      flash[:error] = "Error: Apartment page not found\n"
+      redirect_to root_path
+    elsif !current_user
+      flash[:error] = "Error: user must be signed in to delete apartment\n"
+      redirect_to @apartment
+    elsif @apartment.user_id != current_user.id
+      flash[:error] = "Error: only the owner is allowed to delete apartment\n"
+      redirect_to @apartment
+    else
+      Apartment.delete(@apartment.address)
+      redirect_to root_path
+    end
+  end
  
 end

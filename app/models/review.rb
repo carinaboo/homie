@@ -71,4 +71,9 @@ class Review < ActiveRecord::Base
     return new_average
   end
 
+  def self.delete(user_id, apartment_id)
+    self.where('user_id = ? AND apartment_id = ?', user_id, apartment_id).first.destroy
+    #self.find(:all, :conditions => { :user_id => user_id, :apartment_id => apartment_id}).destroy
+  end
+
 end

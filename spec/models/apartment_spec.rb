@@ -121,4 +121,26 @@ describe Apartment do
 	  	expect(result).to (eq [])
 	  end 
 	end
+
+	describe "delete apartment" do
+	  before do
+		@apartment.update(2, "apt3", "addr3", "desc3", 2000, 2, 2)
+	  end
+
+	  it "test delete with valid address" do
+	  	result = Apartment.delete("addr2")
+	  	expect(result.first.address).to (true)
+	  end
+
+	  it "test delete with invalid address" do
+	  	result = Apartment.search("addr1")
+	  	expect(result).to (false)
+	  end	
+
+	  it "test delete with nil passed in" do
+	  	result = Apartment.search(nil)
+	  	expect(result).to (false)
+	  end 
+	end
+
 end

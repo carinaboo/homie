@@ -3,6 +3,8 @@
 <% end %>
 
 <%= link_to "Edit Apartment", edit_apartment_path(id: @apartment.id) %>
+<p><%= link_to "Delete Apartment", apartment_path(id: @apartment.id), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+
 
 <h2><%= @apartment.title %></h2>
 <p><%= @apartment.address %></p>
@@ -33,6 +35,7 @@
 	<thead>
     <tr>
     	<th></th>
+    	<th></th>
 		<th>User</th>
 		<th>Review</th>
 		<th>Overall Rating</th>
@@ -46,6 +49,7 @@
 		<% @reviews.each do |review| %>
 			<tr>
 				<td><%= link_to "Edit", edit_review_path(id: review.id) %></td>
+				<td><%= link_to "Delete", delete_review_path(id: review.id), :data => { :confirm => "Are you sure?" }, :method => :delete %></td>
 			    <td><%= review.user.username %></td>
 			    <td>
 				    <% if review.review != nil %>
