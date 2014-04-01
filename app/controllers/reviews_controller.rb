@@ -7,7 +7,6 @@ class ReviewsController < ApplicationController
 
   def create
     # can only create when in an apartment page!
-    # assuming add method in model will return correct error code or new_average
     if(current_user)	# check if the user is loggin in
       apartment = Apartment.find(params[:review][:apartment_id])   
       # update new averge rating
@@ -47,8 +46,9 @@ class ReviewsController < ApplicationController
         # update new averge rating
         num_of_reviews = apartment.reviews.count
         average_review = apartment.average_overall_rating || 0
-        overall_rating = params[:review][:overall_rating].to_i
-        new_average = Review.add_average_rating(num_of_reviews, average_review, overall_rating)
+        new_overall_rating = params[:review][:overall_rating].to_i
+        old_overall_rating = review.overall_rating
+        new_average = Review.update_average_rating(num_of_reviews, average_review, old_overall_rating, new_overall_rating)
         apartment.average_overall_rating = new_average;
         apartment.save;
         # add review to apartment
@@ -76,5 +76,27 @@ class ReviewsController < ApplicationController
     #   new_array[index] = json_object
     # }
     # return new_array
+  end
+
+  def delete
+    review = Review.find(params[:id])
+    @apartment = Apartment.find(review.apartment_id)
+    # check if the current user modifying the review is the user wrote the review
+    user_id = review.user_id
+    if !@apartment
+      flash[:error] = "Error: Apartment page not found\n"
+      redirect_to root_path
+    elsif current_user.id != user_id
+      #user is not review creator
+      flash[:error] = "Error: only the owner is allowed to delete apartment\n"
+      redirect_to @apartment
+    elsif !current_user
+      # user is not logged in
+      flash[:error] = "Error: user must be signed in to delete apartment\n"
+      redirect_to @apartment
+    else
+      Review.delete(user_id, review.apartment_id)
+      redirect_to @apartment
+    end
   end
 end

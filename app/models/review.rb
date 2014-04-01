@@ -21,7 +21,7 @@ class Review < ActiveRecord::Base
   validates :user_id, presence: true
   validates :apartment_id, presence: true
   validates :overall_rating, presence: true
-  validates :review, presence: true
+  # validates :review, presence: true
 
   def self.add(user_id, overall_rating, review)
     # adds a review to the database
@@ -69,6 +69,11 @@ class Review < ActiveRecord::Base
     total = num_of_reviews * average_review - old_overall_rating + new_overall_rating
     new_average = Float(total) / num_of_reviews
     return new_average
+  end
+
+  def self.delete(user_id, apartment_id)
+    self.where('user_id = ? AND apartment_id = ?', user_id, apartment_id).first.destroy
+    #self.find(:all, :conditions => { :user_id => user_id, :apartment_id => apartment_id}).destroy
   end
 
 end

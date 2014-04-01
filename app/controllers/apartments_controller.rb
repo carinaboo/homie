@@ -9,7 +9,7 @@ class ApartmentsController < ApplicationController
   #if the user is logged in and hasn't already added a review.
   def show
     @apartment = Apartment.find(params[:id])
-    @reviews = Review.find_by_apt(params[:id])
+    @reviews = Review.find_by_apt(params[:id]) 
     @review = Review.new
     #boolean value used in view to decide whether user can add new review
     # @show_form = can_review?(@reviews)        #method from ApartmentsHelper
@@ -95,6 +95,23 @@ class ApartmentsController < ApplicationController
     @max_price = Apartment.maximum("price")
     @max_bedrooms = Apartment.maximum("bedrooms")
     @max_bathrooms = Apartment.maximum("bathrooms")
+  end
+
+  def destroy
+    @apartment = Apartment.find(params[:id])
+    if !@apartment
+      flash[:error] = "Error: Apartment page not found\n"
+      redirect_to root_path
+    elsif !current_user
+      flash[:error] = "Error: user must be signed in to delete apartment\n"
+      redirect_to @apartment
+    elsif @apartment.user_id != current_user.id
+      flash[:error] = "Error: only the owner is allowed to delete apartment\n"
+      redirect_to @apartment
+    else
+      Apartment.delete(@apartment.address)
+      redirect_to root_path
+    end
   end
  
 end

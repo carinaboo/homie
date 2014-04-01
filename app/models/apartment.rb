@@ -72,4 +72,8 @@ class Apartment < ActiveRecord::Base
 			# find(:all)
 		end
 	end
+
+	def self.delete(address)
+		self.find_by_address(address).destroy
+	end
 end

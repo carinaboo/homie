@@ -3,6 +3,8 @@
 <% end %>
 
 <%= link_to "Edit Apartment", edit_apartment_path(id: @apartment.id) %>
+<p><%= link_to "Delete Apartment", apartment_path(id: @apartment.id), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+
 
 <h2><%= @apartment.title %></h2>
 <p><%= @apartment.address %></p>
@@ -18,6 +20,14 @@
 <%= form_for @review, url: "/reviews", html: {method: :post} do |f| %>
 
 	<div><%= f.label :Overall_Rating %><br />
+	<ul class="rating">
+		<% (1..5).each do |i| %>
+			<li class="rating_star" data-apt-id="<%= @apartment.id %>" data-stars="<%= i %>" id="<%= "#{@apartment.id}_#{i}" %>"></li>
+		<% end %>
+	</ul>
+	<br />
+	<br />
+	<br />
 	<%= f.select :overall_rating, 1..5 %></div>
 
 	<div><%= f.label :Review %><br />
@@ -33,6 +43,7 @@
 	<thead>
     <tr>
     	<th></th>
+    	<th></th>
 		<th>User</th>
 		<th>Review</th>
 		<th>Overall Rating</th>
@@ -42,10 +53,35 @@
     </tr>
   	</thead>
 
-	<tbody>
+<!-- 	<tbody>
 		<% @reviews.each do |review| %>
 			<tr>
 				<td><%= link_to "Edit", edit_review_path(id: review.id) %></td>
+				<td><%= link_to "Delete", delete_review_path(id: review.id), :data => { :confirm => "Are you sure?" }, :method => :delete %></td>
+			    <td><%= review.user.username %></td>
+			    <td>
+				    <% if review.review != nil %>
+				    <%= review.review %>
+				    <% end %>
+			    </td>
+			    <td><%= review.overall_rating %></td>
+			    <td><%= review.created_at %></td>
+			    <td><%= review.updated_at %></td>
+			    <td><%= review.apartment_id %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table> -->
+
+	<tbody>
+		<span id = "haha">hahahahah</span>
+
+		<% @reviews.each do |review| %>
+			<tr>
+				<span id="corresponed_user">
+					<td><%= link_to "Edit" , edit_review_path(id: review.id) %></td>
+				</span>
+				
 			    <td><%= review.user.username %></td>
 			    <td>
 				    <% if review.review != nil %>
@@ -60,3 +96,8 @@
 		<% end %>
 	</tbody>
 </table>
+
+<script type="text/javascript">
+$('#corresponed_user').hide();
+$('#haha').hide();
+</script>
