@@ -18,6 +18,14 @@
 <%= form_for @review, url: "/reviews", html: {method: :post} do |f| %>
 
 	<div><%= f.label :Overall_Rating %><br />
+	<ul class="rating">
+		<% (1..5).each do |i| %>
+			<li class="rating_star" data-apt-id="<%= @apartment.id %>" data-stars="<%= i %>" id="<%= "#{@apartment.id}_#{i}" %>"></li>
+		<% end %>
+	</ul>
+	<br />
+	<br />
+	<br />
 	<%= f.select :overall_rating, 1..5 %></div>
 
 	<div><%= f.label :Review %><br />
