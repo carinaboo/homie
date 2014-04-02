@@ -8,7 +8,7 @@
     <%= label_tag :price, "Price"%>
     <%= text_field_tag :min_price, params[:min_price], placeholder: 0 %>
     <span>to</span>
-    <%= text_field_tag :max_price, params[:max_price], placeholder: @max_price.round(0) %>
+        <%= text_field_tag :max_price, params[:max_price], placeholder: @max_price.round(0) %>
     
     <%= label_tag :rating, "Minimum Rating"%>
     <%= text_field_tag :min_rating, params[:min_rating], placeholder: 0 %>
