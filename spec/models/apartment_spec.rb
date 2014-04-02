@@ -95,12 +95,11 @@ describe Apartment do
 
   describe "update and search for apartment" do
     before do
-      @apartment = Apartment.add(2, "apt2", "addr2", "apt#2", "city2", "state2", 94703, "desc2", 2000, 2, 2)
-
-    # @apartment.update(2, "apt2", "addr2", "apt#2", "city2", "state2", 94703, "desc2", 2000, 2, 2)
-    #       (user_id, title, street_address, apartment_number, city, state, zip, description, price, bedrooms, bathrooms)
-    # @new_apt = Apartment.add(3, "apt3", "addr3", "apt#3", "city2", "state", 94704, "desc1", 1000, 1, 1)
+    @apartment.update(2, "apt2", "addr2", "apt#2", "city2", "state2", 94703, "desc2", 2000, 2, 2)
+    @apartment1 = Apartment.add(2, "apt1", "addr1", "apt#1", "city2", "state2", 94703, "desc2", 2000, 2, 2)
+    @new_apt = Apartment.add(3, "apt3", "addr3", "apt#3", "city2", "state", 94704, "desc1", 1000, 1, 1)
     review1 = @apartment.reviews.add(2, 5, "hjk")
+    review1 = @apartment1.reviews.add(2, 1, "wertyui")
     end
 
     it "testUpdateId" do
