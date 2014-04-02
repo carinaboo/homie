@@ -93,13 +93,17 @@ describe Apartment do
     end
    end
 
-  describe "update and search for apartment" do
+   describe "update and search for apartment" do
     before do
-    @apartment.update(2, "apt2", "addr2", "apt#2", "city2", "state2", 94703, "desc2", 2000, 2, 2)
-    @apartment1 = Apartment.add(2, "apt1", "addr1", "apt#1", "city2", "state2", 94703, "desc2", 2000, 2, 2)
-    @new_apt = Apartment.add(3, "apt3", "addr3", "apt#3", "city2", "state", 94704, "desc1", 1000, 1, 1)
-    review1 = @apartment.reviews.add(2, 5, "hjk")
-    review1 = @apartment1.reviews.add(2, 1, "wertyui")
+      @apartment.update(2, "apt2", "addr2", "apt#2", "city2", "state2", 94703, "desc2", 2000, 2, 2)
+      @apartment1 = Apartment.add(2, "apt1", "addr1", "apt#1", "city2", "state2", 94703, "desc2", 2000, 2, 2)
+      @new_apt = Apartment.add(3, "apt3", "addr3", "apt#3", "city2", "state", 94704, "desc1", 1000, 1, 1)
+      review1 = @apartment1.reviews.add(2, 5, "hjk")
+      @apartment1.average_overall_rating = 5
+      @apartment1.save
+      review2 = @new_apt.reviews.add(2, 1, "wertyui")
+      @new_apt.average_overall_rating = 5
+      @new_apt.save
     end
 
     it "testUpdateId" do
@@ -147,17 +151,14 @@ describe Apartment do
     end
 
     it "test search with valid address" do
-      result = Apartment.search("addr2", "Ratings: low to high", 0, 9999, 0, 0, 10, 1, 10)
-      expect(result.first != nil)
-      puts "0000000000000000000000"
-      puts result.first.street_address
-      puts "========================="
-      expect(result.first.street_address).to (eq "addr2")
+      result = Apartment.search("addr1", "Ratings: low to high", nil, 9999, 0, 0, 10, 1, 10)
+      puts result
+      expect(result.first.street_address).to (eq "addr1")
     end
 
     it "test search with valid address and sort price from high to low" do
       result = Apartment.search("city2", "Price: high to low", 0, 9999, 0, 0, 10, 1, 10)
-      expect(result.first.street_address).to (eq "addr2")
+      expect(result.first.street_address).to (eq "addr1")
     end
 
     it "test search with valid address and sort price from low to high" do
@@ -167,17 +168,17 @@ describe Apartment do
 
     it "test search with valid address and sort ratings from high to low" do
       result = Apartment.search("city2", "Ratings: high to low", 0, 9999, 0, 0, 10, 1, 10)
-      expect(result.first.street_address).to (eq "addr2")
+      expect(result.first.street_address).to (eq "addr1")
     end
 
     it "test search with valid address and sort ratings from low to high" do
-      result = Apartment.search("city2", "Ratings: high to low", 0, 9999, 0, 0, 10, 1, 10)
-      expect(result.first.street_address).to (eq "addr3")
+      result = Apartment.search("city2", "Ratings: low to high", 0, 9999, 0, 0, 10, 1, 10)
+      expect(result.first.street_address).to (eq "addr1")
     end
 
 
     it "test search with invalid address" do
-      result = Apartment.search("addr1", "Ratings: high to low", 0, 9999, 0, 0, 10, 1, 10)
+      result = Apartment.search("addrghjkl", "Ratings: high to low", 0, 9999, 0, 0, 10, 1, 10)
       expect(result).to (eq [])
     end
 
