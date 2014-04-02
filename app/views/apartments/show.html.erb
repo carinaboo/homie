@@ -81,6 +81,8 @@
 				<span id="corresponed_user">
 					<td><%= link_to "Edit" , edit_review_path(id: review.id) %></td>
 				</span>
+
+				<td><%= link_to "Delete", delete_review_path(id: review.id), :data => { :confirm => "Are you sure?" }, :method => :delete %></td>
 				
 			    <td><%= review.user.username %></td>
 			    <td>
