@@ -7,8 +7,13 @@ class ReviewsController < ApplicationController
 
   def create
     # can only create when in an apartment page!
+<<<<<<< HEAD
     if(current_user)	# check if the user is loggin in
       apartment = Apartment.find(params[:review][:apartment_id]) 
+=======
+    if(current_user)  # check if the user is loggin in
+      apartment = Apartment.find(params[:review][:apartment_id])   
+>>>>>>> FETCH_HEAD
       # update new averge rating
       num_of_reviews = apartment.reviews.count
       average_review = apartment.average_overall_rating || 0
@@ -69,7 +74,7 @@ class ReviewsController < ApplicationController
     # array_of_records.each_with_index{ |val, index|
     #   review_id = val.review_id
     #   user_id = val.user_id
-    #   username = User.find(user_id).username 		#Todo: name is username or real name?
+    #   username = User.find(user_id).username    #Todo: name is username or real name?
     #   review = val.review
     #   overall_rating = val.overall_rating
     #   json_object = {:review_id=>review_id, :username=>username, :review=>review, :overall_rating=>overall_rating}.to_json

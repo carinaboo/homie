@@ -19,8 +19,8 @@ class Apartment < ActiveRecord::Base
 	has_many :reviews
 	belongs_to :user, class_name: 'User', foreign_key: 'user_id'
 
-	validates :user_id, :title, :city, :state, :zip, :description, :bedrooms, :bathrooms, presence: true
-	validates :street_address, presence: true, uniqueness: { case_sensitive: false }
+	validates :user_id, :street_address, :title, :city, :state, :zip, :description, :bedrooms, :bathrooms, presence: true
+	#validates :street_address, presence: true, uniqueness: { case_sensitive: false }
 	validates :price, presence: true, numericality: { greater_than: 0}
 
 	SUCCESS = 1
@@ -28,9 +28,11 @@ class Apartment < ActiveRecord::Base
 
   	#adds a new apartment to the database and returns errorCode if not valid.
 	def self.add(user_id, title, street_address, apartment_number, city, state, zip, description, price, bedrooms, bathrooms)
-		apartment = new(user_id: user_id, title: title, street_address: street_address, apartment_number: apartment_number, city: city, state: state, zip: zip, description: description, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
-		apartment.save
-		return apartment
+		if self.where('street_address = ? AND apartment_number = ?', street_address, apartment_number).empty?
+			apartment = new(user_id: user_id, title: title, street_address: street_address, apartment_number: apartment_number, city: city, state: state, zip: zip, description: description, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
+			apartment.save
+			return apartment
+		end
 		#apartment.errors.messages
 		#FORBIDDEN
 	end
@@ -73,7 +75,7 @@ class Apartment < ActiveRecord::Base
 		end
 	end
 
-	def self.delete(address)
-		self.find_by_address(address).destroy
+	def self.delete(street_address, apartment_number)
+		self.where('street_address = ? AND apartment_number = ?', street_address, apartment_number).first.destroy
 	end
 end

@@ -79,9 +79,16 @@
 			<tr>
 				<% if review.user_id == @user_id.to_i %>
 					<td><%= link_to "Edit" , edit_review_path(id: review.id) %></td>
+<<<<<<< HEAD
 				<% else %>
 					<td></td>
 				<% end %>
+=======
+				</span>
+
+				<td><%= link_to "Delete", delete_review_path(id: review.id), :data => { :confirm => "Are you sure?" }, :method => :delete %></td>
+				
+>>>>>>> FETCH_HEAD
 			    <td><%= review.user.username %></td>
 			    <td>
 				    <% if review.review != nil %>
