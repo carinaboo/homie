@@ -12,6 +12,14 @@ group :production do
   gem 'rails_12factor'
 end
 
+# Cucumber automated UI testing
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-websteps'
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
