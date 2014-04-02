@@ -3,4 +3,10 @@
   <data-source source="LOCAL" name="Rails homie: development" uuid="f195fc9b-1b4a-4e61-8920-19822af1949c">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source source="LOCAL" name="Rails homie: test" uuid="625b294d-1bfb-422b-a5dc-2d8a23606a29">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails homie: production" uuid="877a9dd2-43bb-4935-ae01-2f10e19f012d">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>
