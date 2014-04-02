@@ -4,7 +4,6 @@
 #
 #  id                     :integer          not null, primary key
 #  title                  :string(255)
-#  address                :string(255)
 #  description            :text
 #  price                  :float
 #  bathrooms              :float
@@ -13,6 +12,11 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  user_id                :integer
+#  street_address         :string(255)
+#  apartment_number       :string(255)
+#  city                   :string(255)
+#  state                  :string(255)
+#  zip                    :integer
 #
 
 class Apartment < ActiveRecord::Base

@@ -11,6 +11,7 @@
 #  apartment_id   :integer
 #
 
+
 require 'spec_helper'
 
 describe Review do
