@@ -12,7 +12,9 @@ class ApartmentsController < ApplicationController
     @reviews =  Review.find_by_apt(params[:id]) 
     @review = Review.new
     @reviewed = Review.hasReviewed(current_user, params[:id])
-    @user_id = current_user.id
+    if current_user
+      @user_id = current_user.id
+    end
     #boolean value used in view to decide whether user can add new review
     # @show_form = can_review?(@reviews)        #method from ApartmentsHelper
   end
@@ -109,16 +111,21 @@ class ApartmentsController < ApplicationController
 
   def destroy
     @apartment = Apartment.find(params[:id])
+    #print "destroy apartment"
     if !@apartment
+      #p "no apartment"
       flash[:error] = "Error: Apartment page not found\n"
       redirect_to root_path
     elsif !current_user
+      #p "not signed in"
       flash[:error] = "Error: user must be signed in to delete apartment\n"
       redirect_to @apartment
     elsif @apartment.user_id != current_user.id
+      #p "not owner"
       flash[:error] = "Error: only the owner is allowed to delete apartment\n"
       redirect_to @apartment
     else
+      #print "successful"
       @apartment.delete()
       redirect_to root_path
     end
