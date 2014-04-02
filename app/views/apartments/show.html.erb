@@ -54,41 +54,19 @@
     </tr>
   	</thead>
 
-<!-- 	<tbody>
-		<% @reviews.each do |review| %>
-			<tr>
-				<td><%= link_to "Edit", edit_review_path(id: review.id) %></td>
-				<td><%= link_to "Delete", delete_review_path(id: review.id), :data => { :confirm => "Are you sure?" }, :method => :delete %></td>
-			    <td><%= review.user.username %></td>
-			    <td>
-				    <% if review.review != nil %>
-				    <%= review.review %>
-				    <% end %>
-			    </td>
-			    <td><%= review.overall_rating %></td>
-			    <td><%= review.created_at %></td>
-			    <td><%= review.updated_at %></td>
-			    <td><%= review.apartment_id %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table> -->
-
 	<tbody>
 		<% @reviews.each do |review| %>
 			<tr>
 				<% if review.user_id == @user_id.to_i %>
-					<td><%= link_to "Edit" , edit_review_path(id: review.id) %></td>
-<<<<<<< HEAD
+					<td>
+					<%= link_to "Edit" , edit_review_path(id: review.id) %>
+					</td>
+					<td>
+					<%= link_to "Delete", delete_review_path(id: review.id), :data => { :confirm => "Are you sure?" }, :method => :delete %>
+					</td>
 				<% else %>
 					<td></td>
 				<% end %>
-=======
-				</span>
-
-				<td><%= link_to "Delete", delete_review_path(id: review.id), :data => { :confirm => "Are you sure?" }, :method => :delete %></td>
-				
->>>>>>> FETCH_HEAD
 			    <td><%= review.user.username %></td>
 			    <td>
 				    <% if review.review != nil %>

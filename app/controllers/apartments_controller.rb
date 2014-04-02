@@ -119,7 +119,7 @@ class ApartmentsController < ApplicationController
       flash[:error] = "Error: only the owner is allowed to delete apartment\n"
       redirect_to @apartment
     else
-      Apartment.delete(@apartment.address)
+      @apartment.delete()
       redirect_to root_path
     end
   end
