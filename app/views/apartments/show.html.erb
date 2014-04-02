@@ -15,30 +15,30 @@
 <p><%= @apartment.bathrooms %> bathrooms</p>
 <p> rating: <%= @apartment.average_overall_rating %></p>
 
+<% if !@reviewed %>
+	<h2>Create Review</h2>
 
-<h2>Create Review</h2>
+	<%= form_for @review, url: "/reviews", html: {method: :post} do |f| %>
 
-<%= form_for @review, url: "/reviews", html: {method: :post} do |f| %>
+		<div><%= f.label :Overall_Rating %><br />
+		<ul class="rating">
+			<% (1..5).each do |i| %>
+				<li class="rating_star" data-apt-id="<%= @apartment.id %>" data-stars="<%= i %>" id="<%= "#{@apartment.id}_#{i}" %>"></li>
+			<% end %>
+		</ul>
+		<br />
+		<br />
+		<br />
+		<%= f.select :overall_rating, 1..5 %></div>
 
-	<div><%= f.label :Overall_Rating %><br />
-	<ul class="rating">
-		<% (1..5).each do |i| %>
-			<li class="rating_star" data-apt-id="<%= @apartment.id %>" data-stars="<%= i %>" id="<%= "#{@apartment.id}_#{i}" %>"></li>
-		<% end %>
-	</ul>
-	<br />
-	<br />
-	<br />
-	<%= f.select :overall_rating, 1..5 %></div>
+		<div><%= f.label :Review %><br />
+		<%= f.text_area :review, size: "60x12", value: "What do you think of this place?" %></div>
 
-	<div><%= f.label :Review %><br />
-	<%= f.text_area :review, size: "60x12", value: "What do you think of this place?" %></div>
+		<%= f.hidden_field :apartment_id, value: @apartment.id %>
 
-	<%= f.hidden_field :apartment_id, value: @apartment.id %>
-
-	<div><%= f.submit "Submit" %></div>
+		<div><%= f.submit "Submit" %></div>
+	<% end %>
 <% end %>
-
 
 <table>
 	<thead>
@@ -77,10 +77,11 @@
 	<tbody>
 		<% @reviews.each do |review| %>
 			<tr>
-				<span id="corresponed_user">
+				<% if review.user_id == @user_id.to_i %>
 					<td><%= link_to "Edit" , edit_review_path(id: review.id) %></td>
-				</span>
-				
+				<% else %>
+					<td></td>
+				<% end %>
 			    <td><%= review.user.username %></td>
 			    <td>
 				    <% if review.review != nil %>

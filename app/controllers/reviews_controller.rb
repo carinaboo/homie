@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
   def create
     # can only create when in an apartment page!
     if(current_user)	# check if the user is loggin in
-      apartment = Apartment.find(params[:review][:apartment_id])   
+      apartment = Apartment.find(params[:review][:apartment_id]) 
       # update new averge rating
       num_of_reviews = apartment.reviews.count
       average_review = apartment.average_overall_rating || 0
