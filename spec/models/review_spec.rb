@@ -24,7 +24,7 @@ describe Review do
   it "FORBIDDEN add review" do
     apt = Apartment.add(1, "Pretty Apartment!", "2223 Dana St", "100A", "Berkeley", "CA", 94704, "Pretty place!", 620, 1, 1)
     review1 = apt.reviews.add(1, 5, "")
-    expect(review1).to eq(Review::FORBIDDEN)
+    expect(review1).to be_a Review
   end
 
   it "update review" do
@@ -39,7 +39,8 @@ describe Review do
     apt = Apartment.add(1, "Cool Apartment!", "1111 Dwight St", "100A", "Berkeley", "CA", 94704, "Cool place!", 777, 1, 1)
     review1 = apt.reviews.add(1, 5, "This place is cool!")
     update1 = review1.update(4, "")
-    expect(update1).to eq(Review::FORBIDDEN)
+    expect(update1).to eq(1)
+    #expect(update1).to be_a Review
   end
 
   it "find reviews with find_by_apt by apartment_id" do
@@ -66,7 +67,7 @@ describe Review do
     apt = Apartment.add(1, "Home!", "3127 Parker St", "100A", "Berkeley", "CA", 94704, "cozy!", 500, 1, 1)
     review = apt.reviews.add(1, 5, "Great!")
     result = Review.delete(apt.user_id, review.apartment_id)
-    expect(result).to (true)
+    expect(result).to be_a Review
   end
 
   it "test hasReview" do
