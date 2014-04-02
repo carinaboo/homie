@@ -11,6 +11,8 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.find(params[:id])
     @reviews =  Review.find_by_apt(params[:id]) 
     @review = Review.new
+    @reviewed = Review.hasReviewed(current_user, params[:id])
+    @user_id = current_user.id
     #boolean value used in view to decide whether user can add new review
     # @show_form = can_review?(@reviews)        #method from ApartmentsHelper
   end
@@ -117,7 +119,7 @@ class ApartmentsController < ApplicationController
       flash[:error] = "Error: only the owner is allowed to delete apartment\n"
       redirect_to @apartment
     else
-      Apartment.delete(@apartment.address)
+      @apartment.delete()
       redirect_to root_path
     end
   end

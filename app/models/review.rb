@@ -76,4 +76,13 @@ class Review < ActiveRecord::Base
     #self.find(:all, :conditions => { :user_id => user_id, :apartment_id => apartment_id}).destroy
   end
 
+  def self.hasReviewed(user, apt_id)
+    existance = false
+    user.reviews.each do |r|
+      if r.apartment_id == apt_id.to_i
+        existance = true
+      end
+    end
+    return existance
+  end
 end

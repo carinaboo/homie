@@ -7,8 +7,8 @@ class ReviewsController < ApplicationController
 
   def create
     # can only create when in an apartment page!
-    if(current_user)  # check if the user is loggin in
-      apartment = Apartment.find(params[:review][:apartment_id])   
+    if(current_user)	# check if the user is loggin in
+      apartment = Apartment.find(params[:review][:apartment_id]) 
       # update new averge rating
       num_of_reviews = apartment.reviews.count
       average_review = apartment.average_overall_rating || 0
@@ -77,4 +77,27 @@ class ReviewsController < ApplicationController
     # }
     # return new_array
   end
+
+  def delete
+    review = Review.find(params[:id])
+    @apartment = Apartment.find(review.apartment_id)
+    # check if the current user modifying the review is the user wrote the review
+    user_id = review.user_id
+    if !@apartment
+      flash[:error] = "Error: Apartment page not found\n"
+      redirect_to root_path
+    elsif current_user.id != user_id
+      #user is not review creator
+      flash[:error] = "Error: only the owner is allowed to delete apartment\n"
+      redirect_to @apartment
+    elsif !current_user
+      # user is not logged in
+      flash[:error] = "Error: user must be signed in to delete apartment\n"
+      redirect_to @apartment
+    else
+      Review.delete(user_id, review.apartment_id)
+      redirect_to @apartment
+    end
+  end
+    
 end

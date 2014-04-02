@@ -15,30 +15,30 @@
 <p><%= @apartment.bathrooms %> bathrooms</p>
 <p> rating: <%= @apartment.average_overall_rating %></p>
 
+<% if !@reviewed %>
+	<h2>Create Review</h2>
 
-<h2>Create Review</h2>
+	<%= form_for @review, url: "/reviews", html: {method: :post} do |f| %>
 
-<%= form_for @review, url: "/reviews", html: {method: :post} do |f| %>
+		<div><%= f.label :Overall_Rating %><br />
+		<ul class="rating">
+			<% (1..5).each do |i| %>
+				<li class="rating_star" data-apt-id="<%= @apartment.id %>" data-stars="<%= i %>" id="<%= "#{@apartment.id}_#{i}" %>"></li>
+			<% end %>
+		</ul>
+		<br />
+		<br />
+		<br />
+		<%= f.select :overall_rating, 1..5 %></div>
 
-	<div><%= f.label :Overall_Rating %><br />
-	<ul class="rating">
-		<% (1..5).each do |i| %>
-			<li class="rating_star" data-apt-id="<%= @apartment.id %>" data-stars="<%= i %>" id="<%= "#{@apartment.id}_#{i}" %>"></li>
-		<% end %>
-	</ul>
-	<br />
-	<br />
-	<br />
-	<%= f.select :overall_rating, 1..5 %></div>
+		<div><%= f.label :Review %><br />
+		<%= f.text_area :review, size: "60x12", value: "What do you think of this place?" %></div>
 
-	<div><%= f.label :Review %><br />
-	<%= f.text_area :review, size: "60x12", value: "What do you think of this place?" %></div>
+		<%= f.hidden_field :apartment_id, value: @apartment.id %>
 
-	<%= f.hidden_field :apartment_id, value: @apartment.id %>
-
-	<div><%= f.submit "Submit" %></div>
+		<div><%= f.submit "Submit" %></div>
+	<% end %>
 <% end %>
-
 
 <table>
 	<thead>
@@ -50,39 +50,23 @@
 		<th>Overall Rating</th>
 		<th>Created At</th>
 		<th>Updated At</th>
-		<th>Apartment</th>
     </tr>
   	</thead>
-
-<!-- 	<tbody>
-		<% @reviews.each do |review| %>
-			<tr>
-				<td><%= link_to "Edit", edit_review_path(id: review.id) %></td>
-				<td><%= link_to "Delete", delete_review_path(id: review.id), :data => { :confirm => "Are you sure?" }, :method => :delete %></td>
-			    <td><%= review.user.username %></td>
-			    <td>
-				    <% if review.review != nil %>
-				    <%= review.review %>
-				    <% end %>
-			    </td>
-			    <td><%= review.overall_rating %></td>
-			    <td><%= review.created_at %></td>
-			    <td><%= review.updated_at %></td>
-			    <td><%= review.apartment_id %></td>
-			</tr>
-		<% end %>
-	</tbody>
-</table> -->
 
 	<tbody>
 		<% @reviews.each do |review| %>
 			<tr>
-				<span id="corresponed_user">
-					<td><%= link_to "Edit" , edit_review_path(id: review.id) %></td>
-				</span>
-
-				<td><%= link_to "Delete", delete_review_path(id: review.id), :data => { :confirm => "Are you sure?" }, :method => :delete %></td>
-				
+				<% if review.user_id == @user_id.to_i %>
+					<td>
+						<%= link_to "Edit" , edit_review_path(id: review.id) %>
+					</td>
+					<td>
+						<%= link_to "Delete", delete_review_path(id: review.id), :data => { :confirm => "Are you sure?" }, :method => :delete %>
+					</td>
+				<% else %>
+					<td></td>
+					<td></td>
+				<% end %>
 			    <td><%= review.user.username %></td>
 			    <td>
 				    <% if review.review != nil %>
@@ -92,7 +76,6 @@
 			    <td><%= review.overall_rating %></td>
 			    <td><%= review.created_at %></td>
 			    <td><%= review.updated_at %></td>
-			    <td><%= review.apartment_id %></td>
 			</tr>
 		<% end %>
 	</tbody>
