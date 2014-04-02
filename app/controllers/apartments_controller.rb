@@ -111,7 +111,7 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.find(params[:id])
     if !@apartment
       flash[:error] = "Error: Apartment page not found\n"
-      redirect_to root_path
+      redirect_to user_path id:@apartment.user_id
     elsif !current_user
       flash[:error] = "Error: user must be signed in to delete apartment\n"
       redirect_to @apartment

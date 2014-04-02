@@ -102,7 +102,7 @@ describe ApartmentsController do
   describe "DELETE #delete" do
     it "successfully deletes apartment" do
       delete :destroy, id: FactoryGirl.create(:apartment)
-      response.should redirect root_path
+      response.should redirect_to root_path
     end
 
     it "should not delete if user not logged in" do
@@ -115,7 +115,7 @@ describe ApartmentsController do
       subject.sign_out @user
       @user2 = FactoryGirl.create(:user, email: "differentuser@berkeley.edu")
       subject.sign_in @user2
-      put :destroy, id: FactoryGirl.create(:apartment)
+      delete :destroy, id: FactoryGirl.create(:apartment)
       response.should redirect_to Apartment.last
     end
   end
