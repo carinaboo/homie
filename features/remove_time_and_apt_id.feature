@@ -1,16 +1,12 @@
-Feature: Delete Review
+Feature: remove time and apt id
   
   Background: Sign in user and create apartments
     Given logged in
   	Given apartment created
-  	Given apartment created by different user
 
   Scenario: Delete a review that the user create
     Given I am on the first apartment page
     Then I should see "Overall rating"
-    When I press "Submit"
-    Then I should see "Carina Boo"
-    When I follow "Delete"
-
-
-
+    Then I should not see "Created At"
+    Then I should not see "Updated At"
+    Then I should not see "Id"
