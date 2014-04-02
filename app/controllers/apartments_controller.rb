@@ -29,12 +29,16 @@ class ApartmentsController < ApplicationController
   def create
     user_id = current_user.id
     title = params[:apartment][:title]
-    addr = params[:apartment][:address]
+    street_address = params[:apartment][:street_address]
+    apartment_number = params[:apartment][:apartment_number]
+    city = params[:apartment][:city]
+    state = params[:apartment][:state]
+    zip = params[:apartment][:zip]
     desc = params[:apartment][:description]
     price = params[:apartment][:price]
     beds = params[:apartment][:bedrooms]
     baths = params[:apartment][:bathrooms]
-    @apartment = Apartment.add(user_id, title, addr, desc, price, beds, baths)
+    @apartment = Apartment.add(user_id, title, street_address, apartment_number, city, state, zip, desc, price, beds, baths)
     if @apartment.valid?
       redirect_to @apartment
     else
@@ -62,12 +66,16 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.find(params[:id])
     user_id = current_user.id
     title = params[:apartment][:title]
-    address = params[:apartment][:address]
+    street_address = params[:apartment][:street_address]
+    apartment_number = params[:apartment][:apartment_number]
+    city = params[:apartment][:city]
+    state = params[:apartment][:state]
+    zip = params[:apartment][:zip]
     description = params[:apartment][:description]
     price = params[:apartment][:price]
     beds = params[:apartment][:bedrooms]
     baths = params[:apartment][:bathrooms]
-    result = @apartment.update(user_id, title, address, description, price, beds, baths)
+    result = @apartment.update(user_id, title, street_address, apartment_number, city, state, zip, description, price, beds, baths)
     if result.is_a? Apartment
       redirect_to @apartment
     else 
