@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	NOT_LOGGEDIN = -6
 
 	# This is the function to show a user page and list of apartments that the user create
 	def show
