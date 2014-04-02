@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316043435) do
+ActiveRecord::Schema.define(version: 20140401231524) do
 
   create_table "apartments", force: true do |t|
     t.string   "title"
-    t.string   "address"
     t.text     "description"
     t.float    "price"
     t.float    "bathrooms"
@@ -24,6 +23,11 @@ ActiveRecord::Schema.define(version: 20140316043435) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "street_address"
+    t.string   "apartment_number"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
   end
 
   create_table "reviews", force: true do |t|
