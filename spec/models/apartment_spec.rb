@@ -4,7 +4,11 @@
 #
 #  id                     :integer          not null, primary key
 #  title                  :string(255)
-#  address                :string(255)
+#  street_address         :string(255)
+#  apartment_number       :string(255)
+#  city                   :string(255)
+#  state                  :string(255)
+#  zip                    :integer
 #  description            :text
 #  price                  :float
 #  bathrooms              :float
@@ -20,8 +24,8 @@ require 'spec_helper'
 describe Apartment do
   #pending "add some examples to (or delete) #{__FILE__}"
   before do
-	@valid_apt = Apartment.add(1, "apt1", "addr1", "desc1", 1000, 1, 1)	
-	@bad_apt = Apartment.add(nil, "apt2", "addr2", "desc2", 1000, 1, 1)
+	@valid_apt = Apartment.add(1, "apt1", "addr1", "apt#", "city", "state", 94704, "desc1", 1000, 1, 1)
+	@bad_apt = Apartment.add(nil, "apt2", "addr2", "apt#2", "city2", "state2", 94704, "desc2", 1000, 1, 1)
   	@apartment = Apartment.find_by_user_id(1)
   end
 
@@ -42,11 +46,27 @@ describe Apartment do
 	  expect(@apartment.title).to (eq "apt1")
 	end
 
-	it "testAddAddress" do
-	  expect(@apartment.address).to (eq "addr1")
-	end	
+	it "testAddStreetAddress" do
+	  expect(@apartment.street_address).to (eq "addr1")
+  end
 
-	it "testAddDescription" do
+  it "testAddApartmentNumber" do
+    expect(@apartment.apartment_number).to (eq "apt#")
+  end
+
+  it "testAddCity" do
+    expect(@apartment.city).to (eq "city")
+  end
+
+  it "testAddState" do
+    expect(@apartment.state).to (eq "state")
+  end
+
+  it "testAddZip" do
+    expect(@apartment.zip).to (eq "94704")
+  end
+
+  it "testAddDescription" do
 	  expect(@apartment.description).to (eq "desc1")
 	end  
 
@@ -65,7 +85,7 @@ describe Apartment do
 
    describe "failing update and search for apartment" do
 	  before do
-		@result = @apartment.update(nil, "apt2", "addr2", "desc2", 2000, 2, 2)
+		@result = @apartment.update(nil, "apt2", "addr2", "apt#2", "city2", "state2", 94704, "desc2", 2000, 2, 2)
 	  end
 
 	  it "testUpdateId" do
@@ -75,7 +95,7 @@ describe Apartment do
 
 	describe "update and search for apartment" do
 	  before do
-		@apartment.update(2, "apt2", "addr2", "desc2", 2000, 2, 2)
+		@apartment.update(2, "apt2", "addr2", "apt#2", "city2", "state2", 94703, "desc2", 2000, 2, 2)
 	  end
 
 	  it "testUpdateId" do
@@ -87,8 +107,24 @@ describe Apartment do
 	  end
 
 	  it "testUpdateAddress" do
-	  	expect(@apartment.address).to (eq "addr2")
-	  end	
+	  	expect(@apartment.street_address).to (eq "addr2")
+    end
+
+    it "testUpdateApartmentNumber" do
+      expect(@apartment.apartment_number).to (eq "apt#2")
+    end
+
+    it "testUpdateCity" do
+      expect(@apartment.city).to (eq "city2")
+    end
+
+    it "testUpdateState" do
+      expect(@apartment.state).to (eq "state2")
+    end
+
+    it "testUpdateZip" do
+      expect(@apartment.zip).to (eq "94703")
+    end
 
 	  it "testUpdateDescription" do
 	  	expect(@apartment.description).to (eq "desc2")
@@ -108,7 +144,7 @@ describe Apartment do
 
 	  it "test search with valid address" do
 	  	result = Apartment.search("addr2")
-	  	expect(result.first.address).to (eq "addr2")
+	  	expect(result.first.street_address).to (eq "addr2")
 	  end
 
 	  it "test search with invalid address" do
@@ -129,7 +165,7 @@ describe Apartment do
 
 	  it "test delete with valid address" do
 	  	result = Apartment.delete("addr2")
-	  	expect(result.first.address).to (true)
+	  	expect(result.first.street_address).to (true)
 	  end
 
 	  it "test delete with invalid address" do
