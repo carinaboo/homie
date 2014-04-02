@@ -49,7 +49,7 @@ describe ApartmentsController do
       response.should redirect_to Apartment.last
     end
 
-    it "does not add invalid/duplicate apartment page" do  
+    it "does not add invalid/duplicate apartment page" do
       FactoryGirl.create(:apartment)
       expect { post :create, apartment: FactoryGirl.attributes_for(:apartment)}.to change(Apartment, :count).by(0)
     end
@@ -76,16 +76,16 @@ describe ApartmentsController do
 
   describe "POST #update" do
     it "successfully updates apartment page" do
-      put :create, apartment: FactoryGirl.attributes_for(:apartment)
-      response.should redirect_to Apartment.last 
+      put :update, apartment: FactoryGirl.attributes_for(:apartment)
+      response.should redirect_to Apartment.last
     end
 
     it "does not update apartment page with bad info" do
       FactoryGirl.create(:apartment)
-      put :create, apartment: FactoryGirl.attributes_for(:apartment)
-      response.should_not redirect_to Apartment.last 
-    end    
-  end 
+      put :update, apartment: FactoryGirl.attributes_for(:apartment)
+      response.should_not redirect_to Apartment.last
+    end
+  end
 
   describe "POST #search" do
     it "returns http success" do
@@ -97,18 +97,18 @@ describe ApartmentsController do
       post :search, search: ""
       response.should render_template :search
     end
-  end    
+  end
 
   describe "DELETE #delete" do
     it "successfully deletes apartment" do
       delete :destroy, id: FactoryGirl.create(:apartment)
-      response.should redirect root_path 
+      response.should redirect root_path
     end
 
     it "should not delete if user not logged in" do
       subject.sign_out @user
       delete :destroy, id: FactoryGirl.create(:apartment)
-      response.should redirect_to Apartment.last 
+      response.should redirect_to Apartment.last
     end
 
     it "should not delete if wrong user" do
@@ -116,9 +116,9 @@ describe ApartmentsController do
       @user2 = FactoryGirl.create(:user, email: "differentuser@berkeley.edu")
       subject.sign_in @user2
       put :destroy, id: FactoryGirl.create(:apartment)
-      response.should redirect_to Apartment.last 
-    end  
-  end 
+      response.should redirect_to Apartment.last
+    end
+  end
 
 end
 
@@ -127,7 +127,7 @@ end
     it "returns http success" do
       get 'new'
       expect(response).to be_success
-    end 
+    end
   end
 
   describe "create" do
