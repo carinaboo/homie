@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14e6f607-8f8a-411d-80a5-4bf4fce2b218" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/apartments/search.html.erb" afterPath="$PROJECT_DIR$/app/views/apartments/search.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="homie.iws" />
@@ -28,28 +26,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="20140401230300_remove_address_from_apartments.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20140401230300_remove_address_from_apartments.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="132" selection-end="132" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="apartments_controller_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/controllers/apartments_controller_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="0" selection-start="1367" selection-end="1367" vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="2754">
+            <state line="50" column="0" selection-start="1367" selection-end="1367" vertical-scroll-proportion="0.0" vertical-offset="986" max-vertical-offset="2754">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="search.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/apartments/search.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="88" selection-start="733" selection-end="738" vertical-scroll-proportion="0.28764805" vertical-offset="0" max-vertical-offset="1224">
+            <state line="46" column="0" selection-start="1793" selection-end="1937" vertical-scroll-proportion="-5.9215684" vertical-offset="480" max-vertical-offset="1224">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="41" selection-start="495" selection-end="495" vertical-scroll-proportion="-13.730769" vertical-offset="34" max-vertical-offset="663">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="review_spec.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/models/review_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="27" selection-start="2094" selection-end="2094" vertical-scroll-proportion="0.0" vertical-offset="654" max-vertical-offset="1309">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apartment_spec.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/models/apartment_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="38" selection-start="2112" selection-end="2118" vertical-scroll-proportion="-54.88" vertical-offset="73" max-vertical-offset="3009">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reviews_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="66" selection-start="212" selection-end="332" vertical-scroll-proportion="0.259542" vertical-offset="0" max-vertical-offset="1462">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="delete.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/apartments/delete.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="136">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/apartments/create.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="136">
               <folding />
             </state>
           </provider>
@@ -67,34 +110,7 @@
       <file leaf-file-name="reviews_controller_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/controllers/reviews_controller_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1717">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="review_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/models/review_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="30" selection-start="637" selection-end="637" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1445">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reviews.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/models/reviews.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/models/users.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+            <state line="60" column="12" selection-start="1836" selection-end="1836" vertical-scroll-proportion="0.0" vertical-offset="785" max-vertical-offset="1717">
               <folding />
             </state>
           </provider>
@@ -132,6 +148,7 @@
         <option value="$PROJECT_DIR$/spec/models/apartment_spec.rb" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/views/apartments/search.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
       </list>
     </option>
   </component>
@@ -278,6 +295,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -555,14 +594,11 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/review.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="23" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="16" selection-start="568" selection-end="582" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="867" />
+        <state line="15" column="16" selection-start="568" selection-end="582" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="867">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/schema.rb">
@@ -716,39 +752,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/apartments/create.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="951" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/apartments/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="36" selection-start="589" selection-end="589" vertical-scroll-proportion="0.39744952" vertical-offset="0" max-vertical-offset="941" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/apartments/update.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="951" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/apartments/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="35" selection-start="403" selection-end="403" vertical-scroll-proportion="0.26507276" vertical-offset="0" max-vertical-offset="962" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/apartments/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="44" selection-start="654" selection-end="654" vertical-scroll-proportion="-0.6964657" vertical-offset="908" max-vertical-offset="1870" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/apartments/delete.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="951" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/apartment.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="29" selection-start="2317" selection-end="2317" vertical-scroll-proportion="-14.88" vertical-offset="495" max-vertical-offset="1445" />
+        <state line="51" column="29" selection-start="2317" selection-end="2317" vertical-scroll-proportion="-14.88" vertical-offset="495" max-vertical-offset="1445">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
@@ -782,21 +795,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="20" selection-start="871" selection-end="871" vertical-scroll-proportion="0.34412956" vertical-offset="0" max-vertical-offset="1836" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/review.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="5" selection-start="1629" selection-end="1629" vertical-scroll-proportion="0.0" vertical-offset="304" max-vertical-offset="1445" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/models/review_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="30" selection-start="637" selection-end="637" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1445">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/models/reviews.rb">
@@ -811,11 +812,6 @@
         <state line="1" column="14" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/models/apartment_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="7" selection-start="60" selection-end="60" vertical-scroll-proportion="0.10793651" vertical-offset="0" max-vertical-offset="3196" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="988" />
@@ -828,16 +824,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/controllers/reviews_controller_spec.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/apartments/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1717">
+        <state line="14" column="44" selection-start="654" selection-end="654" vertical-scroll-proportion="37.923077" vertical-offset="1224" max-vertical-offset="1853">
+          <folding>
+            <marker date="1396412215598" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396412215598" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396412215598" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396412215598" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396412215598" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396412215598" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396412215598" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396412215598" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396412215598" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396412215598" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396412215598" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396412215598" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/apartments/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="35" selection-start="403" selection-end="403" vertical-scroll-proportion="-6.6923075" vertical-offset="81" max-vertical-offset="748">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/controllers/user_controller_spec.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/apartments/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="1" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="988">
+        <state line="22" column="36" selection-start="589" selection-end="589" vertical-scroll-proportion="-10.807693" vertical-offset="93" max-vertical-offset="748">
+          <folding>
+            <marker date="1396395743727" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396395743727" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396395743727" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396395743727" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396395743727" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396395743727" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396395743727" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396395743727" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396395743727" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1396395743727" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/apartments/delete.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="951">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/apartments/create.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="951">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/apartments/search.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="0" selection-start="1793" selection-end="1937" vertical-scroll-proportion="-5.9215684" vertical-offset="480" max-vertical-offset="1224">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/controllers/reviews_controller_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="12" selection-start="1836" selection-end="1836" vertical-scroll-proportion="0.0" vertical-offset="785" max-vertical-offset="1717">
           <folding />
         </state>
       </provider>
@@ -849,9 +904,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/apartments/search.html.erb">
+    <entry file="file://$PROJECT_DIR$/spec/controllers/user_controller_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="88" selection-start="733" selection-end="738" vertical-scroll-proportion="0.28764805" vertical-offset="0" max-vertical-offset="1224">
+        <state line="0" column="1" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="988">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="41" selection-start="495" selection-end="495" vertical-scroll-proportion="-13.730769" vertical-offset="34" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/models/review_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="27" selection-start="2094" selection-end="2094" vertical-scroll-proportion="0.0" vertical-offset="654" max-vertical-offset="1309">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/models/apartment_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="38" selection-start="2112" selection-end="2118" vertical-scroll-proportion="-54.88" vertical-offset="73" max-vertical-offset="3009">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/reviews_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="66" selection-start="212" selection-end="332" vertical-scroll-proportion="0.259542" vertical-offset="0" max-vertical-offset="1462">
           <folding />
         </state>
       </provider>
