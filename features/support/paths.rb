@@ -16,6 +16,12 @@ module NavigationHelpers
     when /the search results page/
       '/apartments/search?search='
 
+    when /the first apartment page/
+      '/apartments/1'
+
+    when /the second apartment page/
+      '/apartments/2'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

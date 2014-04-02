@@ -12,7 +12,9 @@ class ApartmentsController < ApplicationController
     @reviews =  Review.find_by_apt(params[:id]) 
     @review = Review.new
     @reviewed = Review.hasReviewed(current_user, params[:id])
-    @user_id = current_user.id
+    if current_user
+      @user_id = current_user.id
+    end
     #boolean value used in view to decide whether user can add new review
     # @show_form = can_review?(@reviews)        #method from ApartmentsHelper
   end
