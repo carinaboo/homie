@@ -101,7 +101,10 @@ describe ApartmentsController do
 
   describe "DELETE #delete" do
     it "successfully deletes apartment" do
-      delete :destroy, id: FactoryGirl.create(:apartment)
+      apartment = FactoryGirl.create(:apartment)
+      apartment.user_id = @user.id
+      apartment.save
+      delete :destroy, id: apartment.id
       response.should redirect_to root_path
     end
 
