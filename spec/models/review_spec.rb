@@ -15,20 +15,20 @@ require 'spec_helper'
 
 describe Review do
   it "add review" do
-    apt = Apartment.add(1, "Nice Apartment!", "3001 Haste St", "Great place!", 800, 1, 1)
+    apt = Apartment.add(1, "Nice Apartment!", "3001 Haste St", "100A", "Berkeley", "CA", 94704, "Great place!", 800, 1, 1)
     review1 = apt.reviews.add(1, 5, "This place is nice!")
     allReviews = Review.find_by_apt(apt.id)
     expect(allReviews.length).to eq(1)
   end
 
   it "FORBIDDEN add review" do
-    apt = Apartment.add(1, "Pretty Apartment!", "2223 Dana St", "Pretty place!", 620, 1, 1)
+    apt = Apartment.add(1, "Pretty Apartment!", "2223 Dana St", "100A", "Berkeley", "CA", 94704, "Pretty place!", 620, 1, 1)
     review1 = apt.reviews.add(1, 5, "")
     expect(review1).to eq(Review::FORBIDDEN)
   end
 
   it "update review" do
-    apt = Apartment.add(1, "Legit Apartment!", "7777 Ellsworth St", "Legit place!", 900, 1, 1)
+    apt = Apartment.add(1, "Legit Apartment!", "7777 Ellsworth St", "100A", "Berkeley", "CA", 94704, "Legit place!", 900, 1, 1)
     review1 = apt.reviews.add(1, 2, "This place is horrible!")
     review1.update(5, "This place is legit!")
     expect(review1.overall_rating).to eq(5)
@@ -36,14 +36,14 @@ describe Review do
   end
 
   it "FORBIDDEN update review" do
-    apt = Apartment.add(1, "Cool Apartment!", "1111 Dwight St", "Cool place!", 777, 1, 1)
+    apt = Apartment.add(1, "Cool Apartment!", "1111 Dwight St", "100A", "Berkeley", "CA", 94704, "Cool place!", 777, 1, 1)
     review1 = apt.reviews.add(1, 5, "This place is cool!")
     update1 = review1.update(4, "")
     expect(update1).to eq(Review::FORBIDDEN)
   end
 
   it "find reviews with find_by_apt by apartment_id" do
-    apt1 = Apartment.add(1, "Beautiful Studio", "2402 Fulton St", "Sid loves this place! :)", 1000, 1, 1)
+    apt1 = Apartment.add(1, "Beautiful Studio", "2402 Fulton St", "100A", "Berkeley", "CA", 94704, "Sid loves this place! :)", 1000, 1, 1)
     review1 = apt1.reviews.add(1, 5, "This place is awesome!")
     review2 = apt1.reviews.add(1, 2, "This place is aiteeee.")
     review3 = apt1.reviews.add(1, 5, "This place is grrreeatttt!")
@@ -62,4 +62,18 @@ describe Review do
     expect(uar).to eq(5.1)
   end
 
+  it "test delete review" do
+    apt = Apartment.add(1, "Home!", "3127 Parker St", "100A", "Berkeley", "CA", 94704, "cozy!", 500, 1, 1)
+    review = apt.reviews.add(1, 5, "Great!")
+    result = Review.delete(apt.user_id, review.apartment_id)
+    expect(result).to (true)
+  end
+
+  it "test delete review with wrong info" do
+    apt1 = Apartment.add(1, "Home!", "3127 Parker St", "100A", "Berkeley", "CA", 94704, "cozy!", 500, 1, 1)
+    apt2 = Apartment.add(1, "Home!", "3127 Parker St", "100A", "Berkeley", "CA", 94704, "cozy!", 500, 1, 1)
+    review = apt1.reviews.add(1, 5, "Great!")
+    result = Review.delete(apt2.user_id, review.apartment_id)
+    expect(result).to (false)
+  end 
 end

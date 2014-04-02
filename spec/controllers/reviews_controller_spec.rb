@@ -62,4 +62,34 @@ describe ReviewsController do
     end
   end
 
+  describe "DELETE #delete" do
+    before(:each) do
+      post :create, review: {apartment_id: @apartment.id, overall_rating: 5, review: "This place is the best"}
+      @review = @apartment.reviews.first
+    end
+
+    after(:each) do
+      @review.destroy
+    end
+
+    it "successfully deletes Reviews" do
+      delete :delete, id: @review.id, review: FactoryGirl.attributes_for(:review)
+      response.should redirect_to apartment_path id: @apartment.id
+    end
+
+    it "should not delete if user not logged in" do
+      subject.sign_out @user
+      delete :delete, id: @review.id, review: FactoryGirl.attributes_for(:review)
+      response.should redirect_to apartment_path id: @apartment.id
+    end
+
+    it "should not delete if wrong user" do
+      subject.sign_out @user
+      @user = FactoryGirl.create(:user, email: "differentuser@berkeley.edu")
+      subject.sign_in @user2
+      delete :delete, id: @review.id, review: FactoryGirl.attributes_for(:review)
+      response.should redirect_to apartment_path id: @apartment.id
+    end  
+  end 
+
 end

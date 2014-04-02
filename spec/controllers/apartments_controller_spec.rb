@@ -97,7 +97,28 @@ describe ApartmentsController do
       post :search, search: ""
       response.should render_template :search
     end
-  end     
+  end    
+
+  describe "DELETE #delete" do
+    it "successfully deletes apartment" do
+      delete :destroy, id: @apartment.id, apartment: FactoryGirl.attributes_for(:apartment)
+      response.should redirect root_path 
+    end
+
+    it "should not delete if user not logged in" do
+      subject.sign_out @user
+      delete :destroy, id: @apartment.id, apartment: FactoryGirl.attributes_for(:apartment)
+      response.should redirect_to apartment_path id: @apartment.id
+    end
+
+    it "should not delete if wrong user" do
+      subject.sign_out @user
+      @user = FactoryGirl.create(:user, email: "differentuser@berkeley.edu")
+      subject.sign_in @user2
+      put :destroy, id: @review.id, review: FactoryGirl.attributes_for(:review)
+      response.should redirect_to apartment_path id: @apartment.id
+    end  
+  end 
 
 end
 
