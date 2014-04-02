@@ -68,12 +68,4 @@ describe Review do
     result = Review.delete(apt.user_id, review.apartment_id)
     expect(result).to (true)
   end
-
-  it "test delete review with wrong info" do
-    apt1 = Apartment.add(1, "Home!", "3127 Parker St", "100A", "Berkeley", "CA", 94704, "cozy!", 500, 1, 1)
-    apt2 = Apartment.add(1, "Home!", "3127 Parker St", "100A", "Berkeley", "CA", 94704, "cozy!", 500, 1, 1)
-    review = apt1.reviews.add(1, 5, "Great!")
-    result = Review.delete(apt2.user_id, review.apartment_id)
-    expect(result).to (false)
-  end 
 end
