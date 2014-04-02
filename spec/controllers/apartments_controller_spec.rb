@@ -50,21 +50,26 @@ describe ApartmentsController do
     end
 
     it "does not add invalid/duplicate apartment page" do
-      FactoryGirl.create(:apartment)
-      expect { post :create, apartment: FactoryGirl.attributes_for(:apartment)}.to change(Apartment, :count).by(0)
-    end
-
-    it "should not redirect to new apartment page for bad input" do
-      FactoryGirl.create(:apartment)
-      post :create, apartment: FactoryGirl.attributes_for(:apartment)
-      response.should_not redirect_to Apartment.last
+      #FactoryGirl.create(:apartment)
+      info = FactoryGirl.attributes_for(:apartment)
+      info[:price] = -1
+      expect { post :create, apartment: info}.to change(Apartment, :count).by(0)
     end
   end
 
   describe "GET #edit" do
+    before(:each) do
+      post :create, apartment: FactoryGirl.attributes_for(:apartment)
+      @apartment = FactoryGirl.create(:apartment)
+    end
+
+    after(:each) do
+      @apartment.destroy
+    end
+
     it "successfully loads edit page" do
-      get :edit, id: FactoryGirl.create(:apartment)
-      response.should render_template :edit
+      get :edit, id: @apartment.id
+      response.should redirect_to apartment_path id: @apartment.id
     end
 
     it "should not load edit page if user not logged in" do
@@ -75,15 +80,25 @@ describe ApartmentsController do
   end
 
   describe "POST #update" do
+    before(:each) do
+      post :create, apartment: FactoryGirl.attributes_for(:apartment)
+      @apartment = FactoryGirl.create(:apartment)
+    end
+
+    after(:each) do
+      @apartment.destroy if @apartment
+    end
+
     it "successfully updates apartment page" do
-      put :update, apartment: FactoryGirl.attributes_for(:apartment)
-      response.should redirect_to Apartment.last
+      put :update, id: @apartment.id, apartment: FactoryGirl.attributes_for(:apartment)
+      response.should redirect_to apartment_path id: @apartment.id
     end
 
     it "does not update apartment page with bad info" do
-      FactoryGirl.create(:apartment)
-      put :update, apartment: FactoryGirl.attributes_for(:apartment)
-      response.should_not redirect_to Apartment.last
+      info = FactoryGirl.attributes_for(:apartment)
+      info[:price] = -1
+      put :update, id: @apartment.id, apartment: info
+      response.should_not redirect_to apartment_path id: @apartment.id
     end
   end
 
@@ -101,8 +116,11 @@ describe ApartmentsController do
 
   describe "DELETE #delete" do
     it "successfully deletes apartment" do
-      delete :destroy, id: FactoryGirl.create(:apartment)
-      response.should redirect root_path
+      apartment = FactoryGirl.create(:apartment)
+      apartment.user_id = @user.id
+      apartment.save
+      delete :destroy, id: apartment.id
+      response.should redirect_to root_path
     end
 
     it "should not delete if user not logged in" do
