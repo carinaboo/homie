@@ -68,4 +68,13 @@ describe Review do
     result = Review.delete(apt.user_id, review.apartment_id)
     expect(result).to (true)
   end
+
+  it "test hasReview" do
+    apt = Apartment.add(1, "Second Home!", "3127 Parker St", "100B", "Berkeley", "CA", 94704, "cool!", 600, 1, 1)
+    apt_id = apt.id
+    user_id = apt.user_id
+    apt.reviews.add(user_id, 5, "Great!")
+    reviewed = Review.hasReviewed(User.find(user_id) ,apt_id);
+    expect(reviewed).to eq(true)
+  end
 end
