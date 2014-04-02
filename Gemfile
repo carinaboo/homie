@@ -56,6 +56,8 @@ gem 'devise'
 # Rspec unit testing
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'cucumber-rails', '1.2.1', require: false
+  gem 'database_cleaner', '0.7.0'
 end
 
 #Factory Girl
