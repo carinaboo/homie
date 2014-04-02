@@ -23,7 +23,7 @@
       <tr>
         <td><a href="/apartments/<%= apt.id %>">View</a></td>
         <td class="title"><%= apt.title %></td>
-        <td class="address"><%= apt.address %></td>
+        <td class="street_address"><%= apt.street_address %>, <%= apt.apartment_number %>, <%= apt.city %>, <%= apt.state %> <%= apt.zip %></td>
         <td class="bedrooms"><%= apt.bedrooms.round(0) %></td>
         <td class="bathrooms"><%= apt.bathrooms.round(0) %></td>
         <td class="price"><span class="amount"><%= number_to_currency(apt.price) %></span></td>
