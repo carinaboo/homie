@@ -75,7 +75,7 @@ class Apartment < ActiveRecord::Base
 		end
 	end
 
-	def self.delete(street_address, apartment_number)
-		self.where('street_address = ? AND apartment_number = ?', street_address, apartment_number).first.destroy
+	def delete()
+		self.destroy
 	end
 end
