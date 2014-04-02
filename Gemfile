@@ -16,6 +16,7 @@ end
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-websteps'
+  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
 end

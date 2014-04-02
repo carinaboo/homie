@@ -16,6 +16,14 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
+When /^I confirm popup$/ do
+  page.driver.browser.switch_to.alert.accept    
+end
+
+When /^I dismiss popup$/ do
+  page.driver.browser.switch_to.alert.dismiss
+end
+
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
   expect(page.status_code).to eq(200)
