@@ -17,6 +17,11 @@ describe ReviewsController do
   end
 
   describe "POST #create" do
+    it "not logged in user tries to add new review" do
+      subject.sign_out @user
+      expect { post :create, review: {apartment_id: @apartment.id, overall_rating: 5, review: "This place is the best"}}.to change(Review, :count).by(0)
+    end
+
     it "successfully adds new review page" do
       expect { post :create, review: {apartment_id: @apartment.id, overall_rating: 5, review: "This place is the best"}}.to change(Review, :count).by(1)
     end
@@ -36,7 +41,7 @@ describe ReviewsController do
     it "successfully loads edit page" do
       get :edit, id: @review.id
       response.should render_template :edit
-    end
+    end   
 
     it "successfully updates review page" do
       put :update, id: @review.id, review: FactoryGirl.attributes_for(:review)
