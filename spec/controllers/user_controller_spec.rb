@@ -14,8 +14,13 @@ describe UsersController do
       	user = FactoryGirl.create(:user)
       	subject.sign_in user
       	get :show, id: user
-        subject.sign_in user
         response.should render_template :show
+    end
+
+    it "renders forbidden #show view" do
+        user = FactoryGirl.create(:user)
+        get :show, id: user
+        assigns(:user).should eq(nil)
     end
   end
 end

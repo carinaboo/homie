@@ -176,6 +176,11 @@ describe Apartment do
       expect(result.first.street_address).to (eq "addr1")
     end
 
+    it "test search with valid address and default sorting" do
+      result = Apartment.search("city2", nil, 0, 9999, 0, 0, 10, 1, 10)
+      expect(result.first.street_address).to (eq "addr1")
+    end
+
 
     it "test search with invalid address" do
       result = Apartment.search("addrghjkl", "Ratings: high to low", 0, 9999, 0, 0, 10, 1, 10)
