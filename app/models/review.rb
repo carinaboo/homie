@@ -78,9 +78,11 @@ class Review < ActiveRecord::Base
 
   def self.hasReviewed(user, apt_id)
     existance = false
-    user.reviews.each do |r|
-      if r.apartment_id == apt_id.to_i
-        existance = true
+    if user
+      user.reviews.each do |r|
+        if r.apartment_id == apt_id.to_i
+          existance = true
+        end
       end
     end
     return existance

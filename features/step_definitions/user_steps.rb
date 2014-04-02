@@ -13,3 +13,9 @@ Given /^logged in$/ do
   click_button("Sign in")
   expect(page).to have_content("Welcome")
 end
+
+Given /^logged out$/ do
+  visit "/"
+  click_link("Sign out")
+  expect(page).to have_content("Signed out successfully")
+end
