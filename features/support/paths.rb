@@ -13,6 +13,9 @@ module NavigationHelpers
     when /the home\s?page/
       '/'
 
+    when /the apartment\s?page/
+      '/apartments/1'
+
     when /the search results page/
       '/apartments/search?search='
 
