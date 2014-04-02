@@ -133,7 +133,7 @@ describe ApartmentsController do
       subject.sign_out @user
       @user2 = FactoryGirl.create(:user, email: "differentuser@berkeley.edu")
       subject.sign_in @user2
-      put :destroy, id: FactoryGirl.create(:apartment)
+      delete :destroy, id: FactoryGirl.create(:apartment)
       response.should redirect_to Apartment.last
     end
   end
