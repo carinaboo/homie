@@ -45,3 +45,11 @@ select[name=sorting] {
 		text-align: right;
 	}
 }
+
+html, body, #map {
+	label {
+		float: right;
+	}
+  	height: 100%;
+  	margin: 0;
+}
