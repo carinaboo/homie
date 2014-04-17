@@ -5,8 +5,8 @@ class UsersController < ApplicationController
 	def show
 		if(current_user)
 			@user = User.find(params[:id])
-			# @orders = Order.where(customer_id: @customer.id)
 			@apartments = Apartment.where(user_id: @user.id)
+			@list = @user.flagged_apartments
 		else
 			render json: {errCode: NOT_LOGGEDIN}
 		end

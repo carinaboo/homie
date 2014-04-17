@@ -29,6 +29,7 @@ class Apartment < ActiveRecord::Base
 	has_attached_file :photo, styles: {thumb: "75x75>", small: "200x200>"}
 	#validates_attachment :photo, content_type: { content_type: ["photo/jpg", "photo/jpeg", "photo/png"] }
 	do_not_validate_attachment_file_type :photo
+	make_flaggable
 
 	validates :user_id, :street_address, :title, :city, :state, :zip, :description, :bedrooms, :bathrooms, presence: true
 	#validates :street_address, presence: true, uniqueness: { case_sensitive: false }
@@ -91,8 +92,8 @@ class Apartment < ActiveRecord::Base
 			end
 
 			# find(:all, :conditions => ['address LIKE ?', "%#{search}%"], :order =>  sorting)
-			Apartment.where('(title LIKE ? OR street_address LIKE ? OR apartment_number LIKE ? OR city LIKE ? OR state LIKE ? OR zip LIKE ?) AND (price >= ? AND price <= ? AND (average_overall_rating >= ? OR average_overall_rating IS ?) AND bedrooms >= ? AND bedrooms <= ? AND bathrooms >= ? AND bathrooms <= ?)',
-				"%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", min_price.presence || 0, max_price.presence || Apartment.maximum("price"),
+			Apartment.where('(title LIKE ? OR street_address LIKE ? OR apartment_number LIKE ? OR city LIKE ? OR state LIKE ?) AND (price >= ? AND price <= ? AND (average_overall_rating >= ? OR average_overall_rating IS ?) AND bedrooms >= ? AND bedrooms <= ? AND bathrooms >= ? AND bathrooms <= ?)',
+				"%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", min_price.presence || 0, max_price.presence || Apartment.maximum("price"),
 				min_rating.presence || 0, min_rating.presence || nil,
 				min_bedrooms.presence || 0, max_bedrooms.presence || Apartment.maximum("bedrooms"), 
 				min_bathrooms.presence || 0, max_bathrooms.presence || Apartment.maximum("bathrooms")).order(sorting)

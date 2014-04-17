@@ -34,6 +34,19 @@ ActiveRecord::Schema.define(version: 20140417005150) do
     t.datetime "photo_updated_at"
   end
 
+  create_table "flaggings", force: true do |t|
+    t.string   "flaggable_type"
+    t.integer  "flaggable_id"
+    t.string   "flagger_type"
+    t.integer  "flagger_id"
+    t.text     "reason"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "flaggings", ["flaggable_type", "flaggable_id"], name: "index_flaggings_on_flaggable_type_and_flaggable_id"
+  add_index "flaggings", ["flagger_type", "flagger_id", "flaggable_type", "flaggable_id"], name: "access_flaggings"
+
   create_table "reviews", force: true do |t|
     t.integer  "user_id"
     t.text     "review"

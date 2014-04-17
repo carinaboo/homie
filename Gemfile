@@ -21,6 +21,8 @@ group :test do
   gem 'database_cleaner'
 end
 
+gem 'make_flaggable', :git => 'git://github.com/medihack/make_flaggable.git'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -35,7 +37,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'paperclip'
+gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'rmagick'
 gem 'annotate', '~> 2.6.3'
 
