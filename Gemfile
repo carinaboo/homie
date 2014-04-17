@@ -21,6 +21,8 @@ group :test do
   gem 'database_cleaner'
 end
 
+gem 'make_flaggable', :git => 'git://github.com/medihack/make_flaggable.git'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

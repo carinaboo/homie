@@ -22,6 +22,7 @@
 class Apartment < ActiveRecord::Base
 	has_many :reviews
 	belongs_to :user, class_name: 'User', foreign_key: 'user_id'
+	make_flaggable
 
 	validates :user_id, :street_address, :title, :city, :state, :zip, :description, :bedrooms, :bathrooms, presence: true
 	#validates :street_address, presence: true, uniqueness: { case_sensitive: false }

@@ -5,6 +5,24 @@ class ApartmentsController < ApplicationController
   FORBIDDEN = 403
   PAGE_NOT_FOUND = 404
 
+  def favorite
+    if !current_user
+      redirect_to new_user_session_url, :notice => "You need to Login to add favorite"
+    else
+      @current_user = current_user
+      @apt = Apartment.find(params[:id])
+      @list = current_user.flagged_apartments
+      if @current_user.flagged?(@apt)
+        @current_user.unflag(@apt)
+        @list.delete(@apt)
+        redirect_to apartment_path, :notice => "You removed this apartment to your favourite list"
+      else
+        @current_user.flag(@apt, :favorite)
+        redirect_to apartment_path, :notice => "You added this apartment to your favourite list"
+      end
+    end
+  end
+
   #Loads the apartment profile page with reviews. Provides user with option to add reviews
   #if the user is logged in and hasn't already added a review.
   def show

@@ -21,6 +21,8 @@
 class User < ActiveRecord::Base
   has_many :apartments
   has_many :reviews
+  make_flagger
+  has_many :flagged_apartments, :through => :flaggings, :source => :flaggable, :source_type => 'Apartment'
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
