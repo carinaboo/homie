@@ -9,7 +9,7 @@ class ApartmentsController < ApplicationController
   #if the user is logged in and hasn't already added a review.
   def show
     @apartment = Apartment.find(params[:id])
-    @reviews =  Review.find_by_apt(params[:id]) 
+    @reviews = Review.find_by_apt(params[:id]) 
     @review = Review.new
     @reviewed = Review.hasReviewed(current_user, params[:id])
     if current_user
@@ -32,6 +32,7 @@ class ApartmentsController < ApplicationController
   #creating new profiles.
   def create
     user_id = current_user.id
+    params[:apartment][:user_id] = user_id
     title = params[:apartment][:title]
     street_address = params[:apartment][:street_address]
     apartment_number = params[:apartment][:apartment_number]
@@ -42,7 +43,8 @@ class ApartmentsController < ApplicationController
     price = params[:apartment][:price]
     beds = params[:apartment][:bedrooms]
     baths = params[:apartment][:bathrooms]
-    @apartment = Apartment.add(user_id, title, street_address, apartment_number, city, state, zip, desc, price, beds, baths)
+    #@apartment = Apartment.add(user_id, title, street_address, apartment_number, city, state, zip, desc, price, beds, baths)
+    @apartment = Apartment.addApt(apt_params)
     if @apartment.valid?
       redirect_to @apartment
     else
@@ -69,6 +71,7 @@ class ApartmentsController < ApplicationController
   def update
     @apartment = Apartment.find(params[:id])
     user_id = current_user.id
+    params[:apartment][:user_id] = user_id
     title = params[:apartment][:title]
     street_address = params[:apartment][:street_address]
     apartment_number = params[:apartment][:apartment_number]
@@ -79,7 +82,8 @@ class ApartmentsController < ApplicationController
     price = params[:apartment][:price]
     beds = params[:apartment][:bedrooms]
     baths = params[:apartment][:bathrooms]
-    result = @apartment.update(user_id, title, street_address, apartment_number, city, state, zip, description, price, beds, baths)
+    #result = @apartment.update(user_id, title, street_address, apartment_number, city, state, zip, description, price, beds, baths)
+    result = @apartment.updateApt(apt_params)
     if result.is_a? Apartment
       redirect_to @apartment
     else 
@@ -130,5 +134,9 @@ class ApartmentsController < ApplicationController
       redirect_to root_path
     end
   end
- 
+
+  private
+  def apt_params
+    params.require(:apartment).permit(:title, :description, :price, :bathrooms, :bedrooms, :user_id, :apartment_number, :street_address, :city, :state, :zip, :price, :photo)
+  end 
 end

@@ -1,28 +1,31 @@
 <h1>Edit apartment</h1>
 
-<%= form_for(@apartment) do |f| %>
+<%= form_for(@apartment, html: { multipart: true}) do |f| %>
 
 <%= render 'shared/error_messages' %> 
 
-  <div><%= f.label :title %><br />
+  <div><br /><%= f.label :photo, "Upload image" %>
+   <%= f.file_field :photo %><br /><br /></div>
+
+  <div><%= f.label :Title %><br />
   <%= f.text_field :title %></div>
 
-    <div><%= f.label :Street_Address %><br />
-      <%= f.text_field :street_address %></div>
+   <div><%= f.label :Street_Address %><br />
+  <%= f.text_field :street_address %></div>
 
-    <div><%= f.label :Apartment_Number %><br />
-      <%= f.text_field :apartment_number %></div>
+  <div><%= f.label :Apartment_Number %><br />
+    <%= f.text_field :apartment_number %></div>
 
-    <div><%= f.label :City %><br />
-      <%= f.text_field :city %></div>
+  <div><%= f.label :City %><br />
+    <%= f.text_field :city %></div>
 
-    <div><%= f.label :State %><br />
-      <%= f.text_field :state %></div>
+  <div><%= f.label :State %><br />
+    <%= f.text_field :state %></div>
 
-    <div><%= f.label :Zip %><br />
-      <%= f.text_field :zip %></div>
+  <div><%= f.label :Zip %><br />
+    <%= f.text_field :zip %></div>
 
-  <div><%= f.label :description %><br />
+  <div><%= f.label :Description %><br />
   <%= f.text_area :description %></div>
 
   <div><%= f.label :price %><br />
@@ -31,8 +34,8 @@
   <div><%= f.label :bedrooms %><br />
    <%= f.select :bedrooms, 1..10 %></div>
 
-   <div><%= f.label :bathrooms %><br />
-   <%= f.select :bathrooms, 1..10 %></div>
-
+  <div><%= f.label :bathrooms %><br />
+   <%= f.select :bathrooms, 1..10 %><br /><br /></div>
+   
   <div><%= f.submit "Save" %></div>
 <% end %>

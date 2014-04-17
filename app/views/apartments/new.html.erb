@@ -1,8 +1,11 @@
 <h1>Create a new apartment</h1>
 
-<%= form_for(@apartment) do |f| %>
+<%= form_for(@apartment, html: { multipart: true}) do |f| %>
 
 <%= render 'shared/error_messages' %>
+
+  <div><br /><%= f.label :photo, "Upload image" %>
+   <%= f.file_field :photo %><br /><br /></div>
 
   <div><%= f.label :Title %><br />
   <%= f.text_field :title %></div>
@@ -31,8 +34,8 @@
   <div><%= f.label :bedrooms %><br />
    <%= f.select :bedrooms, 1..10 %></div>
 
-   <div><%= f.label :bathrooms %><br />
-   <%= f.select :bathrooms, 1..10 %></div>
+  <div><%= f.label :bathrooms %><br />
+   <%= f.select :bathrooms, 1..10 %><br /><br /></div>
 
   <div><%= f.submit "Create Apartment" %></div>
 <% end %>

@@ -7,6 +7,8 @@
 
 
 <h2><%= @apartment.title %></h2>
+<%= image_tag @apartment.photo.url(:small) %>
+<p></ br></p>
 <p><%= @apartment.street_address %>, <%= @apartment.apartment_number %></p>
 <p><%= @apartment.city %>, <%= @apartment.state %> <%= @apartment.zip %></p>
 <p><%= @apartment.description %></p>
@@ -45,6 +47,7 @@
     <tr>
     	<th></th>
     	<th></th>
+    	<th>Picture</th>
 		<th>User</th>
 		<th>Review</th>
 		<th>Overall Rating</th>
@@ -60,6 +63,9 @@
 					</td>
 					<td>
 						<%= link_to "Delete", delete_review_path(id: review.id), :data => { :confirm => "Are you sure?" }, :method => :delete %>
+					</td>
+					 <td> 
+						<%= image_tag review.user.photo.url(:thumb) %>
 					</td>
 				<% else %>
 					<td></td>
