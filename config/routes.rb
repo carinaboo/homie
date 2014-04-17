@@ -10,7 +10,11 @@ Homie::Application.routes.draw do
 
   get 'apartments/search', to: 'apartments#search'
   #get 'apartments/delete', to: 'apartment#delete', as: 'delete_apartment'
-  resources :apartments
+  resources :apartments do
+    member do
+      get 'favorite'
+    end
+  end
   # devise_for :users
 
   devise_for :users 
