@@ -9,32 +9,33 @@ Feature: Search
     Given I am on the home page
     Then I should not see "Sign Up"
 
-  Scenario: Browse all apartments
+  Scenario: Browse all apartment
   	Given I am on the home page
     When I press "Search"
     Then I should see "Search results"
     Then I should see "Beautiful Studio"
     Then I should see "Best Studio"
+    And I should see "Picture"
 
-  Scenario: Apartment details are split
-  	Given I am on the home page
-  	When I follow "Add apartment"
-  	Then I should see "Street address"
-  	Then I should see "Apartment number"
-  	Then I should see "City"
-  	Then I should see "State"
-  	Then I should see "Zip"
+  Scenario: Can add picture
+    Given I am on the home page
+    When I follow "Add apartment"
+    Then I should see "Upload image"
+    And I should see "Title"
+    And I should see "Street address"
+    And I should see "Apartment number"
+    And I should see "City"
+    And I should see "State"
+    And I should see "Zip"
+    And I should see "Description"
+    And I should see "Price"
+    And I should see "Bedrooms"
+    And I should see "Bathrooms"
 
   Scenario: View an apartment
   	Given I am on the search results page
   	When I follow "Beautiful Studio"
   	Then I should see "Edit Apartment"
-
-  Scenario: Delete apartment
-  	Given I am on the search results page
-  	When I follow "Beautiful Studio"
-  	Then I should see "Delete Apartment"
-  	When I follow "Delete Apartment"
 
   Scenario: Search apartment by title
   	Given I am on the home page

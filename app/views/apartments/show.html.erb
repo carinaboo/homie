@@ -85,13 +85,13 @@
 					<td>
 						<%= link_to "Delete", delete_review_path(id: review.id), :data => { :confirm => "Are you sure?" }, :method => :delete %>
 					</td>
-					 <td> 
-						<%= image_tag review.user.photo.url(:thumb) %>
-					</td>
 				<% else %>
 					<td></td>
 					<td></td>
 				<% end %>
+				<td> 
+						<%= image_tag review.user.photo.url(:thumb) %>
+				</td>
 			    <td><%= review.user.username %></td>
 			    <td>
 				    <% if review.review != nil %>
