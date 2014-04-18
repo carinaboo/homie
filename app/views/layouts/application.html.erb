@@ -19,9 +19,9 @@
   <div class="nav">
     <%= link_to "", root_path, class: "logo" %>
     <span class="inline"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></span>
+    <span class="inline"><%= link_to "Profile", current_user %></span>
     <span class="inline"><%= link_to "Edit profile", edit_user_registration_path %></span>
     <span class="inline"><%= link_to "Add apartment", new_apartment_path %></span>
-    <span class="inline"><%= link_to "Profile", current_user %></span>
   </div>
 <% else %>
   <div class="nav">
@@ -34,6 +34,8 @@
 <% end %>
 
 <div class="main">
+  <div class="notice"><%= notice %></div>
+  <div class="alert"><%= alert %></div>
   <%= yield %>
 </div>
 

@@ -158,6 +158,14 @@ select[name=sorting] {
 				font-size: 2em;
 				font-family: 'Rokkitt', serif;
 				margin: 8px 0px 5px;
+				
+				a {
+					display: inline-block;
+					width: 100%;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
 			}
 
 			.listing-rooms {
