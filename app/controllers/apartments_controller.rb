@@ -113,6 +113,10 @@ class ApartmentsController < ApplicationController
 
   #Searches for apartment listings
   def search
+    @search = Apartment.search do
+      fulltext params[:search]
+    end
+    @apartments = @search.results
     # @apartments = Apartment.all
     sort = params[:sorting]
 
@@ -127,7 +131,7 @@ class ApartmentsController < ApplicationController
     min_bathrooms = params[:min_bathrooms]
     max_bathrooms = params[:max_bathrooms]
     
-    @apartments = Apartment.search(params[:search], sort, min_price, max_price, min_rating, min_bedrooms, max_bedrooms, min_bathrooms, max_bathrooms)
+    #@apartments = Apartment.search(params[:search], sort, min_price, max_price, min_rating, min_bedrooms, max_bedrooms, min_bathrooms, max_bathrooms)
     @max_price = Apartment.maximum("price") || 5000
     @max_bedrooms = Apartment.maximum("bedrooms") || 6
     @max_bathrooms = Apartment.maximum("bathrooms") || 6

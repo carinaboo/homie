@@ -73,6 +73,15 @@ class Apartment < ActiveRecord::Base
 		FORBIDDEN
 	end
 
+  searchable do
+    text :title, :street_address, :apartment_number, :city, :state, :zip
+
+    float :price
+    float :bathrooms
+    float :bedrooms
+  end
+
+=begin
 	#search for apartments by address and returns an array of apartments at that location. 
 	def self.search(search, sort, min_price, max_price, min_rating, min_bedrooms, max_bedrooms, min_bathrooms, max_bathrooms)
 		if search
@@ -102,7 +111,7 @@ class Apartment < ActiveRecord::Base
 			# find(:all)
 		end
 	end
-
+=end
 	def delete()
 		self.destroy
 	end

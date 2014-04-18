@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2528676079">
+  <component name="DataSourceManagerImpl" format="xml" hash="2080955715">
     <data-source source="LOCAL" name="Rails homie: development" uuid="f195fc9b-1b4a-4e61-8920-19822af1949c">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
@@ -17,6 +17,12 @@
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:db/production</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails homie: cucumber" uuid="efda6a80-08ed-4066-bf0a-092d298ca3f0">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Samuel Son\Documents\GitHub\homie\db\test</jdbc-url>
       <libraries />
     </data-source>
   </component>
