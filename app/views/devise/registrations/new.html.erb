@@ -3,7 +3,7 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><br /><%= f.label :photo, "Upload image" %>
+  <div><br /><%= f.label :photo, "Upload picture" %>
    <%= f.file_field :photo %><br /><br /></div>
 
   <div><%= f.label :Name %>
@@ -21,4 +21,4 @@
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+

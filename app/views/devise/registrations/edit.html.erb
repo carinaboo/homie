@@ -2,9 +2,9 @@
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true }) do |f| %>
 
-  <%= devise_error_messages! %>
+  <%= render 'shared/user_error_messages' %> 
 
-  <div><br /><%= f.label :photo, "Upload image" %>
+  <div><br /><%= f.label :photo, "Upload picture" %>
    <%= f.file_field :photo %><br /><br /></div>
 
   <div><%= f.label :Name %>
@@ -29,7 +29,7 @@
   <div><%= f.submit "Update" %></div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h4>Cancel my account</h4>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
 
