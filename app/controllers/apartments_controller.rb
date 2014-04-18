@@ -58,6 +58,7 @@ class ApartmentsController < ApplicationController
     zip = params[:apartment][:zip]
     desc = params[:apartment][:description]
     price = params[:apartment][:price]
+    price = Apartment.parsePrice(price)
     beds = params[:apartment][:bedrooms]
     baths = params[:apartment][:bathrooms]
     @apartment = Apartment.add(user_id, title, street_address, apartment_number, city, state, zip, desc, price, beds, baths)
@@ -95,6 +96,7 @@ class ApartmentsController < ApplicationController
     zip = params[:apartment][:zip]
     description = params[:apartment][:description]
     price = params[:apartment][:price]
+    price = Apartment.parsePrice(price)
     beds = params[:apartment][:bedrooms]
     baths = params[:apartment][:bathrooms]
     result = @apartment.update(user_id, title, street_address, apartment_number, city, state, zip, description, price, beds, baths)

@@ -11,7 +11,7 @@
       <%= f.text_field :street_address %></div>
 
     <div><%= f.label :Apartment_Number %><br />
-      <%= f.text_field :apartment_number %></div>
+      <%= f.text_field :apartment_number %><%="  (optional)"%></div>
 
     <div><%= f.label :City %><br />
       <%= f.text_field :city %></div>
@@ -29,10 +29,10 @@
   <%= f.text_field :price %></div>
 
   <div><%= f.label :bedrooms %><br />
-   <%= f.select :bedrooms, 1..10 %></div>
+   <%= f.select :bedrooms, 1..10, :selected => @apartment.bedrooms.to_i %></div>
 
    <div><%= f.label :bathrooms %><br />
-   <%= f.select :bathrooms, 1..10 %></div>
+   <%= f.select :bathrooms, 1..10, :selected => @apartment.bathrooms.to_i %></div>
 
   <div><%= f.submit "Save" %></div>
 <% end %>
