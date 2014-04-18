@@ -31,7 +31,6 @@ $(function() {
 
 		var sel = document.getElementById('review_overall_rating');
 		sel.options[stars-1].selected = true;
-		console.log(22222222);
 	});
 });
 
