@@ -10,10 +10,9 @@
 	<p></p>
 <% end %>
 
-<<<<<<< HEAD
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false&v=3&libraries=geometry,places"></script>
 <div id="map"></div>
-=======
+
 <% if current_user %>
 	<% if current_user.flagged?(Apartment.find(@apartment.id))	%>
 		<%= link_to "Remove from favorite", favorite_apartment_path(id: @apartment.id) %>
@@ -23,13 +22,10 @@
 <% else %>
 <%= link_to "Add to favorite", favorite_apartment_path(id: @apartment.id) %>
 <% end %>
->>>>>>> 9bcac74c9f0f897e02eee5284b494ef16b08e3f1
 
 <h2><%= @apartment.title %></h2>
-<<<<<<< HEAD
 <p id='apt-street'><%= @apartment.street_address %>, <%= @apartment.apartment_number %></p>
 <p><%= @apartment.city %>, <%= @apartment.state %> <span id='apt-zip'><%= @apartment.zip %></span></p>
-=======
 <%= image_tag @apartment.photo.url(:small) %>
 <p></ br></p>
 <p><%= @apartment.street_address %>, <%= @apartment.apartment_number %></p>
