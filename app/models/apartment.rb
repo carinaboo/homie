@@ -79,9 +79,11 @@ class Apartment < ActiveRecord::Base
     float :price
     float :bathrooms
     float :bedrooms
+    float :average_overall_rating
   end
 
 =begin
+=end
 	#search for apartments by address and returns an array of apartments at that location. 
 	def self.search(search, sort, min_price, max_price, min_rating, min_bedrooms, max_bedrooms, min_bathrooms, max_bathrooms)
 		if search
@@ -111,7 +113,7 @@ class Apartment < ActiveRecord::Base
 			# find(:all)
 		end
 	end
-=end
+
 	def delete()
 		self.destroy
 	end
