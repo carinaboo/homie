@@ -15,7 +15,6 @@ Feature: Search
     Then I should see "Search results"
     Then I should see "Beautiful Studio"
     Then I should see "Best Studio"
-    And I should see "Picture"
 
   Scenario: Can add picture
     Given I am on the home page
@@ -35,7 +34,7 @@ Feature: Search
   Scenario: View an apartment
   	Given I am on the search results page
   	When I follow "Beautiful Studio"
-  	Then I should see "Edit Apartment"
+  	Then I should see "Create Review"
 
   Scenario: Search apartment by title
   	Given I am on the home page

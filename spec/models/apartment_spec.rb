@@ -218,5 +218,6 @@ describe Apartment do
     it "tests parse price " do
       p = Apartment.parsePrice("$1,000")
       expect(p).to (eq 1000) 
-
+    end
+  end
 end
