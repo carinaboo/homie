@@ -28,42 +28,56 @@
 <% end %> 
 
 <h2>Search results</h2>
+<div id="results">
 
-<table class="apartments">
-  <thead>
-    <tr>
-      <th>Picture</th>
-      <th>Title</th>
-      <th>Address</th>
-      <th>Bedrooms</th>
-      <th>Bathrooms</th>
-      <th>Price</th>
-      <th>Rating</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @apartments.each do |apt| %>
-      <tr>
-        <td class="picture"><%= image_tag apt.photo.url(:thumb) %></td>
-        <td class="title"><%= link_to apt.title, apt %></td>
-        <td class="street_address"><%= apt.street_address %>, <%= apt.apartment_number %>, <%= apt.city %>, <%= apt.state %> <%= apt.zip %></td>
-        <td class="bedrooms"><%= apt.bedrooms.round(0) %></td>
-        <td class="bathrooms"><%= apt.bathrooms.round(0) %></td>
-        <td class="price"><span class="amount"><%= number_to_currency(apt.price) %></span></td>
-        <td class="rating"><%= number_with_precision(apt.average_overall_rating, precision: 2) if apt.average_overall_rating %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% @apartments.each do |apt| %>
 
-<script>
-$(function() {
-  $("#reset_filters").click(function(e){
-    e.preventDefault();
-    $("#filters input").each(function() {
-      $(this).val("");
-    })
-    $("#search_form").submit();
-  });
-});
-</script>
+  <div class="search-result">
+    <div class="listing-images">
+      <div class="listing-images-container">
+        <% if apt.photo.exists? %>
+          <%= image_tag apt.photo.url(:small) %>
+        <% end %>
+      </div>
+      <div class="listing-price">
+        <span class="currency"></span><span class="amount"><%= apt.price.round(0) %></span>
+      </div>
+      
+      <%= link_to "", apt, { class: "target-view" } %>
+      
+      <div class="listing-favorite">
+        <% if current_user %>
+          <% if current_user.flagged?(apt)  %>
+            <%= link_to "", favorite_apartment_path(id: apt.id), { class: "favorited" } %>
+          <% else %>
+            <%= link_to "", favorite_apartment_path(id: apt.id), { class: "not-favorited" } %>
+          <% end %>
+        <% else %>
+          <%= link_to "", favorite_apartment_path(id: apt.id), { class: "not-favorited" } %>
+        <% end %>
+      </div>
+    </div>
+    <div class="listing-footer">
+      <div class="listing-title">
+        <%= link_to apt.title, apt %>
+      </div>
+      <div class="listing-address">
+        <%= apt.street_address %> <%= apt.apartment_number %> <%= apt.city %> <%= apt.state %> <%= apt.zip %>
+      </div>
+      <div class="listing-rooms">
+        <div class="listing-bedrooms">
+          <%= apt.bedrooms.round(0) %> bed
+        </div>
+        <div class="listing-bathrooms">
+          <%= apt.bathrooms.round(0) %> bath
+        </div>
+      </div>
+      <div class="listing-rating">
+        <%= number_with_precision(apt.average_overall_rating, precision: 2) if apt.average_overall_rating %>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+
+</div>
