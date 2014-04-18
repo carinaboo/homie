@@ -16,11 +16,18 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  username               :string(255)
+#  photo_file_name        :string(255)
+#  photo_content_type     :string(255)
+#  photo_file_size        :integer
+#  photo_updated_at       :datetime
 #
 
 class User < ActiveRecord::Base
   has_many :apartments
   has_many :reviews
+  has_attached_file :photo, styles: {thumb: "75x75>", small: "200x200>"}
+  do_not_validate_attachment_file_type :photo
+  
   make_flagger
   has_many :flagged_apartments, :through => :flaggings, :source => :flaggable, :source_type => 'Apartment'
   # Include default devise modules. Others available are:

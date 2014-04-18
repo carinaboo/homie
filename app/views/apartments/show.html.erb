@@ -3,7 +3,12 @@
 <% end %>
 
 <%= link_to "Edit Apartment", edit_apartment_path(id: @apartment.id) %>
-<p><%= link_to "Delete Apartment", apartment_path(id: @apartment.id), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+
+<% if @user_id == @apartment.user_id %>
+	<p><%= link_to "Delete Apartment", apartment_path(id: @apartment.id), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+<% else %>
+	<p></p>
+<% end %>
 
 <<<<<<< HEAD
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false&v=3&libraries=geometry,places"></script>
@@ -21,8 +26,15 @@
 >>>>>>> 9bcac74c9f0f897e02eee5284b494ef16b08e3f1
 
 <h2><%= @apartment.title %></h2>
+<<<<<<< HEAD
 <p id='apt-street'><%= @apartment.street_address %>, <%= @apartment.apartment_number %></p>
 <p><%= @apartment.city %>, <%= @apartment.state %> <span id='apt-zip'><%= @apartment.zip %></span></p>
+=======
+<%= image_tag @apartment.photo.url(:small) %>
+<p></ br></p>
+<p><%= @apartment.street_address %>, <%= @apartment.apartment_number %></p>
+<p><%= @apartment.city %>, <%= @apartment.state %> <%= @apartment.zip %></p>
+>>>>>>> 794746a755eef7c658e33105297f3045f8a3d58f
 <p><%= @apartment.description %></p>
 <p>$<%= @apartment.price %></p>
 <p><%= @apartment.bedrooms %> bedrooms</p>
@@ -59,6 +71,7 @@
     <tr>
     	<th></th>
     	<th></th>
+    	<th>Picture</th>
 		<th>User</th>
 		<th>Review</th>
 		<th>Overall Rating</th>
@@ -74,6 +87,9 @@
 					</td>
 					<td>
 						<%= link_to "Delete", delete_review_path(id: review.id), :data => { :confirm => "Are you sure?" }, :method => :delete %>
+					</td>
+					 <td> 
+						<%= image_tag review.user.photo.url(:thumb) %>
 					</td>
 				<% else %>
 					<td></td>

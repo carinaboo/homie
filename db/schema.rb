@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416223306) do
+ActiveRecord::Schema.define(version: 20140417005150) do
 
   create_table "apartments", force: true do |t|
     t.string   "title"
@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(version: 20140416223306) do
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "flaggings", force: true do |t|
@@ -66,6 +70,10 @@ ActiveRecord::Schema.define(version: 20140416223306) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

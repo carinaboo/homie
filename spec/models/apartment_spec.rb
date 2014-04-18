@@ -4,11 +4,6 @@
 #
 #  id                     :integer          not null, primary key
 #  title                  :string(255)
-#  street_address         :string(255)
-#  apartment_number       :string(255)
-#  city                   :string(255)
-#  state                  :string(255)
-#  zip                    :integer
 #  description            :text
 #  price                  :float
 #  bathrooms              :float
@@ -17,6 +12,15 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  user_id                :integer
+#  street_address         :string(255)
+#  apartment_number       :string(255)
+#  city                   :string(255)
+#  state                  :string(255)
+#  zip                    :integer
+#  photo_file_name        :string(255)
+#  photo_content_type     :string(255)
+#  photo_file_size        :integer
+#  photo_updated_at       :datetime
 #
 
 require 'spec_helper'

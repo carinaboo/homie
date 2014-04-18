@@ -1,15 +1,15 @@
-<h6> [User photo will be here] </h6>
-
-<h1><%= @user.username %></h1>
-<h4>About You: </h4>
+<h2><%= @user.username %></h2>
+<%= image_tag @user.photo.url(:small) %>
+<h3>About You: </h3>
 <h4>Your Email: <%= @user.email %></h4>
 <hr />
-<h4>Apartment Listings You Created</h4>
+<h3>Apartment Listings You Created</h3>
 
 <table class="apartments">
   <thead>
     <tr>
       <th></th>
+      <th>Picture</th>
       <th>Title</th>
       <th>Address</th>
       <th>Bedrooms</th>
@@ -22,6 +22,7 @@
     <% @apartments.each do |apt| %>
       <tr>
         <td><a href="/apartments/<%= apt.id %>">View</a></td>
+        <td class="picture"><%= image_tag apt.photo.url(:thumb) %></td>
         <td class="title"><%= apt.title %></td>
         <td class="street_address"><%= apt.street_address %>, <%= apt.apartment_number %>, <%= apt.city %>, <%= apt.state %> <%= apt.zip %></td>
         <td class="bedrooms"><%= apt.bedrooms.round(0) %></td>
