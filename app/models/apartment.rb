@@ -17,11 +17,18 @@
 #  city                   :string(255)
 #  state                  :string(255)
 #  zip                    :integer
+#  photo_file_name        :string(255)
+#  photo_content_type     :string(255)
+#  photo_file_size        :integer
+#  photo_updated_at       :datetime
 #
 
 class Apartment < ActiveRecord::Base
 	has_many :reviews
 	belongs_to :user, class_name: 'User', foreign_key: 'user_id'
+	has_attached_file :photo, styles: {thumb: "75x75>", small: "200x200>"}
+	#validates_attachment :photo, content_type: { content_type: ["photo/jpg", "photo/jpeg", "photo/png"] }
+	do_not_validate_attachment_file_type :photo
 	make_flaggable
 
 	validates :user_id, :street_address, :title, :city, :state, :zip, :description, :bedrooms, :bathrooms, presence: true
@@ -42,10 +49,26 @@ class Apartment < ActiveRecord::Base
 		#FORBIDDEN
 	end
 
+	def self.addApt(params)
+		street_address = params[:street_address]
+		apartment_number = params[:apartment_number]
+		if self.where('street_address = ? AND apartment_number = ?', street_address, apartment_number).empty?
+			apartment = new(params)
+			apartment.save
+			return apartment
+		end
+	end 
+
 	#update the description for this apartment record and then returns FORBIDDEN if
 	#the updates are not valid; otherwise returns 1 for success
 	def update(user_id, title, street_address, apartment_number, city, state, zip, description, price, bedrooms, bathrooms)
 		valid = self.update_attributes(user_id: user_id, title: title, street_address: street_address, apartment_number: apartment_number, city: city, state: state, zip: zip, description: description, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
+		return self if valid
+		FORBIDDEN
+	end
+
+	def updateApt(params)
+		valid = self.update_attributes(params)
 		return self if valid
 		FORBIDDEN
 	end
@@ -69,8 +92,8 @@ class Apartment < ActiveRecord::Base
 			end
 
 			# find(:all, :conditions => ['address LIKE ?', "%#{search}%"], :order =>  sorting)
-			Apartment.where('(title LIKE ? OR street_address LIKE ? OR apartment_number LIKE ? OR city LIKE ? OR state LIKE ? OR zip LIKE ?) AND (price >= ? AND price <= ? AND (average_overall_rating >= ? OR average_overall_rating IS ?) AND bedrooms >= ? AND bedrooms <= ? AND bathrooms >= ? AND bathrooms <= ?)',
-				"%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", min_price.presence || 0, max_price.presence || Apartment.maximum("price"),
+			Apartment.where('(title LIKE ? OR street_address LIKE ? OR apartment_number LIKE ? OR city LIKE ? OR state LIKE ?) AND (price >= ? AND price <= ? AND (average_overall_rating >= ? OR average_overall_rating IS ?) AND bedrooms >= ? AND bedrooms <= ? AND bathrooms >= ? AND bathrooms <= ?)',
+				"%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", min_price.presence || 0, max_price.presence || Apartment.maximum("price"),
 				min_rating.presence || 0, min_rating.presence || nil,
 				min_bedrooms.presence || 0, max_bedrooms.presence || Apartment.maximum("bedrooms"), 
 				min_bathrooms.presence || 0, max_bathrooms.presence || Apartment.maximum("bathrooms")).order(sorting)
