@@ -16,12 +16,12 @@
 
 <% if current_user %>
 	<% if current_user.flagged?(Apartment.find(@apartment.id))	%>
-		<%= link_to image_tag('/images/unfavorite.png'), favorite_apartment_path(id: @apartment.id) %>
+		<%= link_to image_tag('/images/unfavorite.png'), favorite_apartment_path(id: @apartment.id), { class: "favorite" } %>
 	<% else %>
-		<%= link_to image_tag('/images/favorite.png'), favorite_apartment_path(id: @apartment.id) %>
+		<%= link_to image_tag('/images/favorite.png'), favorite_apartment_path(id: @apartment.id), { class: "favorite" } %>
 	<% end %>
 <% else %>
-<%= link_to image_tag('/images/favorite.png'), favorite_apartment_path(id: @apartment.id) %>
+<%= link_to image_tag('/images/favorite.png'), favorite_apartment_path(id: @apartment.id), { class: "favorite" } %>
 <% end %>
 
 
