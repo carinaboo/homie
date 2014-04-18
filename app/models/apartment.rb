@@ -106,4 +106,11 @@ class Apartment < ActiveRecord::Base
 	def delete()
 		self.destroy
 	end
+
+	#pass in a price, return it in float format
+	def self.parsePrice(p)
+		p = p.to_s
+		p = p.gsub(/[$,_]/,'').to_f
+		return p
+	end
 end
