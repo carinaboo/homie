@@ -46,10 +46,8 @@ select[name=sorting] {
 	}
 }
 
-html, body, #map {
-	label {
-		float: right;
-	}
-  	height: 100%;
-  	margin: 0;
+#map {
+	width: 500px;
+	height: 400px;
+	float: right;
 }
