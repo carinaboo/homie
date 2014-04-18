@@ -214,4 +214,9 @@ describe Apartment do
     end
   end
 
+  describe "parsePrice to remove '$'', ','', '_'" do
+    it "tests parse price " do
+      p = Apartment.parsePrice("$1,000")
+      expect(p).to (eq 1000) 
+
 end

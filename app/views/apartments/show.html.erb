@@ -7,9 +7,8 @@
 <h2><%= @apartment.title %></h2>
 <div id="map"></div>
 
-<%= link_to "Edit Apartment", edit_apartment_path(id: @apartment.id) %>
-
 <% if @user_id == @apartment.user_id %>
+	<%= link_to "Edit Apartment", edit_apartment_path(id: @apartment.id) %>
 	<p><%= link_to "Delete Apartment", apartment_path(id: @apartment.id), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
 <% else %>
 	<p></p>
