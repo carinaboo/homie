@@ -44,7 +44,11 @@
   <tbody>
     <% @apartments.each do |apt| %>
       <tr>
-        <td class="picture"><%= image_tag apt.photo.url(:thumb) %></td>
+        <td class="picture">
+          <% if apt.photo.exists? %>
+            <%= image_tag apt.photo.url(:thumb) %>
+          <% end %>
+        </td>
         <td class="title"><%= link_to apt.title, apt %></td>
         <td class="street_address"><%= apt.street_address %>, <%= apt.apartment_number %>, <%= apt.city %>, <%= apt.state %> <%= apt.zip %></td>
         <td class="bedrooms"><%= apt.bedrooms.round(0) %></td>

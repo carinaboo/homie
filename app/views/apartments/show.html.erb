@@ -27,7 +27,11 @@
 
 <p id='apt-street'><%= @apartment.street_address %>, <%= @apartment.apartment_number %></p>
 <p><%= @apartment.city %>, <%= @apartment.state %> <span id='apt-zip'><%= @apartment.zip %></span></p>
-<%= image_tag @apartment.photo.url(:small) %>
+<p>
+	<% if @apartment.photo.exists? %>
+		<%= image_tag @apartment.photo.url(:small) %>
+	<% end %>
+</p>
 <p></ br></p>
 <p><%= @apartment.street_address %>, <%= @apartment.apartment_number %></p>
 <p><%= @apartment.city %>, <%= @apartment.state %> <%= @apartment.zip %></p>
@@ -89,7 +93,9 @@
 					<td></td>
 				<% end %>
 				<td> 
+					<% if review.user.photo.exists? %>
 						<%= image_tag review.user.photo.url(:thumb) %>
+					<% end %>
 				</td>
 			    <td><%= review.user.username %></td>
 			    <td>
