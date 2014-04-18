@@ -10,6 +10,13 @@ GIT
       xpath (~> 2.0)
 
 GIT
+  remote: git://github.com/medihack/make_flaggable.git
+  revision: d7309c0c89c6de3fa940eed314a594e77ca83466
+  specs:
+    make_flaggable (0.0.3)
+      activerecord (>= 3.0, < 4.1)
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: 663760e67b80ee25adc293bf5f03debae28b5af9
   specs:
@@ -222,6 +229,7 @@ DEPENDENCIES
   factory_girl_rails
   jbuilder (~> 1.2)
   jquery-rails
+  make_flaggable!
   pg
   rails (= 4.0.2)
   rails_12factor
