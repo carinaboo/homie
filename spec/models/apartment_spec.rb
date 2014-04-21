@@ -196,11 +196,6 @@ describe Apartment do
       expect(result).to (eq [])
     end
 
-    it "test search with zipcode" do
-      result = Apartment.search(94704, "Ratings: low to high", 0, 9999, 0, 0, 10, 1, 10)
-      expect(result.first.zip).to (eq 94704)
-    end
-
     it "test search with city" do
       result = Apartment.search("city2", "Ratings: low to high", 0, 9999, 0, 0, 10, 1, 10)
       expect(result.first.city).to (eq "city2")
@@ -223,5 +218,6 @@ describe Apartment do
     it "tests parse price " do
       p = Apartment.parsePrice("$1,000")
       expect(p).to (eq 1000) 
-
+    end
+  end
 end

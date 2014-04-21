@@ -16,21 +16,28 @@
 
 <% if current_user %>
 	<% if current_user.flagged?(Apartment.find(@apartment.id))	%>
-		<%= link_to image_tag('/images/unfavorite.png'), favorite_apartment_path(id: @apartment.id) %>
+		<%= link_to image_tag('/images/unfavorite.png'), favorite_apartment_path(id: @apartment.id), { class: "favorite" } %>
 	<% else %>
-		<%= link_to image_tag('/images/favorite.png'), favorite_apartment_path(id: @apartment.id) %>
+		<%= link_to image_tag('/images/favorite.png'), favorite_apartment_path(id: @apartment.id), { class: "favorite" } %>
 	<% end %>
 <% else %>
-<%= link_to image_tag('/images/favorite.png'), favorite_apartment_path(id: @apartment.id) %>
+<%= link_to image_tag('/images/favorite.png'), favorite_apartment_path(id: @apartment.id), { class: "favorite" } %>
 <% end %>
 
-
-<p id='apt-street'><%= @apartment.street_address %>, <%= @apartment.apartment_number %></p>
-<p><%= @apartment.city %>, <%= @apartment.state %> <span id='apt-zip'><%= @apartment.zip %></span></p>
-<%= image_tag @apartment.photo.url(:small) %>
+<p>
+	<% if @apartment.photo.exists? %>
+		<%= image_tag @apartment.photo.url(:small) %>
+	<% end %>
+</p>
 <p></ br></p>
-<p><%= @apartment.street_address %>, <%= @apartment.apartment_number %></p>
-<p><%= @apartment.city %>, <%= @apartment.state %> <%= @apartment.zip %></p>
+<h4 id='apt-street'>
+	<%= @apartment.street_address %> 
+	<%= @apartment.apartment_number %>
+	<%= @apartment.city %> 
+	<%= @apartment.state %> 
+	<span id="apt-zip"><%= @apartment.zip %></span>
+</h4>
+
 <p><%= @apartment.description %></p>
 <p>$<%= @apartment.price %></p>
 <p><%= @apartment.bedrooms %> bedrooms</p>
@@ -84,13 +91,15 @@
 					<td>
 						<%= link_to "Delete", delete_review_path(id: review.id), :data => { :confirm => "Are you sure?" }, :method => :delete %>
 					</td>
-					 <td> 
-						<%= image_tag review.user.photo.url(:thumb) %>
-					</td>
 				<% else %>
 					<td></td>
 					<td></td>
 				<% end %>
+				<td> 
+					<% if review.user.photo.exists? %>
+						<%= image_tag review.user.photo.url(:thumb) %>
+					<% end %>
+				</td>
 			    <td><%= review.user.username %></td>
 			    <td>
 				    <% if review.review != nil %>

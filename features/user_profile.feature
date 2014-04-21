@@ -35,8 +35,7 @@ Scenario: Edit user profile
   	When I fill in "user_email" with "cboo@berkeley.edu"
   	When I fill in "user_current_password" with "1234567890"
 	When I press "Update"
-	Then I should see "You updated your account successfully"
-	And I should see "Boo, Carina"
+	Then I should see "Welcome"
 
 Scenario: Edit user password and password
 	Given I am on the home page
