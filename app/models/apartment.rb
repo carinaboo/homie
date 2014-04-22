@@ -49,26 +49,10 @@ class Apartment < ActiveRecord::Base
 		#FORBIDDEN
 	end
 
-	def self.addApt(params)
-		street_address = params[:street_address]
-		apartment_number = params[:apartment_number]
-		if self.where('street_address = ? AND apartment_number = ?', street_address, apartment_number).empty?
-			apartment = new(params)
-			apartment.save
-			return apartment
-		end
-	end 
-
 	#update the description for this apartment record and then returns FORBIDDEN if
 	#the updates are not valid; otherwise returns 1 for success
 	def update(user_id, title, street_address, apartment_number, city, state, zip, description, price, bedrooms, bathrooms)
 		valid = self.update_attributes(user_id: user_id, title: title, street_address: street_address, apartment_number: apartment_number, city: city, state: state, zip: zip, description: description, price: price, bedrooms: bedrooms, bathrooms:bathrooms)
-		return self if valid
-		FORBIDDEN
-	end
-
-	def updateApt(params)
-		valid = self.update_attributes(params)
 		return self if valid
 		FORBIDDEN
 	end
