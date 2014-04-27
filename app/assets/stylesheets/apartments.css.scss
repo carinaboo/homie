@@ -41,6 +41,7 @@ select[name=sorting] {
 	overflow: auto;
 
 	.search-result {
+		min-height: 440px;
 		width: 300px;
 		float: left;
 		margin: 0px 10px 20px;
