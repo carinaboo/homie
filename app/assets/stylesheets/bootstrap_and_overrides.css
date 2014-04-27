@@ -6,6 +6,10 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
+body {
+	line-height: normal;
+}
+
 .alert {
 	padding: 0px;
 	margin-bottom: 0px;
