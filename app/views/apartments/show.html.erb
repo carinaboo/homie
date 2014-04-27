@@ -33,7 +33,7 @@
 <h4 id='apt-street'>
 	<%= @apartment.street_address %> 
 	<%= @apartment.apartment_number %>
-	<%= @apartment.city %> 
+	<%= @apartment.city %> cra
 	<%= @apartment.state %> 
 	<span id="apt-zip"><%= @apartment.zip %></span>
 </h4>
@@ -44,7 +44,7 @@
 <p><%= @apartment.bathrooms %> bathrooms</p>
 <p> rating: <%= @apartment.average_overall_rating %></p>
 
-<% if !@reviewed %>
+<% if !@reviewed && @loggedIn%>
 	<h2>Create Review</h2>
 
 	<%= form_for @review, url: "/reviews", html: {method: :post} do |f| %>

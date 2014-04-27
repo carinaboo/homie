@@ -30,6 +30,7 @@ class ApartmentsController < ApplicationController
     @reviews = Review.find_by_apt(params[:id]) 
     @review = Review.new
     @reviewed = Review.hasReviewed(current_user, params[:id])
+    @loggedIn = current_user
     if current_user
       @user_id = current_user.id
     end
