@@ -226,3 +226,15 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+Then(/^I should see image favorite$/) do
+  expect(page).to have_xpath("//img[@src=\"/images/favorite.png\"]")
+end
+
+Then(/^I should see image unfavorite$/) do
+  expect(page).to have_xpath("//img[@src=\"/images/unfavorite.png\"]")
+end
+
+When(/^I follow favorite$/) do
+  find('a.favorite').click
+end

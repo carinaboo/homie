@@ -1,4 +1,6 @@
 <h2><%= @user.username %></h2>
+<p><%= link_to "Edit profile", edit_user_registration_path %></p>
+
 <%= image_tag @user.photo.url(:small) %>
 <h3>About You: </h3>
 <h4>Your Email: <%= @user.email %></h4>
@@ -22,7 +24,11 @@
     <% @apartments.each do |apt| %>
       <tr>
         <td><a href="/apartments/<%= apt.id %>">View</a></td>
-        <td class="picture"><%= image_tag apt.photo.url(:thumb) %></td>
+        <td class="picture">
+          <% if apt.photo.exists? %>
+            <%= image_tag apt.photo.url(:thumb) %>
+          <% end %>
+        </td>
         <td class="title"><%= apt.title %></td>
         <td class="street_address"><%= apt.street_address %>, <%= apt.apartment_number %>, <%= apt.city %>, <%= apt.state %> <%= apt.zip %></td>
         <td class="bedrooms"><%= apt.bedrooms.round(0) %></td>

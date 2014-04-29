@@ -5,37 +5,37 @@
 <%= render 'shared/error_messages' %> 
 
   <div><br /><%= f.label :photo, "Upload image" %>
-   <%= f.file_field :photo %><br /><br /></div>
+   <%= f.file_field :photo %><br /></div>
 
   <div><%= f.label :Title %>
-  <%= f.text_field :title %><br /><br /></div>
+  <%= f.text_field :title %><br /></div>
 
    <div><%= f.label :Street_Address %>
-  <%= f.text_field :street_address %><br /><br /></div>
+  <%= f.text_field :street_address %><br /></div>
 
   <div><%= f.label :Apartment_Number %>
-    <%= f.text_field :apartment_number %><br /><br /></div>
+    <%= f.text_field :apartment_number %><%="  (optional)"%><br /></div>
 
   <div><%= f.label :City %>
-    <%= f.text_field :city %><br /><br /></div>
+    <%= f.text_field :city %><br /></div>
 
   <div><%= f.label :State %>
-    <%= f.text_field :state %><br /><br /></div>
+    <%= f.text_field :state %><br /></div>
 
   <div><%= f.label :Zip %>
-    <%= f.text_field :zip %><br /><br /></div>
+    <%= f.text_field :zip %><br /></div>
 
   <div><%= f.label :Description %>
-  <%= f.text_area :description %><br /><br /></div>
+  <%= f.text_area :description %><br /></div>
 
   <div><%= f.label :price %>
-  <%= f.text_field :price %><br /><br /></div>
+  <%= f.text_field :price %><br /></div>
 
   <div><%= f.label :bedrooms %>
-   <%= f.select :bedrooms, 1..10 %><br /><br /></div>
+   <%= f.select :bedrooms, 1..10, :selected => @apartment.bedrooms.to_i %><br /></div>
 
   <div><%= f.label :bathrooms %>
-   <%= f.select :bathrooms, 1..10 %><br /><br /></div>
+   <%= f.select :bathrooms, 1..10, :selected => @apartment.bathrooms.to_i %><br /></div>
    
   <div><%= f.submit "Save" %></div>
 <% end %>

@@ -30,6 +30,7 @@ class ApartmentsController < ApplicationController
     @reviews = Review.find_by_apt(params[:id]) 
     @review = Review.new
     @reviewed = Review.hasReviewed(current_user, params[:id])
+    @loggedIn = current_user
     if current_user
       @user_id = current_user.id
     end
@@ -51,23 +52,33 @@ class ApartmentsController < ApplicationController
   def create
     user_id = current_user.id
     params[:apartment][:user_id] = user_id
-    title = params[:apartment][:title]
+    price = params[:apartment][:price]
+    params[:apartment][:price] = Apartment.parsePrice(price)
     street_address = params[:apartment][:street_address]
     apartment_number = params[:apartment][:apartment_number]
+
+=begin
+    title = params[:apartment][:title]
     city = params[:apartment][:city]
     state = params[:apartment][:state]
     zip = params[:apartment][:zip]
     desc = params[:apartment][:description]
     price = params[:apartment][:price]
-    price = Apartment.parsePrice(price)
+    params[:apartment][:price] = Apartment.parsePrice(price)
     beds = params[:apartment][:bedrooms]
     baths = params[:apartment][:bathrooms]
-    #@apartment = Apartment.add(user_id, title, street_address, apartment_number, city, state, zip, desc, price, beds, baths)
-    @apartment = Apartment.addApt(apt_params)
-    if @apartment.valid?
-      redirect_to @apartment
-    else
-      render "new"
+    street_address = params[:street_address]
+    apartment_number = params[:apartment_number]
+    @apartment = Apartment.add(user_id, title, street_address, apartment_number, city, state, zip, desc, price, beds, baths)
+=end
+
+    @apartment = Apartment.new(apt_params)
+    if Apartment.where('street_address = ? AND apartment_number = ?', street_address, apartment_number).empty?    
+      if @apartment.save
+        redirect_to @apartment
+      else
+        render "new"
+      end
     end
   end
 
@@ -91,6 +102,10 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.find(params[:id])
     user_id = current_user.id
     params[:apartment][:user_id] = user_id
+    price = params[:apartment][:price]
+    params[:apartment][:price] = Apartment.parsePrice(price)
+
+=begin
     title = params[:apartment][:title]
     street_address = params[:apartment][:street_address]
     apartment_number = params[:apartment][:apartment_number]
@@ -99,12 +114,13 @@ class ApartmentsController < ApplicationController
     zip = params[:apartment][:zip]
     description = params[:apartment][:description]
     price = params[:apartment][:price]
-    price = Apartment.parsePrice(price)
+    params[:apartment][:price] = Apartment.parsePrice(price)
     beds = params[:apartment][:bedrooms]
     baths = params[:apartment][:bathrooms]
-    #result = @apartment.update(user_id, title, street_address, apartment_number, city, state, zip, description, price, beds, baths)
-    result = @apartment.updateApt(apt_params)
-    if result.is_a? Apartment
+    result = @apartment.update(user_id, title, street_address, apartment_number, city, state, zip, description, price, beds, baths)
+=end
+
+    if @apartment.update_attributes(apt_params)
       redirect_to @apartment
     else 
       render "edit"

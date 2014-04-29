@@ -26,7 +26,7 @@
 class Apartment < ActiveRecord::Base
 	has_many :reviews
 	belongs_to :user, class_name: 'User', foreign_key: 'user_id'
-	has_attached_file :photo, styles: {thumb: "75x75>", small: "200x200>"}
+	has_attached_file :photo, styles: {thumb: "75x75>", small: "500x500>", large: "1200x1200>"}
 	#validates_attachment :photo, content_type: { content_type: ["photo/jpg", "photo/jpeg", "photo/png"] }
 	do_not_validate_attachment_file_type :photo
 	make_flaggable
@@ -48,16 +48,6 @@ class Apartment < ActiveRecord::Base
 		#apartment.errors.messages
 		#FORBIDDEN
 	end
-
-	def self.addApt(params)
-		street_address = params[:street_address]
-		apartment_number = params[:apartment_number]
-		if self.where('street_address = ? AND apartment_number = ?', street_address, apartment_number).empty?
-			apartment = new(params)
-			apartment.save
-			return apartment
-		end
-	end 
 
 	#update the description for this apartment record and then returns FORBIDDEN if
 	#the updates are not valid; otherwise returns 1 for success
