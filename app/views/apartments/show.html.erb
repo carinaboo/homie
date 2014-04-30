@@ -2,6 +2,8 @@
 
 <h2><%= @apartment.title %></h2>
 
+<div id="map"></div>
+
 <% if @user_id == @apartment.user_id %>
 	<div class="actions">
 		<%= link_to "Edit", edit_apartment_path(id: @apartment.id), :class => 'button small' %>
@@ -56,7 +58,6 @@
 
 <div class="price"><%= number_to_currency(@apartment.price, unit: "$") %></div>
 
-<div id="map"></div>
 <div class="details">
 	<div class="bedrooms"><%= @apartment.bedrooms.round(0) %> bedrooms</div>
 	<div class="bathrooms"><%= @apartment.bathrooms.round(0) %> bathrooms</div>
@@ -81,11 +82,11 @@
 		<%= f.select :overall_rating, 1..5 %></div>
 
 		<div><%= f.label :Review %><br />
-		<%= f.text_area :review, size: "60x12", placeholder: "What do you think of this place?" %></div>
+		<%= f.text_area :review, size: "60x12", placeholder: "What do you think of this place?" %><br /><br /></div>
 
 		<%= f.hidden_field :apartment_id, value: @apartment.id %>
 
-		<div><%= f.submit "Submit" %></div>
+		<div><%= f.submit "Submit", class: "button small" %><br /><br /></div>
 	<% end %>
 <% end %>
 

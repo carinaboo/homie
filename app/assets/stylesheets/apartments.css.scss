@@ -22,8 +22,8 @@ select[name=sorting] {
 	height: 400px;
 	width: 500px;
 	float: right;
-	position: relative;
-	top: -420px;
+	// position: relative;
+	// top: -420px;
 }
 
 #new_review {
@@ -231,11 +231,11 @@ select[name=sorting] {
 
 .actions {
 	display: inline-block;
+	margin-right: 30px;
 }
 .favorite {
 	display: inline-block;
 	vertical-align: top;
-	margin-left: 30px;
 	a {
 		display: inline-block;
 		width: 35px;
@@ -323,6 +323,7 @@ select[name=sorting] {
 
 	.review {
 		overflow: auto;
+		margin-bottom: 25px;
 
 		.reviewer {
 			float: left;
@@ -332,6 +333,8 @@ select[name=sorting] {
 				height: 75px;
 				width: 75px;
 				border-radius: 75px;
+				background: #CCC image-url('profile-default.png');
+				background-size: 75px 75px; 
 
 				img {
 					min-width: 100%;
@@ -376,6 +379,7 @@ select[name=sorting] {
 				position: absolute;
 				bottom: 10px;
 				right: 10px;
+				margin-right: 0;
 			}
 		}
 	}
