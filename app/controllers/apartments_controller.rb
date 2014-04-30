@@ -79,6 +79,9 @@ class ApartmentsController < ApplicationController
       else
         render "new"
       end
+    else
+      flash[:error] = "Error: Apartment with same address and apartment number already exists\n"
+      redirect_to new_apartment_path
     end
   end
 
