@@ -21,6 +21,12 @@ select[name=sorting] {
 	float: right;
 }
 
+#new_review {
+	select, label {
+		display: none;
+	}
+}
+
 #filters {
 	label {
 		display: inline-block;

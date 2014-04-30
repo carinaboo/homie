@@ -29,7 +29,7 @@
 		<%= image_tag @apartment.photo.url(:small) %>
 	<% end %>
 </p>
-<p></ br></p>
+<p><br /></p>
 <h4 id='apt-street'>
 	<%= @apartment.street_address %> 
 	<%= @apartment.apartment_number %>
@@ -44,12 +44,13 @@
 <p><%= @apartment.bathrooms %> bathrooms</p>
 <p> rating: <%= @apartment.average_overall_rating %></p>
 
+<br />
 <% if !@reviewed && @loggedIn%>
 	<h2>Create Review</h2>
 
 	<%= form_for @review, url: "/reviews", html: {method: :post} do |f| %>
 
-		<div><%= f.label :Overall_Rating %><br />
+		<div><%= f.label :Overall_Rating %>
 		<ul class="rating">
 			<% (1..5).each do |i| %>
 				<li class="rating_star" data-apt-id="<%= @apartment.id %>" data-stars="<%= i %>" id="<%= "#{@apartment.id}_#{i}" %>"></li>
