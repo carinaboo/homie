@@ -12,6 +12,7 @@ class ApartmentsController < ApplicationController
       @current_user = current_user
       @apt = Apartment.find(params[:id])
       @list = current_user.flagged_apartments
+      @pictures = @apt.pictures
       if @current_user.flagged?(@apt)
         @current_user.unflag(@apt)
         @list.delete(@apt)

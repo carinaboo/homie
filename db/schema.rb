@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20140501172127) do
   add_index "flaggings", ["flagger_type", "flagger_id", "flaggable_type", "flaggable_id"], name: "access_flaggings"
 
   create_table "pictures", force: true do |t|
-    t.integer  "apt_id"
+    t.integer  "apartment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"

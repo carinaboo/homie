@@ -3,7 +3,7 @@
 # Table name: pictures
 #
 #  id                 :integer          not null, primary key
-#  apt_id             :integer
+#  apartment_id       :integer
 #  created_at         :datetime
 #  updated_at         :datetime
 #  image_file_name    :string(255)
