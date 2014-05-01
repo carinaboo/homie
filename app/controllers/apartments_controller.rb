@@ -12,7 +12,6 @@ class ApartmentsController < ApplicationController
       @current_user = current_user
       @apt = Apartment.find(params[:id])
       @list = current_user.flagged_apartments
-      @pictures = @apt.pictures
       if @current_user.flagged?(@apt)
         @current_user.unflag(@apt)
         @list.delete(@apt)
@@ -29,7 +28,9 @@ class ApartmentsController < ApplicationController
   def show
     @apartment = Apartment.find(params[:id])
     @reviews = Review.find_by_apt(params[:id]) 
+    @pictures = @apartment.pictures
     @review = Review.new
+    @picture = Picture.new
     @reviewed = Review.hasReviewed(current_user, params[:id])
     @loggedIn = current_user
     if current_user
