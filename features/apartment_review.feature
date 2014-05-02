@@ -23,11 +23,11 @@ Scenario: Edit apartment
     When I select "1" from "apartment_bathrooms"
     Then I press "Create Apartment"
     Then I should see "Northside two bedroom"
-    When I follow "Edit Apartment"
+    When I follow "Edit"
     Then I should see "Price"
     When I fill in "apartment_price" with "3000"
     When I press "Save"
-    Then I should see "$3000"
+    Then I should see "$3,000.00"
 
 Scenario: Delete apartment
 	Given I am on the home page
@@ -44,8 +44,8 @@ Scenario: Delete apartment
     When I select "1" from "apartment_bathrooms"
     Then I press "Create Apartment"
     Then I should see "Northside two bedroom"
-    And I should see "Delete Apartment"
-    When I follow "Delete Apartment"
+    And I should see "Delete"
+    When I follow "Delete"
     Then I should see "Welcome"
 
 Scenario: Add first (empty) review should succeed
@@ -65,7 +65,7 @@ Scenario: Verify that review contains image
 	When I fill in "review_review" with "It's ok!"
 	When I press "Submit"
 	Then I should see "It's ok!"
-	And I should see "Picture"
+	And I should see "Carina Boo"
 
 Scenario: Add second review should fail
 	Given I am on the apartment page
