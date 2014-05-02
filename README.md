@@ -18,6 +18,7 @@ Homie
 1. `rspec`
 
 ### To View Test Coverage Report
+1. `cucumber`
 1. `rspec`
 1. Go into the `coverage` directory in `homie`.
 1. Open `index.html` with your browser to see the test coverage.
