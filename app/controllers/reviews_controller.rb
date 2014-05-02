@@ -79,8 +79,8 @@ class ReviewsController < ApplicationController
   end
 
   def delete
-    review = Review.find(params[:id])
-    @apartment = Apartment.find(review.apartment_id)
+    review = Review.find_by_id(params[:id])
+    @apartment = Apartment.find_by_id(review.apartment_id)
     # check if the current user modifying the review is the user wrote the review
     user_id = review.user_id
     if !@apartment
