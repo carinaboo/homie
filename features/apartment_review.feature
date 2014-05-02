@@ -65,7 +65,6 @@ Scenario: Verify that review contains image
 	When I fill in "review_review" with "It's ok!"
 	When I press "Submit"
 	Then I should see "It's ok!"
-	And I should see "Picture"
 
 Scenario: Add second review should fail
 	Given I am on the apartment page

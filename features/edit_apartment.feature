@@ -22,6 +22,7 @@ Feature: Edit apartment
    Scenario: All fields valid
     Given I am on the home page
     When I follow "Add apartment"
+    When I attach a "small" image to "apartment_photo"    
     When I fill in "apartment_title" with "Northside two bedroom"
     When I fill in "apartment_street_address" with "1644 Oxford St"
     When I fill in "apartment_apartment_number" with "1"
@@ -34,3 +35,4 @@ Feature: Edit apartment
     When I select "1" from "apartment_bathrooms"
     Then I press "Create Apartment"
     Then I should see "Northside two bedroom"
+    And I should see "Share Photo"
