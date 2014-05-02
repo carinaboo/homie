@@ -49,13 +49,47 @@
         
         <div class="listing-favorite">
           <% if current_user %>
-            <% if current_user.flagged?(apt)  %>
-              <%= link_to "", favorite_apartment_path(id: apt.id), { class: "favorited" } %>
-            <% else %>
-              <%= link_to "", favorite_apartment_path(id: apt.id), { class: "not-favorited" } %>
-            <% end %>
+            <li id="favo" on="true"></li>
+            <script type="text/javascript">
+              function handle_favorite() {
+                var sel = document.getElementById('favo').getAttribute('on');
+                if (sel == "true") {
+                  $('#favo').addClass('off-star');
+                  document.getElementById('favo').setAttribute("on", "false");
+                } else {
+                  $('#favo').removeClass('off-star');
+                  document.getElementById('favo').setAttribute("on", "true");
+                }
+              }
+
+              $('#favo').click(function() {
+                user_id = <%=(current_user)? current_user.id : nil%>
+                apt_id = <%=apt.id%>
+
+                  $.ajax({
+                      type: 'POST',
+                      url: "/apartments/<%= apt.id %>/favorite",
+                      data: JSON.stringify( {user_id: user_id, apartment_id: apt_id} ),
+                      contentType: "application/json",
+                      dataType: "json",
+                      success: handle_favorite(),
+                      error: function(err) { alert('error occurred on request'); }
+                  });
+              });
+              </script>
+              <% if current_user.flagged?(Apartment.find(apt.id))  %>
+                <script type="text/javascript">
+                  $('#favo').removeClass('off-star');
+                  document.getElementById('favo').setAttribute("on", "true");
+                </script>
+              <% else %>
+                <script type="text/javascript">
+                  $('#favo').addClass('off-star');
+                  document.getElementById('favo').setAttribute("on", "false");
+                </script>
+              <% end %>
           <% else %>
-            <%= link_to "", favorite_apartment_path(id: apt.id), { class: "not-favorited" } %>
+            <%= link_to "", new_user_session_path, { class: "not-favorited" } %>
           <% end %>
         </div>
       </div>

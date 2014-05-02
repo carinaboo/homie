@@ -15,7 +15,7 @@ Homie::Application.routes.draw do
   #get 'apartments/delete', to: 'apartment#delete', as: 'delete_apartment'
   resources :apartments do
     member do
-      get 'favorite'
+      post 'favorite', to: 'apartments#favorite'
     end
   end
   # devise_for :users

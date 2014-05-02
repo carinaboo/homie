@@ -5,21 +5,34 @@ class ApartmentsController < ApplicationController
   FORBIDDEN = 403
   PAGE_NOT_FOUND = 404
 
+  # def favorite
+  #   if !current_user
+  #     redirect_to new_user_session_url, :notice => "You need to Login to add favorite"
+  #   else
+  #     @current_user = current_user
+  #     @apt = Apartment.find(params[:id])
+  #     @list = current_user.flagged_apartments
+  #     if @current_user.flagged?(@apt)
+  #       @current_user.unflag(@apt)
+  #       @list.delete(@apt)
+  #       redirect_to apartment_path, :notice => "You removed this apartment to your favourite list"
+  #     else
+  #       @current_user.flag(@apt, :favorite)
+  #       redirect_to apartment_path, :notice => "You added this apartment to your favourite list"
+  #     end
+  #   end
+  # end
+
   def favorite
-    if !current_user
-      redirect_to new_user_session_url, :notice => "You need to Login to add favorite"
+    @current_user = current_user
+    @apt = Apartment.find(params[:id])
+    result = Apartment.favorite(@current_user, @apt)
+    if result == 200
+      render json: {errCode: 200}
+    elsif result == 201
+      render json: {errCode: 201}
     else
-      @current_user = current_user
-      @apt = Apartment.find(params[:id])
-      @list = current_user.flagged_apartments
-      if @current_user.flagged?(@apt)
-        @current_user.unflag(@apt)
-        @list.delete(@apt)
-        redirect_to apartment_path, :notice => "You removed this apartment to your favourite list"
-      else
-        @current_user.flag(@apt, :favorite)
-        redirect_to apartment_path, :notice => "You added this apartment to your favourite list"
-      end
+      render json: {errCode: -1}
     end
   end
 

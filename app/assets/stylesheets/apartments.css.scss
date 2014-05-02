@@ -92,6 +92,21 @@ select[name=sorting] {
 				padding: 15px 10px 10px;
 				text-align: center;
 
+				.off-star {
+					background-position: 0 35px;
+					&:hover {
+						background-position: 0px 70px;
+					}
+				}
+
+				#favo {
+					display: inline-block;
+					width: 35px;
+					height: 35px;
+					background-size: 35px;
+					background-image: image-url("icons/favorite.png");
+				}
+
 				a {
 					display: inline-block;
 					width: 35px;
@@ -236,6 +251,22 @@ select[name=sorting] {
 .favorite {
 	display: inline-block;
 	vertical-align: top;
+
+	.off-star {
+		background-position: 0 35px;
+		&:hover {
+			background-position: 0px 70px;
+		}
+	}
+
+	#favo {
+		display: inline-block;
+		width: 35px;
+		height: 35px;
+		background-size: 35px;
+		background-image: image-url("icons/favorite.png");
+	}
+
 	a {
 		display: inline-block;
 		width: 35px;

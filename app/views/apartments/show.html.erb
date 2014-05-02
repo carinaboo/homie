@@ -13,14 +13,19 @@
 
 <% if current_user %>
 	<div class="favorite">
+	<li id="favo" on="true"></li>
 	<% if current_user.flagged?(Apartment.find(@apartment.id))	%>
-		<%= link_to "", favorite_apartment_path(id: @apartment.id), { class: "favorited" } %>
+		<script type="text/javascript">
+			$('#favo').removeClass('off-star');
+			document.getElementById('favo').setAttribute("on", "true");
+		</script>
 	<% else %>
-		<%= link_to "", favorite_apartment_path(id: @apartment.id), { class: "not-favorited" } %>
+		<script type="text/javascript">
+			$('#favo').addClass('off-star');
+			document.getElementById('favo').setAttribute("on", "false");
+		</script>
 	<% end %>
 	</div>
-<% else %>
-	<%= link_to "", favorite_apartment_path(id: @apartment.id), { class: "not-favorited" } %>
 <% end %>
 
 <% if @apartment.photo.exists? %>
@@ -135,4 +140,30 @@
 
 <script type="text/javascript">
 $('#corresponed_user').hide();
+
+function handle_favorite() {
+	var sel = document.getElementById('favo').getAttribute('on');
+	if (sel == "true") {
+		$('#favo').addClass('off-star');
+		document.getElementById('favo').setAttribute("on", "false");
+	} else {
+		$('#favo').removeClass('off-star');
+		document.getElementById('favo').setAttribute("on", "true");
+	}
+}
+
+$('#favo').click(function() {
+	user_id = <%=(current_user)? current_user.id : nil%>
+    apt_id = <%=@apartment.id%>
+
+    $.ajax({
+        type: 'POST',
+        url: "/apartments/<%= @apartment.id %>/favorite",
+        data: JSON.stringify( {user_id: user_id, apartment_id: apt_id} ),
+        contentType: "application/json",
+        dataType: "json",
+        success: handle_favorite(),
+        error: function(err) { alert('error occurred on request'); }
+    });
+});
 </script>
