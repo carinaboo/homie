@@ -138,7 +138,13 @@ class ApartmentsController < ApplicationController
   def with_rating(query)
     min_rating = params[:min_rating]
     lowest_rating = (min_rating.presence || 0).to_f
-    query.with(:average_overall_rating).greater_than_or_equal_to(lowest_rating)
+    or_nil = (min_rating.presence || nil)
+    if min_rating == (min_rating.presence || 0)
+      query.with(:average_overall_rating).greater_than_or_equal_to(lowest_rating)
+    elsif min_rating == or_nil
+      query.with(:average_overall_rating)
+    end
+
   end
 
   def with_bedrooms(query)

@@ -2,48 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14e6f607-8f8a-411d-80a5-4bf4fce2b218" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/apartments/1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/apartments/2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/apartments/3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/apartments/4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/apartments/5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/apartments/6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/backgrounds/cozy.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/apartments/default.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/icons/favorite-filled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/icons/favorite-unfilled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/backgrounds/interior.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/apartments.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/favorite.feature" />
-      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\controllers\devise\confirmations_controller.rb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\controllers\devise\omniauth_callbacks_controller.rb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\controllers\devise\passwords_controller.rb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\controllers\devise\registrations_controller.rb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\controllers\devise\sessions_controller.rb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\controllers\devise\unlocks_controller.rb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\controllers\devise_controller.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/test" afterPath="$PROJECT_DIR$/db/test" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/apartment.rb" afterPath="$PROJECT_DIR$/app/models/apartment.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/apartment_review.feature" afterPath="$PROJECT_DIR$/features/apartment_review.feature" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/apartment_spec.rb" afterPath="$PROJECT_DIR$/spec/models/apartment_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/apartments.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/apartments.css.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/apartments_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/apartments_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/controllers/apartments_controller_spec.rb" afterPath="$PROJECT_DIR$/spec/controllers/apartments_controller_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/apartments/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/apartments/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/home.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/apartments/new.html.erb" afterPath="$PROJECT_DIR$/app/views/apartments/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" afterPath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/search.feature" afterPath="$PROJECT_DIR$/features/search.feature" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/apartments/search.html.erb" afterPath="$PROJECT_DIR$/app/views/apartments/search.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/apartments/show.html.erb" afterPath="$PROJECT_DIR$/app/views/apartments/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/user_profile.feature" afterPath="$PROJECT_DIR$/features/user_profile.feature" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/step_definitions/web_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/web_steps.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="homie.iws" />
@@ -67,28 +27,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="apartments_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="apartments_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/apartments_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="18" selection-start="4513" selection-end="4513" vertical-scroll-proportion="0.0" vertical-offset="1087" max-vertical-offset="3825">
+            <state line="137" column="24" selection-start="4782" selection-end="4782" vertical-scroll-proportion="1.4117647" vertical-offset="1393" max-vertical-offset="3927">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apartment.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="apartment.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/apartment.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="0" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.3846154" vertical-offset="731" max-vertical-offset="1547">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="5" selection-start="703" selection-end="703" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1547">
+            <state line="67" column="0" selection-start="2833" selection-end="2833" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="1547">
               <folding />
             </state>
           </provider>
@@ -97,10 +48,32 @@
       <file leaf-file-name="search.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/apartments/search.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="260" selection-end="260" vertical-scroll-proportion="-0.65384614" vertical-offset="34" max-vertical-offset="1513">
+            <state line="35" column="36" selection-start="1620" selection-end="1620" vertical-scroll-proportion="-22.884615" vertical-offset="0" max-vertical-offset="1496">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/apartments/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="8" selection-start="1622" selection-end="1622" vertical-scroll-proportion="-2.6153846" vertical-offset="765" max-vertical-offset="2108">
               <folding>
-                <marker date="1398814040510" expanded="true" signature="2973:3164" placeholder="{...}" />
-                <marker date="1398814040510" expanded="true" signature="3012:3154" placeholder="{...}" />
+                <marker date="1398814040513" expanded="true" signature="1032:1131" placeholder="..." />
+                <marker date="1398814040513" expanded="true" signature="1166:1342" placeholder="..." />
+                <marker date="1398814040513" expanded="true" signature="1696:2003" placeholder="..." />
+                <marker date="1398814040513" expanded="true" signature="1754:1930" placeholder="..." />
+                <marker date="1398814040513" expanded="true" signature="2012:2133" placeholder="..." />
+                <marker date="1398814040513" expanded="true" signature="2263:3169" placeholder="..." />
+                <marker date="1398814040513" expanded="true" signature="2272:2415" placeholder="..." />
+                <marker date="1398814040513" expanded="true" signature="2281:2403" placeholder="..." />
+                <marker date="1398814040513" expanded="true" signature="2425:3160" placeholder="..." />
+                <marker date="1398814040513" expanded="true" signature="2467:3138" placeholder="..." />
+                <marker date="1398814040513" expanded="true" signature="2522:2595" placeholder="..." />
+                <marker date="1398814040513" expanded="true" signature="2605:2743" placeholder="..." />
+                <marker date="1398814040513" expanded="true" signature="2811:2930" placeholder="..." />
+                <marker date="1398814040513" expanded="true" signature="2986:3084" placeholder="..." />
+                <marker date="1398814040513" expanded="true" signature="3203:3244" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -135,10 +108,10 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/apartments/search.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/controllers/apartments_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/apartment.rb" />
+        <option value="$PROJECT_DIR$/app/views/apartments/search.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/apartments_controller.rb" />
       </list>
     </option>
   </component>
@@ -204,7 +177,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -218,11 +191,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="migrate" />
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="homie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -478,7 +469,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20644216" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19253294" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -493,6 +484,27 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3190883" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42278862" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -576,11 +588,6 @@
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="12" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1275" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/models/apartment_test.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="655" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
@@ -683,11 +690,6 @@
         <state line="15" column="35" selection-start="403" selection-end="403" vertical-scroll-proportion="-6.6923075" vertical-offset="81" max-vertical-offset="748" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/apartments/delete.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="951" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/controllers/reviews_controller_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="0" selection-start="1856" selection-end="1856" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1802" />
@@ -718,11 +720,6 @@
         <state line="5" column="39" selection-start="179" selection-end="179" vertical-scroll-proportion="0.13076924" vertical-offset="0" max-vertical-offset="1190" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/apartments/create.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="951" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/apartments/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="0" selection-start="126" selection-end="225" vertical-scroll-proportion="0.13076924" vertical-offset="0" max-vertical-offset="799">
@@ -737,16 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/apartments/search.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="260" selection-end="260" vertical-scroll-proportion="-0.65384614" vertical-offset="34" max-vertical-offset="1513">
-          <folding>
-            <marker date="1398814040510" expanded="true" signature="2973:3164" placeholder="{...}" />
-            <marker date="1398814040510" expanded="true" signature="3012:3154" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/sunspot.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="951">
@@ -754,30 +741,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/apartments/delete.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="136">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/apartments/create.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="136">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="5" selection-start="703" selection-end="703" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1547">
+        <state line="26" column="5" selection-start="703" selection-end="703" vertical-scroll-proportion="0.35207102" vertical-offset="204" max-vertical-offset="1547">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/apartments/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="16" selection-start="2762" selection-end="2762" vertical-scroll-proportion="-56.884617" vertical-offset="0" max-vertical-offset="1972">
+        <state line="49" column="8" selection-start="1622" selection-end="1622" vertical-scroll-proportion="-2.6153846" vertical-offset="765" max-vertical-offset="2108">
+          <folding>
+            <marker date="1398814040513" expanded="true" signature="1032:1131" placeholder="..." />
+            <marker date="1398814040513" expanded="true" signature="1166:1342" placeholder="..." />
+            <marker date="1398814040513" expanded="true" signature="1696:2003" placeholder="..." />
+            <marker date="1398814040513" expanded="true" signature="1754:1930" placeholder="..." />
+            <marker date="1398814040513" expanded="true" signature="2012:2133" placeholder="..." />
+            <marker date="1398814040513" expanded="true" signature="2263:3169" placeholder="..." />
+            <marker date="1398814040513" expanded="true" signature="2272:2415" placeholder="..." />
+            <marker date="1398814040513" expanded="true" signature="2281:2403" placeholder="..." />
+            <marker date="1398814040513" expanded="true" signature="2425:3160" placeholder="..." />
+            <marker date="1398814040513" expanded="true" signature="2467:3138" placeholder="..." />
+            <marker date="1398814040513" expanded="true" signature="2522:2595" placeholder="..." />
+            <marker date="1398814040513" expanded="true" signature="2605:2743" placeholder="..." />
+            <marker date="1398814040513" expanded="true" signature="2811:2930" placeholder="..." />
+            <marker date="1398814040513" expanded="true" signature="2986:3084" placeholder="..." />
+            <marker date="1398814040513" expanded="true" signature="3203:3244" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/apartment.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="0" selection-start="2833" selection-end="2833" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="1547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/apartments/search.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="36" selection-start="1620" selection-end="1620" vertical-scroll-proportion="-22.884615" vertical-offset="0" max-vertical-offset="1496">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/controllers/home_controller_test.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/models/apartment_test.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="676">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/apartments_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="18" selection-start="4513" selection-end="4513" vertical-scroll-proportion="0.0" vertical-offset="1087" max-vertical-offset="3825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/apartment.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="0" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.3846154" vertical-offset="731" max-vertical-offset="1547">
+        <state line="137" column="24" selection-start="4782" selection-end="4782" vertical-scroll-proportion="1.4117647" vertical-offset="1393" max-vertical-offset="3927">
           <folding />
         </state>
       </provider>

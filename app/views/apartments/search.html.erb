@@ -1,82 +1,82 @@
 <%= form_tag apartments_search_path, id: "search_form", method: 'get' do %>
-  <%= text_field_tag :search, params[:search], id: "search_field", placeholder: "Search address or listing title" %>
-  <%= submit_tag "Search", name: nil, class: "btn btn-primary" %> 
-  <%= select_tag "sorting", options_for_select([ "Ratings: high to low", "Ratings: low to high", "Price: high to low", "Price: low to high" ], :selected => params[:sorting]), :onchange => "this.form.submit();" %>
-  <div id="filters">
-    <span>Filters:</span>
+    <%= text_field_tag :search, params[:search], id: "search_field", placeholder: "Search address or listing title" %>
+    <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+    <%= select_tag "sorting", options_for_select([ "Ratings: high to low", "Ratings: low to high", "Price: high to low", "Price: low to high" ], :selected => params[:sorting]), :onchange => "this.form.submit();" %>
+    <div id="filters">
+      <span>Filters:</span>
 
-    <%= label_tag :price, "Price"%>
-    <%= text_field_tag :min_price, params[:min_price], placeholder: 0 %>
-    <span>to</span>
-        <%= text_field_tag :max_price, params[:max_price], placeholder: @max_price.round(0) %>
-    
-    <%= label_tag :rating, "Minimum Rating"%>
-    <%= text_field_tag :min_rating, params[:min_rating], placeholder: 0 %>
-    
-    <%= label_tag :bedrooms, "Bedrooms" %>
-    <%= text_field_tag :min_bedrooms, params[:min_bedrooms], placeholder: 1 %>
-    <span>to</span>
-    <%= text_field_tag :max_bedrooms, params[:max_bedrooms], placeholder: @max_bedrooms.round(0) %>
-    
-    <%= label_tag :bathrooms, "Bathrooms" %>
-    <%= text_field_tag :min_bathrooms, params[:min_bathrooms], placeholder: 1 %>
-    <span>to</span>
-    <%= text_field_tag :max_bathrooms, params[:max_bathrooms], placeholder: @max_bathrooms.round(0) %>
+      <%= label_tag :price, "Price"%>
+      <%= text_field_tag :min_price, params[:min_price], placeholder: 0 %>
+      <span>to</span>
+      <%= text_field_tag :max_price, params[:max_price], placeholder: @max_price.round(0) %>
 
-    <%= link_to "Clear", "#", id: "reset_filters" %>
-  </div>
-<% end %> 
+      <%= label_tag :rating, "Minimum Rating"%>
+      <%= text_field_tag :min_rating, params[:min_rating], placeholder: 0 %>
+
+      <%= label_tag :bedrooms, "Bedrooms" %>
+      <%= text_field_tag :min_bedrooms, params[:min_bedrooms], placeholder: 1 %>
+      <span>to</span>
+      <%= text_field_tag :max_bedrooms, params[:max_bedrooms], placeholder: @max_bedrooms.round(0) %>
+
+      <%= label_tag :bathrooms, "Bathrooms" %>
+      <%= text_field_tag :min_bathrooms, params[:min_bathrooms], placeholder: 1 %>
+      <span>to</span>
+      <%= text_field_tag :max_bathrooms, params[:max_bathrooms], placeholder: @max_bathrooms.round(0) %>
+
+      <%= link_to "Clear", "#", id: "reset_filters" %>
+    </div>
+<% end %>
 
 <h2>Search results</h2>
 <div id="results">
 
   <% @apartments.each do |apt| %>
 
-  <div class="search-result">
-    <div class="listing-images">
-      <div class="listing-images-container">
-        <% if apt.photo.exists? %>
-          <%= image_tag apt.photo.url(:small) %>
-        <% end %>
-      </div>
-      <div class="listing-price">
-        <span class="currency"></span><span class="amount"><%= apt.price.round(0) %></span>
-      </div>
-      
-      <%= link_to "", apt, { class: "target-view" } %>
-      
-      <div class="listing-favorite">
-        <% if current_user %>
-          <% if current_user.flagged?(apt)  %>
-            <%= link_to "", favorite_apartment_path(id: apt.id), { class: "favorited" } %>
-          <% else %>
-            <%= link_to "", favorite_apartment_path(id: apt.id), { class: "not-favorited" } %>
-          <% end %>
-        <% else %>
-          <%= link_to "", favorite_apartment_path(id: apt.id), { class: "not-favorited" } %>
-        <% end %>
-      </div>
-    </div>
-    <div class="listing-footer">
-      <div class="listing-title">
-        <%= link_to apt.title, apt %>
-      </div>
-      <div class="listing-address">
-        <%= apt.street_address %> <%= apt.apartment_number %> <%= apt.city %> <%= apt.state %> <%= apt.zip %>
-      </div>
-      <div class="listing-rooms">
-        <div class="listing-bedrooms">
-          <%= apt.bedrooms.round(0) %> bed
+      <div class="search-result">
+        <div class="listing-images">
+          <div class="listing-images-container">
+            <% if apt.photo.exists? %>
+                <%= image_tag apt.photo.url(:small) %>
+            <% end %>
+          </div>
+          <div class="listing-price">
+            <span class="currency"></span><span class="amount"><%= apt.price.round(0) %></span>
+          </div>
+
+          <%= link_to "", apt, { class: "target-view" } %>
+
+          <div class="listing-favorite">
+            <% if current_user %>
+                <% if current_user.flagged?(apt)  %>
+                    <%= link_to "", favorite_apartment_path(id: apt.id), { class: "favorited" } %>
+                <% else %>
+                    <%= link_to "", favorite_apartment_path(id: apt.id), { class: "not-favorited" } %>
+                <% end %>
+            <% else %>
+                <%= link_to "", favorite_apartment_path(id: apt.id), { class: "not-favorited" } %>
+            <% end %>
+          </div>
         </div>
-        <div class="listing-bathrooms">
-          <%= apt.bathrooms.round(0) %> bath
+        <div class="listing-footer">
+          <div class="listing-title">
+            <%= link_to apt.title, apt %>
+          </div>
+          <div class="listing-address">
+            <%= apt.street_address %> <%= apt.apartment_number %> <%= apt.city %> <%= apt.state %> <%= apt.zip %>
+          </div>
+          <div class="listing-rooms">
+            <div class="listing-bedrooms">
+              <%= apt.bedrooms.round(0) %> bed
+            </div>
+            <div class="listing-bathrooms">
+              <%= apt.bathrooms.round(0) %> bath
+            </div>
+          </div>
+          <div class="listing-rating">
+            <%= number_with_precision(apt.average_overall_rating, precision: 2) if apt.average_overall_rating %>
+          </div>
         </div>
       </div>
-      <div class="listing-rating">
-        <%= number_with_precision(apt.average_overall_rating, precision: 2) if apt.average_overall_rating %>
-      </div>
-    </div>
-  </div>
 
   <% end %>
 
