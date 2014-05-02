@@ -87,4 +87,22 @@ class Review < ActiveRecord::Base
     end
     return existance
   end
+
+  #the new method defined to update the review. Should always try to use this one if possible
+  def self.update_rating_new(apt_id, review_id, new_rating)
+    review = Review.find(review_id)
+    review.overall_rating = new_rating
+    review.save
+    reviews = Apartment.find(apt_id).reviews
+    total = 0
+    counter = 0
+    reviews.each do |r|
+      total += r.overall_rating
+      counter+=1
+    end
+    avg = total/counter
+    apt = Apartment.find(apt_id)
+    apt.average_overall_rating = avg
+    apt.save
+  end
 end
