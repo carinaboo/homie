@@ -41,6 +41,11 @@ describe ReviewsController do
     it "successfully loads edit page" do
       get :edit, id: @review.id
       response.should render_template :edit
+    end 
+
+    it "successfully loads edit page" do
+      get :edit, id: 100000
+      response.should render_template :root_path
     end   
 
     it "successfully updates review page" do

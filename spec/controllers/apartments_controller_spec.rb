@@ -54,6 +54,8 @@ describe ApartmentsController do
       info = FactoryGirl.attributes_for(:apartment)
       info[:price] = -1
       expect { post :create, apartment: info}.to change(Apartment, :count).by(0)
+      expect { post :create, apartment: FactoryGirl.attributes_for(:apartment)}.to change(Apartment, :count).by(1)
+      expect { post :create, apartment: FactoryGirl.attributes_for(:apartment)}.to change(Apartment, :count).by(0)
     end
   end
 
@@ -75,6 +77,11 @@ describe ApartmentsController do
     it "should not load edit page if user not logged in" do
       subject.sign_out @user
       get :edit, id: FactoryGirl.create(:apartment)
+      response.should_not render_template :edit
+    end
+
+    it "should not load edit page if apartment does not exist" do
+      get :edit, id: 10000
       response.should_not render_template :edit
     end
   end
@@ -135,6 +142,11 @@ describe ApartmentsController do
       subject.sign_in @user2
       delete :destroy, id: FactoryGirl.create(:apartment)
       response.should redirect_to Apartment.last
+    end
+
+    it "should not delete apartment if apartment does not exist" do
+      delete :destroy, id: 1000000
+      response.should redirect_to root_path
     end
   end
 

@@ -1,6 +1,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false&v=3&libraries=geometry,places"></script>
 
-<h2><%= @apartment.title %></h2>
+<h1><%= @apartment.title %></h1>
 
 <div id="map"></div>
 
@@ -28,11 +28,23 @@
 	</div>
 <% end %>
 
-<% if @apartment.photo.exists? %>
+<% if @apartment.photo.exists? || @pictures.size > 0 %>
 	<div class="photos">
-		<%= image_tag @apartment.photo.url(:large) %>
+		<div class="fotorama" data-nav="thumbs" data-fit="cover" data-keyboard="true" data-allowfullscreen="true">
+			<% if @apartment.photo.exists? %>
+				<%= image_tag @apartment.photo.url(:large) %>
+			<% end %>
+			<% if @pictures.size > 0 %>
+		  		<% @pictures.each do |picture| %>
+		  			<% if !picture.image_file_name.nil? %>
+						<%= image_tag picture.image.url(:large) %>
+					<% end %>
+				<% end %>
+			<% end %>
+		</div>
 	</div>
 <% end %>
+
 <h4 id='apt-street'>
 	<%= @apartment.street_address %> 
 	<%= @apartment.apartment_number %>
@@ -70,6 +82,19 @@
 </div>
 
 <br />
+<% if @loggedIn %>
+	<h2>Share Photo</h2>
+
+	<%= form_for(@picture, :url => create_picture_path, :html => { method: "post", multipart: true }) do |f| %>
+	  <p>Do you live here? Share your photo of the place.</p>
+	  <%= f.file_field :image, required: true %>
+	  <%= f.hidden_field :apartment_id, value: @apartment.id %>
+	  <input class="button tiny" name="commit" type="submit" value="Upload">
+	<% end %>
+<% end %>
+
+<br />
+
 <% if !@reviewed && @loggedIn %>
 	<h2>Create Review</h2>
 

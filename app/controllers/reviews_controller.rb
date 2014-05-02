@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
 
   #Page for editing review
   def edit
-    @review = Review.find(params[:id])
+    @review = Review.find_by_id(params[:id])
     if !@review
       render json: {errCode: PAGE_NOT_FOUND}
     elsif !current_user

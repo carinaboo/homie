@@ -100,6 +100,7 @@ select[name=sorting] {
 				}
 
 				.favo {
+					cursor: pointer;
 					display: inline-block;
 					width: 35px;
 					height: 35px;
@@ -260,6 +261,7 @@ select[name=sorting] {
 	}
 
 	#favo {
+		cursor: pointer;
 		display: inline-block;
 		width: 35px;
 		height: 35px;

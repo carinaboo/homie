@@ -102,7 +102,7 @@ class ApartmentsController < ApplicationController
 
   #Page for editing apartment profile information.
   def edit
-    @apartment = Apartment.find(params[:id])
+    @apartment = Apartment.find_by_id(params[:id])
     if !@apartment
       flash[:error] = "Error: Apartment page not found\n"
       redirect_to root_path
@@ -215,7 +215,7 @@ class ApartmentsController < ApplicationController
   end
 
   def destroy
-    @apartment = Apartment.find(params[:id])
+    @apartment = Apartment.find_by_id(params[:id])
     #print "destroy apartment"
     if !@apartment
       #p "no apartment"
