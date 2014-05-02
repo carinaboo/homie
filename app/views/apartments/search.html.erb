@@ -49,22 +49,13 @@
         
         <div class="listing-favorite">
           <% if current_user %>
-            <li id="favo" on="true"></li>
+            <li class="favo" id="<%= "#{apt.id}" %>" on="true"></li>
+            
             <script type="text/javascript">
-              function handle_favorite() {
-                var sel = document.getElementById('favo').getAttribute('on');
-                if (sel == "true") {
-                  $('#favo').addClass('off-star');
-                  document.getElementById('favo').setAttribute("on", "false");
-                } else {
-                  $('#favo').removeClass('off-star');
-                  document.getElementById('favo').setAttribute("on", "true");
-                }
-              }
-
-              $('#favo').click(function() {
-                user_id = <%=(current_user)? current_user.id : nil%>
-                apt_id = <%=apt.id%>
+              $('#<%= "#{apt.id}" %>').click(function() {
+                user_id = <%=(current_user)? current_user.id : nil%>;
+                apt_id = <%=apt.id%>;
+                console.log(apt_id);
 
                   $.ajax({
                       type: 'POST',
@@ -72,22 +63,24 @@
                       data: JSON.stringify( {user_id: user_id, apartment_id: apt_id} ),
                       contentType: "application/json",
                       dataType: "json",
-                      success: handle_favorite(),
+                      success: handle_favorite(apt_id),
                       error: function(err) { alert('error occurred on request'); }
                   });
               });
               </script>
+
               <% if current_user.flagged?(Apartment.find(apt.id))  %>
                 <script type="text/javascript">
-                  $('#favo').removeClass('off-star');
-                  document.getElementById('favo').setAttribute("on", "true");
+                  $('#<%= "#{apt.id}" %>').removeClass('off-star');
+                  document.getElementById('<%= "#{apt.id}" %>').setAttribute("on", "true");
                 </script>
               <% else %>
                 <script type="text/javascript">
-                  $('#favo').addClass('off-star');
-                  document.getElementById('favo').setAttribute("on", "false");
+                  $('#<%= "#{apt.id}" %>').addClass('off-star');
+                  document.getElementById('<%= "#{apt.id}" %>').setAttribute("on", "false");
                 </script>
               <% end %>
+
           <% else %>
             <%= link_to "", new_user_session_path, { class: "not-favorited" } %>
           <% end %>
@@ -122,6 +115,18 @@
     </div>
 
   <% end %>
-  <!-- </ul> -->
 
 </div>
+
+<script type="text/javascript">
+var handle_favorite = function(id) {
+  var sel = $('#'+id).attr('on');
+  if (sel == "true") {
+    $('#'+id).addClass('off-star');
+    $('#'+id).attr("on", "false");
+  } else {
+    $('#'+id).removeClass('off-star');
+    $('#'+id).attr("on", "true");
+  }
+}
+</script>
