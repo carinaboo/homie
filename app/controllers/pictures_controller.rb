@@ -3,7 +3,7 @@ class PicturesController < ApplicationController
 	def create
     # can only create when in an apartment page!
 	    if(current_user)	# check if the user is logged in
-	      apartment = Apartment.find(params[:picture][:apartment_id]) 
+	      apartment = Apartment.find(params[:picture][:apartment_id]) # removed params[:picture][:apartment_id]
 	      picture = Picture.new(picture_params)
 	      picture.save
 	      redirect_to apartment_path id: apartment.id

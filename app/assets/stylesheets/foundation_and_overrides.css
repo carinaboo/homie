@@ -24,6 +24,11 @@ textarea {
 	width: auto;
 }
 
+input[type="file"] {
+	width: auto;
+	display: block;
+}
+
 select {
 	width: auto;
 	background-position: 94% center;

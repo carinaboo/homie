@@ -21,13 +21,16 @@ group :test do
   gem 'database_cleaner'
 end
 
+# Fotorama photo gallery viewer
+gem 'fotoramajs'
+
 gem 'make_flaggable', :git => 'git://github.com/medihack/make_flaggable.git'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
-# Bootstrap Styling
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+# Drag-drop image uploader
+gem 'dropzonejs-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

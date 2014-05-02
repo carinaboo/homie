@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require dropzone
+//= require fotorama
 //= require_tree .
 
 $(function() {

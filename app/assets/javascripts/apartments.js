@@ -45,17 +45,17 @@ $(document).ready(function() {
 
             var infoWindowContent = [
                 ['<div class="info_content">' +
-                '<h3>' + res[0].formatted_address +'</h3>' + '</div>'],
+                '<span>' + res[0].formatted_address +'</span>' + '</div>'],
                 ['<div class="info_content">' +
-                '<h3>Safeway</h3>' + '</div>'],
+                '<span>Safeway</span>' + '</div>'],
                 ['<div class="info_content">' +
-                '<h3>Berkeley Bowl</h3>' + '</div>'],
+                '<span>Berkeley Bowl</span>' + '</div>'],
                 ['<div class="info_content">' +
-                '<h3>Trader Joes</h3>' + '</div>'],
+                '<span>Trader Joes</span>' + '</div>'],
                 ['<div class="info_content">' +
-                '<h3>Sproul Plaza</h3>' + '</div>'],
+                '<span>Sproul Plaza</span>' + '</div>'],
                 ['<div class="info_content">' +
-                '<h3>Soda Hall</h3>' + '</div>'],
+                '<span>Soda Hall</span>' + '</div>'],
             ];
 
             var iconURLPrefix = 'http://maps.google.com/mapfiles/ms/icons/';
