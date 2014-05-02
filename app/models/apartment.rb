@@ -25,6 +25,7 @@
 
 class Apartment < ActiveRecord::Base
 	has_many :reviews
+	has_many :pictures
 	belongs_to :user, class_name: 'User', foreign_key: 'user_id'
 	has_attached_file :photo, styles: {thumb: "75x75>", small: "500x500>", large: "1200x1200>"}
 	#validates_attachment :photo, content_type: { content_type: ["photo/jpg", "photo/jpeg", "photo/png"] }

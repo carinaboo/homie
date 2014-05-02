@@ -1,6 +1,6 @@
 <%= form_tag apartments_search_path, id: "search_form", method: 'get' do %>
   <%= text_field_tag :search, params[:search], id: "search_field", placeholder: "Search address or listing title" %>
-  <%= submit_tag "Search", name: nil, class: "btn btn-primary" %> 
+  <%= submit_tag "Search", name: nil, class: "button small" %> 
   <%= select_tag "sorting", options_for_select([ "Ratings: high to low", "Ratings: low to high", "Price: high to low", "Price: low to high" ], :selected => params[:sorting]), :onchange => "this.form.submit();" %>
   <div id="filters">
     <span>Filters:</span>
@@ -30,54 +30,64 @@
 <h2>Search results</h2>
 <div id="results">
 
+  <!-- <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4"> -->
+  
   <% @apartments.each do |apt| %>
 
-  <div class="search-result">
-    <div class="listing-images">
-      <div class="listing-images-container">
-        <% if apt.photo.exists? %>
-          <%= image_tag apt.photo.url(:small) %>
-        <% end %>
-      </div>
-      <div class="listing-price">
-        <span class="currency"></span><span class="amount"><%= apt.price.round(0) %></span>
-      </div>
-      
-      <%= link_to "", apt, { class: "target-view" } %>
-      
-      <div class="listing-favorite">
-        <% if current_user %>
-          <% if current_user.flagged?(apt)  %>
-            <%= link_to "", favorite_apartment_path(id: apt.id), { class: "favorited" } %>
+    <div class="search-result">
+      <div class="listing-images">
+        <div class="listing-images-container">
+          <% if apt.photo.exists? %>
+            <%= image_tag apt.photo.url(:small) %>
+          <% end %>
+        </div>
+        <div class="listing-price">
+          <span class="currency"></span><span class="amount"><%= apt.price.round(0) %></span>
+        </div>
+        
+        <%= link_to "", apt, { class: "target-view" } %>
+        
+        <div class="listing-favorite">
+          <% if current_user %>
+            <% if current_user.flagged?(apt)  %>
+              <%= link_to "", favorite_apartment_path(id: apt.id), { class: "favorited" } %>
+            <% else %>
+              <%= link_to "", favorite_apartment_path(id: apt.id), { class: "not-favorited" } %>
+            <% end %>
           <% else %>
             <%= link_to "", favorite_apartment_path(id: apt.id), { class: "not-favorited" } %>
           <% end %>
-        <% else %>
-          <%= link_to "", favorite_apartment_path(id: apt.id), { class: "not-favorited" } %>
-        <% end %>
-      </div>
-    </div>
-    <div class="listing-footer">
-      <div class="listing-title">
-        <%= link_to apt.title, apt %>
-      </div>
-      <div class="listing-address">
-        <%= apt.street_address %> <%= apt.apartment_number %> <%= apt.city %> <%= apt.state %> <%= apt.zip %>
-      </div>
-      <div class="listing-rooms">
-        <div class="listing-bedrooms">
-          <%= apt.bedrooms.round(0) %> bed
-        </div>
-        <div class="listing-bathrooms">
-          <%= apt.bathrooms.round(0) %> bath
         </div>
       </div>
-      <div class="listing-rating">
-        <%= number_with_precision(apt.average_overall_rating, precision: 2) if apt.average_overall_rating %>
+      <div class="listing-footer">
+        <div class="listing-title">
+          <%= link_to apt.title, apt %>
+        </div>
+        <div class="listing-address">
+          <%= apt.street_address %> <%= apt.apartment_number %> <%= apt.city %> <%= apt.state %> <%= apt.zip %>
+        </div>
+        <div class="listing-rooms">
+          <div class="listing-bedrooms">
+            <%= apt.bedrooms.round(0) %> bed
+          </div>
+          <div class="listing-bathrooms">
+            <%= apt.bathrooms.round(0) %> bath
+          </div>
+        </div>
+        <div class="listing-rating">
+          <% if !apt.average_overall_rating %>
+            <div class="rating-0"></div>
+          <% else %>
+            <% if number_with_precision(apt.average_overall_rating, precision: 0) == 0 %>
+              <div class="rating-1 %>"></div>
+            <% end %>
+              <div class="rating-<%= number_with_precision(apt.average_overall_rating, precision: 0) %>"></div>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
 
   <% end %>
+  <!-- </ul> -->
 
 </div>

@@ -1,0 +1,44 @@
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+img {
+	max-width: none;
+}
+
+input[type="text"], 
+input[type="password"], 
+input[type="date"], 
+input[type="datetime"], 
+input[type="datetime-local"], 
+input[type="month"], 
+input[type="week"], 
+input[type="email"], 
+input[type="number"], 
+input[type="search"], 
+input[type="tel"], 
+input[type="time"], 
+input[type="url"], 
+textarea {
+	display: inline;
+	width: auto;
+}
+
+select {
+	width: auto;
+	background-position: 94% center;
+}
+
+button, .button {
+	margin: 0;
+}
+
+button.small, .button.small {
+	padding-top: 0.7rem;
+	padding-right: 1.75rem;
+	padding-bottom: 0.65rem;
+	padding-left: 1.75rem;
+	font-size: 0.8125rem;
+	position: relative;
+	top: -1px;
+}

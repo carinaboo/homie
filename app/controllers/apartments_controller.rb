@@ -28,7 +28,9 @@ class ApartmentsController < ApplicationController
   def show
     @apartment = Apartment.find(params[:id])
     @reviews = Review.find_by_apt(params[:id]) 
+    @pictures = @apartment.pictures
     @review = Review.new
+    @picture = Picture.new
     @reviewed = Review.hasReviewed(current_user, params[:id])
     @loggedIn = current_user
     if current_user
@@ -79,6 +81,9 @@ class ApartmentsController < ApplicationController
       else
         render "new"
       end
+    else
+      flash[:error] = "Error: Apartment with same address and apartment number already exists\n"
+      redirect_to new_apartment_path
     end
   end
 
