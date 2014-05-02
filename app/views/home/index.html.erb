@@ -6,6 +6,6 @@
 <h2 class="title">Find your new apartment.</h2>
 <%= form_tag apartments_search_path, :method => 'get' do %>
   <%= text_field_tag :search, params[:search], :id => 'search_field', :placeholder => "Search address or listing title" %>
-  <%= submit_tag "Search", name: nil, class: "btn btn-primary" %> 
+  <%= submit_tag "Search", name: nil, class: "button small" %> 
 <% end %> 
 </section>

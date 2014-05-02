@@ -1,5 +1,8 @@
 <h1>Create a new apartment</h1>
 
+<%= flash[:error].html_safe unless flash[:error].blank? %>
+
+
 <%= form_for(@apartment, html: { multipart: true}) do |f| %>
 
 <%= render 'shared/error_messages' %>
@@ -14,7 +17,7 @@
   <%= f.text_field :street_address %><br /><br /></div>
 
   <div><%= f.label :Apartment_Number %>
-    <%= f.text_field :apartment_number %><%="  (optional)"%><br /><br /></div>
+    <%= f.text_field :apartment_number %> (optional)<br /><br /></div>
 
   <div><%= f.label :City %>
     <%= f.text_field :city %><br /><br /></div>
@@ -37,5 +40,5 @@
   <div><%= f.label :bathrooms %>
    <%= f.select :bathrooms, 1..10 %><br /><br /></div>
 
-  <div><%= f.submit "Create Apartment" %></div>
+  <div><%= f.submit "Create Apartment", :class => 'button small' %></div>
 <% end %>

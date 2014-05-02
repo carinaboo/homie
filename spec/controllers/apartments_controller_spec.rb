@@ -140,25 +140,22 @@ describe ApartmentsController do
 
   describe "GET #favorite" do
     it "should favorite if user not logged in" do
+       apartment = FactoryGirl.create(:apartment)
        subject.sign_out @user
-       get :favorite, id: FactoryGirl.create(:apartment)
-       response.should redirect_to new_user_session_url
+       expect { post :favorite, id: apartment.id}.to change(@user.flagged_apartments, :count).by(0)
     end
 
     it "should favorite if user logged in" do
        apartment = FactoryGirl.create(:apartment)
-       get :favorite, id: apartment.id
-       response.should redirect_to apartment_path id: apartment.id
+       expect { post :favorite, id: apartment.id}.to change(@user.flagged_apartments, :count).by(1)
        is_flagged = apartment.flagged_by?(@user)
        expect(is_flagged).to be true
     end
 
     it "should unfavorite if user logged in" do
        apartment = FactoryGirl.create(:apartment)
-       get :favorite, id: apartment.id
-       response.should redirect_to apartment_path id: apartment.id
-       get :favorite, id: apartment.id
-       response.should redirect_to apartment_path id: apartment.id
+       post :favorite, id: apartment.id
+       expect { post :favorite, id: apartment.id}.to change(@user.flagged_apartments, :count).by(-1)
        is_flagged = apartment.flagged_by?(@user)
        expect(is_flagged).to be false
     end

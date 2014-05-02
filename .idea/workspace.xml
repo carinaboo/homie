@@ -2,9 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14e6f607-8f8a-411d-80a5-4bf4fce2b218" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/favicon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/icons/favorite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/profile-default.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/icons/stars.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20140501171932_create_pictures.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20140501172127_add_attachment_image_to_pictures.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/foundation.css.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/foundation_and_overrides.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/normalize.css.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/picture.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/picture_spec.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/pictures.css.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/pictures.js.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories/pictures.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/pictures_controller.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/controllers/pictures_controller_spec.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/pictures_helper.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/helpers/pictures_helper_spec.rb" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\images\icons\favorite-filled.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\images\icons\favorite-unfilled.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\images\logo-orange.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\images\logo.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\bootstrap.js.coffee" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap\bootstrap-affix.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap\bootstrap-alert.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap\bootstrap-button.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap\bootstrap-carousel.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap\bootstrap-collapse.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap\bootstrap-dropdown.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap\bootstrap-modal.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap\bootstrap-popover.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap\bootstrap-scrollspy.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap\bootstrap-tab.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap\bootstrap-tooltip.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap\bootstrap-transition.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap\bootstrap-typeahead.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\javascripts\twitter\bootstrap_ujs.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\stylesheets\bootstrap_and_overrides.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\stylesheets\twitter-bootstrap-static\bootstrap.css.erb" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\stylesheets\twitter-bootstrap-static\fontawesome.css.erb" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\stylesheets\twitter-bootstrap-static\sprites.css.erb" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\public\favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\public\images\favorite.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\public\images\unfavorite.png" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\images\backgrounds\cozy.jpg" afterPath="$PROJECT_DIR$/public/images/backgrounds/cozy.jpg" />
+      <change type="MOVED" beforePath="C:\Users\Samuel Son\Documents\GitHub\homie\app\assets\images\backgrounds\interior.jpg" afterPath="$PROJECT_DIR$/public/images/backgrounds/interior.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/test" afterPath="$PROJECT_DIR$/db/test" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/apartment.rb" afterPath="$PROJECT_DIR$/app/models/apartment.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/apartment_spec.rb" afterPath="$PROJECT_DIR$/spec/models/apartment_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/apartments.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/apartments.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/apartments.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/apartments.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/apartments_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/apartments_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/controllers/apartments_controller_spec.rb" afterPath="$PROJECT_DIR$/spec/controllers/apartments_controller_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/apartments/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/apartments/edit.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/home.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/apartments/new.html.erb" afterPath="$PROJECT_DIR$/app/views/apartments/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/review.rb" afterPath="$PROJECT_DIR$/app/models/review.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/review_spec.rb" afterPath="$PROJECT_DIR$/spec/models/review_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/reviews_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/apartments/search.html.erb" afterPath="$PROJECT_DIR$/app/views/apartments/search.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/apartments/show.html.erb" afterPath="$PROJECT_DIR$/app/views/apartments/show.html.erb" />
     </list>
     <ignored path="homie.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +93,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="apartments_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="apartments_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/apartments_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="24" selection-start="4782" selection-end="4782" vertical-scroll-proportion="1.4117647" vertical-offset="1393" max-vertical-offset="3927">
-              <folding />
+            <state line="155" column="24" selection-start="5332" selection-end="5332" vertical-scroll-proportion="0.0" vertical-offset="1699" max-vertical-offset="4233">
+              <folding>
+                <marker date="1399066600894" expanded="true" signature="3247:3435" placeholder="if ... end" />
+                <marker date="1399066600894" expanded="true" signature="3260:3400" placeholder="if ... end" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -39,16 +108,18 @@
       <file leaf-file-name="apartment.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/apartment.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="0" selection-start="2833" selection-end="2833" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="1547">
-              <folding />
+            <state line="87" column="0" selection-start="3153" selection-end="3153" vertical-scroll-proportion="0.0" vertical-offset="1240" max-vertical-offset="1887">
+              <folding>
+                <marker date="1399066600886" expanded="true" signature="3129:3253" placeholder="do ... end" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="search.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/apartments/search.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="36" selection-start="1620" selection-end="1620" vertical-scroll-proportion="-22.884615" vertical-offset="0" max-vertical-offset="1496">
+            <state line="133" column="0" selection-start="5078" selection-end="5078" vertical-scroll-proportion="3.5494506" vertical-offset="0" max-vertical-offset="2380">
               <folding />
             </state>
           </provider>
@@ -57,23 +128,10 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/apartments/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="8" selection-start="1622" selection-end="1622" vertical-scroll-proportion="-2.6153846" vertical-offset="765" max-vertical-offset="2108">
+            <state line="75" column="8" selection-start="2284" selection-end="2284" vertical-scroll-proportion="-2.6153846" vertical-offset="1207" max-vertical-offset="2975">
               <folding>
-                <marker date="1398814040513" expanded="true" signature="1032:1131" placeholder="..." />
-                <marker date="1398814040513" expanded="true" signature="1166:1342" placeholder="..." />
-                <marker date="1398814040513" expanded="true" signature="1696:2003" placeholder="..." />
-                <marker date="1398814040513" expanded="true" signature="1754:1930" placeholder="..." />
-                <marker date="1398814040513" expanded="true" signature="2012:2133" placeholder="..." />
-                <marker date="1398814040513" expanded="true" signature="2263:3169" placeholder="..." />
-                <marker date="1398814040513" expanded="true" signature="2272:2415" placeholder="..." />
-                <marker date="1398814040513" expanded="true" signature="2281:2403" placeholder="..." />
-                <marker date="1398814040513" expanded="true" signature="2425:3160" placeholder="..." />
-                <marker date="1398814040513" expanded="true" signature="2467:3138" placeholder="..." />
-                <marker date="1398814040513" expanded="true" signature="2522:2595" placeholder="..." />
-                <marker date="1398814040513" expanded="true" signature="2605:2743" placeholder="..." />
-                <marker date="1398814040513" expanded="true" signature="2811:2930" placeholder="..." />
-                <marker date="1398814040513" expanded="true" signature="2986:3084" placeholder="..." />
-                <marker date="1398814040513" expanded="true" signature="3203:3244" placeholder="..." />
+                <marker date="1399066600130" expanded="true" signature="572:944" placeholder="if ... end" />
+                <marker date="1399066600130" expanded="true" signature="4993:5004" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -110,8 +168,8 @@
         <option value="$PROJECT_DIR$/app/controllers/reviews_controller.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/models/apartment.rb" />
-        <option value="$PROJECT_DIR$/app/views/apartments/search.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/apartments_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/apartments/search.html.erb" />
       </list>
     </option>
   </component>
@@ -764,38 +822,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/apartments/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="8" selection-start="1622" selection-end="1622" vertical-scroll-proportion="-2.6153846" vertical-offset="765" max-vertical-offset="2108">
+        <state line="75" column="8" selection-start="2284" selection-end="2284" vertical-scroll-proportion="-2.6153846" vertical-offset="1207" max-vertical-offset="2975">
           <folding>
-            <marker date="1398814040513" expanded="true" signature="1032:1131" placeholder="..." />
-            <marker date="1398814040513" expanded="true" signature="1166:1342" placeholder="..." />
-            <marker date="1398814040513" expanded="true" signature="1696:2003" placeholder="..." />
-            <marker date="1398814040513" expanded="true" signature="1754:1930" placeholder="..." />
-            <marker date="1398814040513" expanded="true" signature="2012:2133" placeholder="..." />
-            <marker date="1398814040513" expanded="true" signature="2263:3169" placeholder="..." />
-            <marker date="1398814040513" expanded="true" signature="2272:2415" placeholder="..." />
-            <marker date="1398814040513" expanded="true" signature="2281:2403" placeholder="..." />
-            <marker date="1398814040513" expanded="true" signature="2425:3160" placeholder="..." />
-            <marker date="1398814040513" expanded="true" signature="2467:3138" placeholder="..." />
-            <marker date="1398814040513" expanded="true" signature="2522:2595" placeholder="..." />
-            <marker date="1398814040513" expanded="true" signature="2605:2743" placeholder="..." />
-            <marker date="1398814040513" expanded="true" signature="2811:2930" placeholder="..." />
-            <marker date="1398814040513" expanded="true" signature="2986:3084" placeholder="..." />
-            <marker date="1398814040513" expanded="true" signature="3203:3244" placeholder="..." />
+            <marker date="1399066600130" expanded="true" signature="572:944" placeholder="if ... end" />
+            <marker date="1399066600130" expanded="true" signature="4993:5004" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/apartment.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="0" selection-start="2833" selection-end="2833" vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="1547">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/apartments/search.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="36" selection-start="1620" selection-end="1620" vertical-scroll-proportion="-22.884615" vertical-offset="0" max-vertical-offset="1496">
-          <folding />
+        <state line="87" column="0" selection-start="3153" selection-end="3153" vertical-scroll-proportion="0.0" vertical-offset="1240" max-vertical-offset="1887">
+          <folding>
+            <marker date="1399066600886" expanded="true" signature="3129:3253" placeholder="do ... end" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -815,7 +855,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/apartments_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="24" selection-start="4782" selection-end="4782" vertical-scroll-proportion="1.4117647" vertical-offset="1393" max-vertical-offset="3927">
+        <state line="155" column="24" selection-start="5332" selection-end="5332" vertical-scroll-proportion="0.0" vertical-offset="1699" max-vertical-offset="4233">
+          <folding>
+            <marker date="1399066600894" expanded="true" signature="3247:3435" placeholder="if ... end" />
+            <marker date="1399066600894" expanded="true" signature="3260:3400" placeholder="if ... end" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/apartments/search.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="133" column="0" selection-start="5078" selection-end="5078" vertical-scroll-proportion="3.5494506" vertical-offset="0" max-vertical-offset="2380">
           <folding />
         </state>
       </provider>

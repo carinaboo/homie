@@ -8,17 +8,28 @@
 }
 
 #search_field {
-	width: 300px;
+	width: 350px;
 }
 
 select[name=sorting] {
 	margin-left: 190px;
+	width: 175px;
+	font: initial;
+	font-size: 0.8em;
 }
 
 #map {
-	height: 400px;
-	width: 500px;
+	height: 300px;
+	width: 400px;
 	float: right;
+	// position: relative;
+	// top: -420px;
+}
+
+#new_review {
+	select, label {
+		display: none;
+	}
 }
 
 #filters {
@@ -27,7 +38,7 @@ select[name=sorting] {
 		margin-left: 20px;
 	}
 	input {
-		width: 20px;
+		width: 30px;
 	}
 	input[name=min_price], input[name=max_price] {
 		width: 50px;
@@ -44,6 +55,7 @@ select[name=sorting] {
 		width: 300px;
 		float: left;
 		margin: 0px 10px 20px;
+		line-height: normal;
 
 		.listing-images {
 			position: relative;
@@ -80,21 +92,40 @@ select[name=sorting] {
 				padding: 15px 10px 10px;
 				text-align: center;
 
+				.off-star {
+					background-position: 0 35px;
+					&:hover {
+						background-position: 0px 70px;
+					}
+				}
+
+				.favo {
+					display: inline-block;
+					width: 35px;
+					height: 35px;
+					background-size: 35px;
+					background-image: image-url("icons/favorite.png");
+				}
+
 				a {
 					display: inline-block;
-					width: 33px;
-					height: 33px;
+					width: 35px;
+					height: 35px;
+					background-size: 35px;
 
 					&.not-favorited {
-						background-image: image-url("icons/favorite-unfilled.png");
+						background-image: image-url("icons/favorite.png");
+						background-position: 0px 35px;
 
 						&:hover {
-							background-image: image-url("icons/favorite-filled.png");
+							background-image: image-url("icons/favorite.png");
+							background-position: 0px 70px;
 						}
 					}
 
 					&.favorited {
-						background-image: image-url("icons/favorite-filled.png");
+						background-image: image-url("icons/favorite.png");
+						background-position: 0px 0px;
 					}
 				}
 			}
@@ -156,7 +187,7 @@ select[name=sorting] {
 			}
 		}
 		.listing-footer {
-			min-height: 130px;
+			min-height: 185px;
 			padding: 10px 0;
 			text-align: center;
 
@@ -183,11 +214,213 @@ select[name=sorting] {
 					margin-right: 6px;
 				}
 			}
+			.listing-rating {
+				div[class^='rating-'] {
+					width: 144px;
+					height: 28px;
+					margin: 0 auto;
+					background-image: url(/images/icons/stars.png);
+				}
+				.rating-0 {
+					background-position: -10px 231px;
+				}
+				.rating-1 {
+					background-position: -10px 193px;
+				}
+				.rating-2 {
+					background-position: -10px 153px;
+				}
+				.rating-3 {
+					background-position: -10px 114px;
+				}
+				.rating-4 {
+					background-position: -10px 75px;
+				}
+				.rating-5 {
+					background-position: -10px 36px;
+				}
+			}
 		}
 	}
 }
 
-@media handheld, only screen and (max-width: 743px), only screen and (max-device-width: 743px) {
+.actions {
+	display: inline-block;
+	margin-right: 30px;
+}
+.favorite {
+	display: inline-block;
+	vertical-align: top;
+
+	.off-star {
+		background-position: 0 35px;
+		&:hover {
+			background-position: 0px 70px;
+		}
+	}
+
+	#favo {
+		display: inline-block;
+		width: 35px;
+		height: 35px;
+		background-size: 35px;
+		background-image: image-url("icons/favorite.png");
+	}
+
+	a {
+		display: inline-block;
+		width: 35px;
+		height: 35px;
+		background-size: 35px;
+
+		&.not-favorited {
+			background-image: image-url("icons/favorite.png");
+			background-position: 0px 35px;
+
+			&:hover {
+				background-image: image-url("icons/favorite.png");
+				background-position: 0px 70px;
+			}
+		}
+
+		&.favorited {
+			background-image: image-url("icons/favorite.png");
+			background-position: 0px 0px;
+		}
+	}
+}
+
+.photos {
+	margin: 30px 0px 20px;
+
+	img {
+		max-width: 550px;
+	}
+}
+
+.rating-info {
+	margin-bottom: 20px;
+	overflow: auto;
+
+	& > div {
+		float: left;
+	}
+
+	.rating-count {
+		line-height: 28px;
+		margin-left: 15px;
+	}
+}
+.rating {
+
+	div[class^='rating-'] {
+		width: 144px;
+		height: 28px;
+		background-image: url(/images/icons/stars.png);
+	}
+	.rating-0 {
+		background-position: -10px 231px;
+	}
+	.rating-1 {
+		background-position: -10px 193px;
+	}
+	.rating-2 {
+		background-position: -10px 153px;
+	}
+	.rating-3 {
+		background-position: -10px 114px;
+	}
+	.rating-4 {
+		background-position: -10px 75px;
+	}
+	.rating-5 {
+		background-position: -10px 36px;
+	}
+}
+
+.price {
+	margin-bottom: 15px;
+}
+
+.details {
+	> div {
+		margin-bottom: 15px;
+	}
+}
+
+.reviews {
+	// width: 600px;
+	overflow: auto;
+
+	.review {
+		overflow: auto;
+		margin-bottom: 25px;
+
+		.reviewer {
+			float: left;
+
+			.reviewer-image {
+				overflow: hidden;
+				height: 75px;
+				width: 75px;
+				border-radius: 75px;
+				background: #CCC image-url('profile-default.png');
+				background-size: 75px 75px; 
+
+				img {
+					width: 100%;
+					min-height: 100%;
+				}
+			}
+		}
+		.callout {
+			min-height: 100px;
+			width: 510px;
+			background-color: #444;
+			position: relative;
+			color: #E0E0E0;
+			padding: 10px;
+			border-radius: 3px;
+			float: left;
+			margin-left: 15px;
+
+			&::before {
+				content: "";
+				width: 0px;
+				height: 0px;
+				border: 0.8em solid transparent;
+				position: absolute;
+				// callout arrow
+				left: -20px;
+				top: 30px;
+				border-right: 10px solid #444;
+			}
+			.review-description {
+				margin: 15px 0px 20px;
+			}
+			.reviewer-name {
+				font-size: 0.8em;
+				margin-bottom: 8px;
+			}
+			.review-updated {
+				font-size: 0.8em;
+			}
+			.actions {
+				position: absolute;
+				bottom: 10px;
+				right: 10px;
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+@media handheld, only screen and (max-width: 1000px), only screen and (max-device-width: 1000px) {
     /* max content width on mobile devices */
-    
+    #map {
+    	display: block;
+    	width: 100%;
+		position: static;
+		top: 0px;
+	}
 }

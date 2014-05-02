@@ -25,6 +25,7 @@
 
 class Apartment < ActiveRecord::Base
 	has_many :reviews
+	has_many :pictures
 	belongs_to :user, class_name: 'User', foreign_key: 'user_id'
 	has_attached_file :photo, styles: {thumb: "75x75>", small: "500x500>", large: "1200x1200>"}
 	#validates_attachment :photo, content_type: { content_type: ["photo/jpg", "photo/jpeg", "photo/png"] }
@@ -81,5 +82,24 @@ class Apartment < ActiveRecord::Base
 		p = p.to_s
 		p = p.gsub(/[$,_]/,'').to_f
 		return p
+	end
+
+	def self.favorite(user_id, apt_id)
+		user = User.find_by_id(user_id)
+		if !user
+			return -1
+		end
+		apt = Apartment.find(apt_id)
+		list = user.flagged_apartments
+		if user.flagged?(apt)
+			#check whether the apt is in list
+        	user.unflag(apt)
+        	list.delete(apt)
+        	return 200
+      	else
+      		#apt is not in list
+        	user.flag(apt, :favorite)
+        	return 201
+      	end
 	end
 end

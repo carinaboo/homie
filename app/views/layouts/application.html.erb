@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Homie</title>
+  <%= favicon_link_tag 'favicon.png' %>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
@@ -18,18 +19,28 @@
 <% if current_user %>
   <div class="nav">
     <%= link_to "", root_path, class: "logo" %>
-    <span class="inline"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></span>
-    <span class="inline"><%= link_to "Profile", current_user %></span>
-    <span class="inline"><%= link_to "Edit profile", edit_user_registration_path %></span>
-    <span class="inline"><%= link_to "Add apartment", new_apartment_path %></span>
+    
+    <% if !current_page?(root_url) && !current_page?(apartments_search_url) %>
+      <%= form_tag apartments_search_path, :class => 'search', :method => 'get' do %>
+        <%= text_field_tag :search, params[:search], :id => 'search_field', :placeholder => "Search address or listing title" %>
+        <%= submit_tag "Search", name: nil, class: "button small" %> 
+      <% end %> 
+    <% end %>
+
+    <div class="links">
+      <%= link_to "Add apartment", new_apartment_path %>
+      <%= link_to "Edit profile", edit_user_registration_path %>
+      <%= link_to "Profile", current_user %>
+      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    </div>
   </div>
 <% else %>
   <div class="nav">
     <%= link_to "", root_path, class: "logo" %>
-    <span class "rightbox">
-      <span class="inline"><%= link_to "Log In", new_user_session_url %></span>
-      <span class="inline"><%= link_to "Sign Up", new_user_registration_url %></span>
-    </span>
+    <div class="links">
+      <%= link_to "Sign Up", new_user_registration_url %>
+      <%= link_to "Log In", new_user_session_url %>
+    </div>
   </div>
 <% end %>
 

@@ -78,4 +78,14 @@ describe Review do
     reviewed = Review.hasReviewed(User.find(user_id) ,apt_id);
     expect(reviewed).to eq(true)
   end
+
+  it "test update_rating_new" do
+    apt = Apartment.add(1, "Third Home!", "1234 Cool Ave", "100B", "Berkeley", "CA", 94704, "cool!", 600, 1, 1)
+    apt_id = apt.id
+    user_id = apt.user_id
+    review = apt.reviews.add(user_id, 5, "Great!")
+    Review.update_rating_new(apt_id, review.id, 4)
+    review = Review.find(review.id)
+    expect(review.overall_rating).to eq(4)
+  end
 end

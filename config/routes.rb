@@ -8,11 +8,14 @@ Homie::Application.routes.draw do
   get "reviews/:apt_id", to: 'reviews#find_by_apt', as: 'reviews_find_by_apt'
   delete 'reviews/:id', to: 'reviews#delete', as:'delete_review'
 
+  post '/pictures', to: 'pictures#create', as: 'create_picture'
+  delete 'pictures/:id', to: 'pictures#delete', as:'delete_picture'
+
   get 'apartments/search', to: 'apartments#search'
   #get 'apartments/delete', to: 'apartment#delete', as: 'delete_apartment'
   resources :apartments do
     member do
-      get 'favorite'
+      post 'favorite', to: 'apartments#favorite'
     end
   end
   # devise_for :users

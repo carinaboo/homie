@@ -220,4 +220,23 @@ describe Apartment do
       expect(p).to (eq 1000) 
     end
   end
+
+  describe "favorite apartment" do
+    it "users try to add apartment to their favorite list" do
+      p = Apartment.favorite(1, @valid_apt.id)
+      expect(p).to (eq 201) 
+    end
+
+    it "users try to add apartment to their favorite list" do
+      p = Apartment.favorite(1, @valid_apt.id)
+      q = Apartment.favorite(1, @valid_apt.id)
+      expect(q).to (eq 200) 
+    end
+
+    it "not logged in users try to add apartment to their favorite list" do
+      p = Apartment.favorite(100, @valid_apt.id)
+      q = Apartment.favorite(100, @valid_apt.id)
+      expect(p).to (eq -1) 
+    end
+  end
 end

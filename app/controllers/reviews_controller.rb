@@ -95,6 +95,7 @@ class ReviewsController < ApplicationController
       flash[:error] = "Error: only the owner is allowed to delete apartment\n"
       redirect_to @apartment
     else
+      Review.update_rating_new(review.apartment_id, review.id, 0)
       Review.delete(user_id, review.apartment_id)
       redirect_to @apartment
     end
