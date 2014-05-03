@@ -30,7 +30,7 @@
 
 <% if @apartment.photo.exists? || @pictures.size > 0 %>
 	<div class="photos">
-		<div class="fotorama" data-nav="thumbs" data-fit="cover" data-keyboard="true" data-allowfullscreen="true">
+		<div class="fotorama" data-nav="thumbs" data-fit="cover" data-keyboard="true" data-allowfullscreen="true" data-width="600px" data-ratio="800/500">
 			<% if @apartment.photo.exists? %>
 				<%= image_tag @apartment.photo.url(:large) %>
 			<% end %>
