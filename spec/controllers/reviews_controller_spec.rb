@@ -43,10 +43,16 @@ describe ReviewsController do
       response.should render_template :edit
     end 
 
-    it "successfully loads edit page" do
-      get :edit, id: 100000
-      response.should render_template :root_path
-    end   
+    it "does not load edit page if id is not valid" do
+      get :edit, id: 1000000
+      response.should_not render_template :edit
+    end 
+
+    it "does not load edit page if invalid user" do
+      subject.sign_out @user
+      get :edit, id: @review.id
+      response.should_not render_template :edit
+    end  
 
     it "successfully updates review page" do
       put :update, id: @review.id, review: FactoryGirl.attributes_for(:review)
@@ -57,6 +63,13 @@ describe ReviewsController do
       subject.sign_out @user
       @user2 = FactoryGirl.create(:user, email: "differentuser@berkeley.edu")
       subject.sign_in @user2
+      put :update, id: @review.id, review: FactoryGirl.attributes_for(:review)
+      response.should_not redirect_to apartment_path id: @apartment.id
+      subject.sign_in @user
+    end  
+
+    it "does not update review page with wrong user" do
+      subject.sign_out @user
       put :update, id: @review.id, review: FactoryGirl.attributes_for(:review)
       response.should_not redirect_to apartment_path id: @apartment.id
       subject.sign_in @user
@@ -99,6 +112,13 @@ describe ReviewsController do
     it "successfully deletes Reviews" do
       delete :delete, id: @review.id, review: FactoryGirl.attributes_for(:review)
       response.should redirect_to apartment_path id: @apartment.id
+    end
+
+    it "should not delete Reviews if apartment does not exist" do
+      @review.apartment_id = 1000
+      @review.save
+      delete :delete, id: @review.id, review: FactoryGirl.attributes_for(:review)
+      response.should_not redirect_to apartment_path id: @apartment.id
     end
   end 
 

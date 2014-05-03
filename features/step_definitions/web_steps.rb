@@ -106,6 +106,15 @@ When /^(?:|I )attach the file "([^\"]*)" to "([^\"]*)"(?: within "([^\"]*)")?$/ 
   end
 end
 
+When /^I attach a "([^\"]*)" image to "([^\"]*)"/ do |size, field|
+  attach_file(field, image_path(size))
+end
+
+Then /^I can see the image "(.+)"$/ do |pic|
+  expect(page).to have_xpath("//img[@src=\"/*/*/#{pic}\"]")
+  #expect(page).to have_xpath("//img[@src=\"~/homie/features/support/fixtures/#{pic}\"]")
+end
+
 Then /^(?:|I )should see JSON:$/ do |expected_json|
   require 'json'
   expected = JSON.pretty_generate(JSON.parse(expected_json))
@@ -228,11 +237,11 @@ Then /^show me the page$/ do
 end
 
 Then(/^I should see image favorite$/) do
-  expect(page).to have_xpath("//img[@src=\"/images/favorite.png\"]")
+  expect(page).to have_xpath("//img[@src=\"/icons/favorite.png\"]")
 end
 
 Then(/^I should see image unfavorite$/) do
-  expect(page).to have_xpath("//img[@src=\"/images/unfavorite.png\"]")
+  expect(page).to have_xpath("//img[@src=\"/icons/favorite.png\"]")
 end
 
 When(/^I follow favorite$/) do

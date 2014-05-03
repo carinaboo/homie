@@ -3,6 +3,7 @@ Feature: User
 Background: Sign in User
 	Given I am on the home page
   	When I follow "Sign Up"
+  	When I attach a "small" image to "user_photo" 
   	When I fill in "user_username" with "Carina Boo"
   	When I fill in "user_email" with "cboo@berkeley.edu"
   	When I fill in "user_password" with "1234567890"
@@ -31,6 +32,7 @@ Scenario: Add photo to user profile
 Scenario: Edit user profile
 	Given I am on the home page
 	When I follow "Edit profile"
+	When I attach a "small" image to "user_photo" 
 	When I fill in "user_username" with "Boo, Carina"
   	When I fill in "user_email" with "cboo@berkeley.edu"
   	When I fill in "user_current_password" with "1234567890"

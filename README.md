@@ -8,7 +8,7 @@ Homie
 1. `bundle install`
 1. `rake db:migrate`
 1. `rails g sunspot_rails:install`
-1. `rake sunspot:solr:start` (For Windows: `rake sunspot:solr:run`)
+1. `bundle exec rake sunspot:solr:start` (For Windows: `rake sunspot:solr:run`)
 1. `rake sunspot:reindex`
 1. `rails s`
 1. Go to `localhost:3000/` in your browser
