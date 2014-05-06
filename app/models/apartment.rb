@@ -58,35 +58,20 @@ class Apartment < ActiveRecord::Base
 		FORBIDDEN
 	end
 
-	#search for apartments by address and returns an array of apartments at that location. 
-	def self.search(search, sort, min_price, max_price, min_rating, min_bedrooms, max_bedrooms, min_bathrooms, max_bathrooms)
-		if search
-			# for now blank search returns all results to make it easier for dev testing
-			# change to show nothing later
-			
-			if sort == "Ratings: low to high"
-				sorting = 'average_overall_rating asc'
-			elsif sort == "Ratings: high to low"
-				sorting = 'average_overall_rating desc'
-			elsif sort == "Price: low to high"
-				sorting = 'price asc'
-			elsif sort == "Price: high to low"
-				sorting = 'price desc'
-			else # default sort from highest to lowest rating
-				sorting = 'average_overall_rating desc'
-			end
-
-			# find(:all, :conditions => ['address LIKE ?', "%#{search}%"], :order =>  sorting)
-			Apartment.where('(title LIKE ? OR street_address LIKE ? OR apartment_number LIKE ? OR city LIKE ? OR state LIKE ? OR CAST(zip as varchar) LIKE ?) AND (price >= ? AND price <= ? AND (average_overall_rating >= ? OR average_overall_rating IS ?) AND bedrooms >= ? AND bedrooms <= ? AND bathrooms >= ? AND bathrooms <= ?)',
-				"%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", min_price.presence || 0, max_price.presence || Apartment.maximum("price"),
-				min_rating.presence || 0, min_rating.presence || nil,
-				min_bedrooms.presence || 0, max_bedrooms.presence || Apartment.maximum("bedrooms"), 
-				min_bathrooms.presence || 0, max_bathrooms.presence || Apartment.maximum("bathrooms")).order(sorting)
-		else
-			return []
-			# find(:all)
-		end
+	def updateApt(params)
+		valid = self.update_attributes(params)
+		return self if valid
+		FORBIDDEN
 	end
+
+  searchable do
+    text :title, :street_address, :apartment_number, :city, :state, :zip
+
+    float :price
+    float :bathrooms
+    float :bedrooms
+    float :average_overall_rating
+  end
 
 	def delete()
 		self.destroy

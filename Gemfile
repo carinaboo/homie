@@ -26,6 +26,13 @@ gem 'fotoramajs'
 
 gem 'make_flaggable', :git => 'git://github.com/medihack/make_flaggable.git'
 
+# Sunspot solr search engine
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+
+# Progress bar gem for reindexing previous records for sunspot
+gem 'progress_bar'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

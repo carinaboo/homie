@@ -145,23 +145,70 @@ class ApartmentsController < ApplicationController
     end
   end
 
-  #Searches for apartment listings
-  def search
-    # @apartments = Apartment.all
-    sort = params[:sorting]
-
+  def with_price(query)
     min_price = params[:min_price]
     max_price = params[:max_price]
+    lowest_price = (min_price.presence || 0).to_f
+    highest_price = (max_price.presence || Apartment.maximum("price")).to_f
+    query.with(:price).between(lowest_price..highest_price)
+  end
 
+  def with_rating(query)
     min_rating = params[:min_rating]
+    lowest_rating = (min_rating.presence || 0).to_f
+    or_nil = (min_rating.presence || nil)
+    if min_rating == (min_rating.presence || 0)
+      query.with(:average_overall_rating).greater_than_or_equal_to(lowest_rating)
+    elsif min_rating == or_nil
+      query.with(:average_overall_rating)
+    end
 
+  end
+
+  def with_bedrooms(query)
     min_bedrooms = params[:min_bedrooms]
     max_bedrooms = params[:max_bedrooms]
-    
+    lowest_bedrooms = (min_bedrooms.presence || 0).to_f
+    highest_bedrooms = (max_bedrooms.presence || Apartment.maximum("bedrooms")).to_f
+    query.with(:bedrooms).between(lowest_bedrooms..highest_bedrooms)
+  end
+
+  def with_bathrooms(query)
     min_bathrooms = params[:min_bathrooms]
     max_bathrooms = params[:max_bathrooms]
-    
-    @apartments = Apartment.search(params[:search], sort, min_price, max_price, min_rating, min_bedrooms, max_bedrooms, min_bathrooms, max_bathrooms)
+    lowest_bathrooms = (min_bathrooms.presence || 0).to_f
+    highest_bathrooms = (max_bathrooms.presence || Apartment.maximum("bathrooms")).to_f
+    query.with(:bedrooms).between(lowest_bathrooms..highest_bathrooms)
+  end
+
+  def low_high_sort(query)
+    sort = params[:sorting]
+    if sort == "Ratings: low to high"
+      query.order_by(:average_overall_rating, :asc)
+    elsif sort == "Ratings: high to low"
+      query.order_by(:average_overall_rating, :desc)
+    elsif sort == "Price: low to high"
+      query.order_by(:price, :asc)
+    elsif sort == "Price: high to low"
+      query.order_by(:price, :desc)
+    else # default sort from highest to lowest rating
+      query.order_by(:average_overall_rating, :desc)
+    end
+  end
+
+
+  #Searches for apartment listings
+  def search
+    @search = Apartment.search do |query|
+      query.fulltext params[:search]
+      with_price(query)
+      with_rating(query)
+      with_bedrooms(query)
+      with_bathrooms(query)
+      low_high_sort(query)
+    end
+
+    @apartments = @search.results
     @max_price = Apartment.maximum("price") || 5000
     @max_bedrooms = Apartment.maximum("bedrooms") || 6
     @max_bathrooms = Apartment.maximum("bathrooms") || 6
@@ -192,5 +239,5 @@ class ApartmentsController < ApplicationController
   private
   def apt_params
     params.require(:apartment).permit(:title, :description, :price, :bathrooms, :bedrooms, :user_id, :apartment_number, :street_address, :city, :state, :zip, :price, :photo)
-  end 
+  end
 end
